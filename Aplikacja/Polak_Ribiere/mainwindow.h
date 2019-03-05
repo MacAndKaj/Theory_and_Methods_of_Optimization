@@ -16,6 +16,9 @@ public:
     ~MainWindow();
     void closeEvent(QCloseEvent *event);
 
+private slots:
+    void close();
+
 private:
     Ui::MainWindow *ui;
 };

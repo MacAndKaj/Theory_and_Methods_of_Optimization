@@ -1,1 +1,4 @@
 .idea/
+moc_*
+*.o
+build-Polak_Ribiere-Desktop_Qt_5_11_2_GCC_64bit-Debug/

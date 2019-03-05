@@ -27,13 +27,16 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    graph.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    graph.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    graph.ui
 
 RESOURCES += \
         images.qrc \

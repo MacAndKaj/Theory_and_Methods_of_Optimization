@@ -9,6 +9,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    ui->progressBar_computing->hide();
 }
 
 MainWindow::~MainWindow()
@@ -19,7 +21,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::closeEvent(QCloseEvent *event)
 {
-    QMessageBox::StandardButton resBtn = QMessageBox::question( this, QObject::tr("Exiting"),
+    QMessageBox::StandardButton resBtn = QMessageBox::question( this, QObject::tr("Exit!"),
                                                                 QObject::tr("Are you sure?\n"),
                                                                 QMessageBox::No | QMessageBox::Yes,
                                                                 QMessageBox::Yes);
@@ -29,3 +31,5 @@ void MainWindow::closeEvent(QCloseEvent *event)
     }
     event->ignore();
 }
+
+

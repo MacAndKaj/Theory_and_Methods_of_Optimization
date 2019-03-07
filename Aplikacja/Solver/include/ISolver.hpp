@@ -5,4 +5,9 @@
 #ifndef SOLVER_ISOLVER_HPP
 #define SOLVER_ISOLVER_HPP
 
+class ISolver
+{
+
+};
+
 #endif //SOLVER_ISOLVER_HPP

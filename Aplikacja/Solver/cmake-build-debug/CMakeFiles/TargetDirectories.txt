@@ -1,0 +1,4 @@
+/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-debug/CMakeFiles/test.dir
+/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-debug/CMakeFiles/SolverTests.dir

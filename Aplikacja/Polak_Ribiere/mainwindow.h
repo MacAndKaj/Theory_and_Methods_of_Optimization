@@ -1,7 +1,10 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "graph.h"
+#include <memory>
 #include <QMainWindow>
+
 
 namespace Ui {
 class MainWindow;
@@ -17,10 +20,13 @@ public:
     void closeEvent(QCloseEvent *event);
 
 private slots:
-    void close();
+    inline void on_actionactionExit_triggered(){close();}
+
+    void on_pushButton_StopShow_clicked();
 
 private:
-    Ui::MainWindow *ui;
+    Ui::MainWindow* _ui;
+    std::unique_ptr<Graph> _graph;
 };
 
 #endif // MAINWINDOW_H

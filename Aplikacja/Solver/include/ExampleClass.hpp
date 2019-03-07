@@ -2,12 +2,20 @@
 // Created by maciek on 06.03.19.
 //
 
-#ifndef SOLVERTESTS_EXAMPLECLASS_HPP
-#define SOLVERTESTS_EXAMPLECLASS_HPP
+#ifndef SOLVER__EXAMPLECLASS_HPP
+#define SOLVER__EXAMPLECLASS_HPP
 
 class ExampleClass
 {
+public:
+    ExampleClass();
+    virtual ~ExampleClass();
+
+    unsigned int getFive(bool failTest=false) const;
 
 };
+
+
+
 
 #endif //SOLVERTESTS_EXAMPLECLASS_HPP

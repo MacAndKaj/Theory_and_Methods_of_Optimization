@@ -4,9 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui widgets datavisualization
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 CONFIG += c++14
 
 TARGET = Polak_Ribiere
@@ -28,19 +27,18 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    graph.cpp
+        graph.cpp
 
 HEADERS += \
         mainwindow.h \
-    graph.h
+        graph.h
 
 FORMS += \
         mainwindow.ui \
-    graph.ui
+        graph.ui
 
 RESOURCES += \
-        images.qrc \
-    images.qrc
+        images.qrc
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

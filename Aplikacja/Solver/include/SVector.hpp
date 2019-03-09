@@ -7,32 +7,28 @@
 
 #include <vector>
 
-class Vector
+class SVector
 {
 public:
-    Vector() = default;
-    explicit Vector(const std::vector<float>& vector);
+    SVector() = default;
+    explicit SVector(const std::vector<float>& vector);
+
     const std::vector<float>& getVector() const;
     void setVector(const std::vector<float>& vector);
+
+    float cartesianNorm()const;
+
 private:
     std::vector<float> _vector;
 
-    friend Vector operator +(const Vector&, const Vector&);
+    friend SVector operator *(const SVector&, float);
+    friend SVector operator +(const SVector&, const SVector&);
+    friend SVector operator -(const SVector&, const SVector&);
+
 };
 
-Vector operator+(const Vector& lhs, const Vector& rhs)
-{
-    std::vector<float> vector;
-    if(not (lhs._vector.empty() and rhs._vector.empty())
-        and lhs._vector.size() == rhs._vector.size())
-    {
-        const auto& rhsItem = rhs._vector.begin();
-        for (const auto& lhsItem : lhs._vector)
-        {
-            vector.emplace_back(lhsItem+(*rhsItem));
-        }
-    }
-    return Vector(vector);
-}
+SVector operator *(const SVector&, float);
+SVector operator +(const SVector&, const SVector&);
+SVector operator -(const SVector&, const SVector&);
 
 #endif //SOLVERTESTS_VECTOR_HPP

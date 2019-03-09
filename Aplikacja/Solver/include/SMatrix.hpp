@@ -5,7 +5,7 @@
 #ifndef SOLVER_MATRIX_HPP
 #define SOLVER_MATRIX_HPP
 
-class Matrix
+class SMatrix
 {
 
 };

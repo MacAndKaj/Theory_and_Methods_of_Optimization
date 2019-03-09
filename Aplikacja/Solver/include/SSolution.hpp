@@ -5,8 +5,12 @@
 #ifndef SOLVER_SSOLUTION_HPP
 #define SOLVER_SSOLUTION_HPP
 
+#include "SVector.hpp"
+
 class SSolution
 {
+public:
+    SVector vector;
 
 };
 

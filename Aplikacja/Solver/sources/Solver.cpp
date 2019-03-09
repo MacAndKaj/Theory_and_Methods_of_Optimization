@@ -3,3 +3,9 @@
 //
 
 #include "Solver.hpp"
+
+Solver::Solver()
+{
+
+}
+

@@ -2,4 +2,4 @@
 // Created by maciek on 06.03.19.
 //
 
-#include "Matrix.hpp"
+#include "SMatrix.hpp"

@@ -7,7 +7,10 @@
 
 class ISolver
 {
-
+public:
+    void setMethod() = 0;
+    void computeSolution() const = 0;
+    SSolution getSolution() const = 0;
 };
 
 #endif //SOLVER_ISOLVER_HPP

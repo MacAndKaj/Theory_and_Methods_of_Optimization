@@ -2,7 +2,7 @@
 // Created by maciek on 06.03.19.
 //
 
-#include <ExampleClass.hpp>
+#include "ExampleClass.hpp"
 
 
 ExampleClass::ExampleClass()

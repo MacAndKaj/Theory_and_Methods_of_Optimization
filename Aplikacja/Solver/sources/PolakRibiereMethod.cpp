@@ -15,3 +15,14 @@ SSolution PolakRibiereMethod::getSolution() const
 {
     return SSolution();
 }
+
+PolakRibiereMethod::PolakRibiereMethod(float error, float minimalStepBetweenTwoPoints,
+    float minimalDifferenceBetweenStepsValues, unsigned int numberOfIterations,
+    const std::vector<SVector>& solutionVecor)
+    : _error(error)
+    , _minimalStepBetweenTwoPoints(minimalStepBetweenTwoPoints)
+    , _minimalDifferenceBetweenStepsValues(minimalDifferenceBetweenStepsValues)
+    , _numberOfIterations(numberOfIterations)
+    , _solutionVecor(solutionVecor)
+{
+}

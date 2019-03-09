@@ -10,8 +10,10 @@
 
 class Solver
 {
-
-    std::unique_ptr<> _method;
+public:
+    Solver();
+private:
+    std::unique_ptr<IMethod> _method;
 };
 
 #endif //SOLVERTESTS_SOLVER_HPP

@@ -10,10 +10,15 @@
 
 class PolakRibiereMethod: public IMethod
 {
+    METHOD_FRIENDSHIP
 public:
     SSolution getSolution() const override;
 
+    PolakRibiereMethod() = delete;
+    PolakRibiereMethod(const PolakRibiereMethod&) = delete;
 private:
+    PolakRibiereMethod(float error, float minimalStepBetweenTwoPoints, float minimalDifferenceBetweenStepsValues,
+        unsigned int numberOfIterations, const std::vector<SVector>& solutionVecor);
     float getBeta()const;
 
 //--Algorithm parameters

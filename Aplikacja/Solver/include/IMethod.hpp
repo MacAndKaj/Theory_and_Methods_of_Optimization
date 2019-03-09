@@ -6,6 +6,7 @@
 #define SOLVER_IMETHOD_HPP
 
 #include "SSolution.hpp"
+#define METHOD_FRIENDSHIP friend class MethodsFactory;
 
 class IMethod
 {

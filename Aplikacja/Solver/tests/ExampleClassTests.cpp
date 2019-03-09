@@ -3,7 +3,7 @@
 //
 
 #include <gtest/gtest.h>
-#include <ExampleClass.hpp>
+#include "ExampleClass.hpp"
 
 
 class ExampleClassTests : public ::testing::Test

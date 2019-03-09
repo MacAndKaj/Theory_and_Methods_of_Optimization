@@ -6,12 +6,12 @@ set(CMAKE_CXX_STANDARD 14)
 set(EXECUTABLE_NAME "SolverTests")
 set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/build)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
-set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
 include_directories(include)
 file(GLOB SRCS sources/*.cpp tests/*.cpp)
 
-add_executable(SolverTests ${SRCS} sources/PolakRibiereMethod.cpp include/PolakRibiereMethod.hpp include/IMethod.hpp)
+
+add_executable(SolverTests ${SRCS} include/Definitions.hpp)
 
 find_package(Threads REQUIRED)
 find_package(GTest REQUIRED)

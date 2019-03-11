@@ -1,0 +1,5 @@
+@startuml
+    actor User
+	participant QTApp
+	participant Solver
+@enduml

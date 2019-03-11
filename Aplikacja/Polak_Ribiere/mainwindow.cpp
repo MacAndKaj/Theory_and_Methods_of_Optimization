@@ -4,18 +4,16 @@
 #include<QMessageBox>
 #include<QCloseEvent>
 
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+    , _ui(new Ui::MainWindow)
 {
-    ui->setupUi(this);
-
-    ui->progressBar_computing->hide();
+    _ui->setupUi(this);
+    _ui->progressBar_computing->hide();
 }
 
 MainWindow::~MainWindow()
 {
-    delete ui;
 }
 
 
@@ -33,3 +31,11 @@ void MainWindow::closeEvent(QCloseEvent *event)
 }
 
 
+
+
+
+void MainWindow::on_pushButton_StopShow_clicked()
+{
+    _graph = std::make_unique<Graph>();
+    _graph->show();
+}

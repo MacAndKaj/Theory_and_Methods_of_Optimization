@@ -6,11 +6,15 @@
 #define SOLVER_IMETHOD_HPP
 
 #include "SSolution.hpp"
-#define METHOD_FRIENDSHIP friend class MethodsFactory;
+#include "ObjectiveFunction.hpp"
+
+#define IMETHODS_FRIENDSHIP friend class MethodsFactory;
 
 class IMethod
 {
 public:
+    virtual void startComputing() = 0;
+    virtual void setFunction(std::unique_ptr<ObjectiveFunction>&) = 0;
     virtual SSolution getSolution() const = 0;
 };
 

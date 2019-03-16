@@ -11,11 +11,13 @@ class SVector
 {
 public:
     SVector() = default;
-    explicit SVector(const std::vector<float>& vector);
+    SVector(const std::vector<float>& vector);
 
     const std::vector<float>& getVector() const;
     void setVector(const std::vector<float>& vector);
 
+    float x(unsigned int&&)const;
+    unsigned long getSize() const;
     float cartesianNorm()const;
 
 private:

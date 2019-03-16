@@ -11,7 +11,7 @@ include_directories(include)
 file(GLOB SRCS sources/*.cpp tests/*.cpp)
 
 
-add_executable(SolverTests ${SRCS} include/Definitions.hpp)
+add_executable(SolverTests ${SRCS} )
 
 find_package(Threads REQUIRED)
 find_package(GTest REQUIRED)

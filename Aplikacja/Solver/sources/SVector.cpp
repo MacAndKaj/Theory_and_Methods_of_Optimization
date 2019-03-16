@@ -72,6 +72,16 @@ float SVector::cartesianNorm() const
     return std::sqrt(sum);
 }
 
+unsigned long SVector::getSize() const
+{
+    return _vector.size();
+}
+
+float SVector::x(unsigned int&& index) const
+{
+    return _vector[index];
+}
+
 
 
 //---------------------------------------------------------------------------------------------

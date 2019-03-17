@@ -7,8 +7,8 @@
 
 
 #include <bits/unique_ptr.h>
-#include "Definitions.hpp"
-#include "ISolver.hpp"
+#include "Definitions_and_Helpers/Definitions.hpp"
+#include "Interface/ISolver.hpp"
 
 class IMethod;
 
@@ -16,7 +16,6 @@ class Solver: public ISolver
 {
 public:
     Solver();
-private:
     void setMethod(MethodType) override;
 
     void computeSolution() const override;

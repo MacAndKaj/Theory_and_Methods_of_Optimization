@@ -3,8 +3,7 @@
 //
 
 #include <PolakRibiereMethod.hpp>
-
-#include "PolakRibiereMethod.hpp"
+#include <Logger/LoggersFactory.hpp>
 
 PolakRibiereMethod::PolakRibiereMethod(float error, float minimalStepBetweenTwoPoints,
     float minimalDifferenceBetweenStepsValues, unsigned int numberOfIterations,
@@ -14,7 +13,9 @@ PolakRibiereMethod::PolakRibiereMethod(float error, float minimalStepBetweenTwoP
     , _minimalStepFunctionDifference(minimalDifferenceBetweenStepsValues)
     , _maxNumberOfIterations(numberOfIterations)
     , _solutionVecor(solutionVecor)
+    , _log(LoggersFactory::getLoggersFactory().getLogger("PolakRibiereMethod"))
 {
+
 }
 
 
@@ -33,7 +34,7 @@ void PolakRibiereMethod::startComputing()
     }
 }
 
-void PolakRibiereMethod::setFunction(std::unique_ptr<ObjectiveFunction>& function)
+void PolakRibiereMethod::setFunction(std::unique_ptr<SObjectiveFunction>& function)
 {
     _function = std::move(function);
 }

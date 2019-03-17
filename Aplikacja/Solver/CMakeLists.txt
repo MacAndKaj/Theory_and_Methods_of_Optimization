@@ -8,7 +8,11 @@ set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/build)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
 include_directories(include)
-file(GLOB SRCS sources/*.cpp tests/*.cpp)
+file(GLOB SRCS
+        sources/*.cpp
+        sources/Functions/*.cpp
+        sources/Logger/*.cpp
+        tests/*.cpp)
 
 
 add_executable(SolverTests ${SRCS} )

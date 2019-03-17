@@ -2,7 +2,7 @@
 // Created by maciek on 06.03.19.
 //
 #include <PolakRibiereMethod.hpp>
-#include "Solver.hpp"
+#include <Solver.hpp>
 
 Solver::Solver()
     : _methodType(MethodType::MethodType_Unknown)

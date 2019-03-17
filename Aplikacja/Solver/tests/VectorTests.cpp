@@ -88,7 +88,7 @@ TEST_F(SVectorTests,ShouldComputeCartesianCorrectlyNorm)
     startService(vector);
 
     float expectedNorm = 11.f;
-    auto norm = _sut->cartesianNorm();
+    auto norm = _sut->getCartesianNorm();
     ASSERT_EQ(expectedNorm,norm);
 }
 
@@ -100,6 +100,6 @@ TEST_F(SVectorTests,ShouldComputeCartesianCorrectlyNormForNegativeElements)
     startService(vector);
 
     float expectedNorm = 11.f;
-    auto norm = _sut->cartesianNorm();
+    auto norm = _sut->getCartesianNorm();
     ASSERT_EQ(expectedNorm,norm);
 }

@@ -5,7 +5,7 @@
 #ifndef SOLVER_ISOLVER_HPP
 #define SOLVER_ISOLVER_HPP
 
-#include "Definitions.hpp"
+#include "Definitions_and_Helpers/Definitions.hpp"
 
 class SSolution;
 

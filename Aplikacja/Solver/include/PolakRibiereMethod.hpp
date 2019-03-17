@@ -6,10 +6,11 @@
 #define SOLVER_POLAKRIBIEREMETHOD_HPP
 
 #include <bits/unique_ptr.h>
+#include <Logger/Logger.hpp>
 #include "SVector.hpp"
-#include "IMethod.hpp"
+#include "Interface/IMethod.hpp"
 
-class ObjectiveFunction;
+class SObjectiveFunction;
 
 class PolakRibiereMethod : public IMethod
 {
@@ -21,7 +22,7 @@ public:
     PolakRibiereMethod(const PolakRibiereMethod&) = delete;
 
     void startComputing() override;
-    void setFunction(std::unique_ptr<ObjectiveFunction>&) override;
+    void setFunction(std::unique_ptr<SObjectiveFunction>&) override;
 private:
     PolakRibiereMethod(float error, float minimalStepBetweenTwoPoints, float minimalDifferenceBetweenStepsValues,
         unsigned int numberOfIterations, const std::vector<SVector>& solutionVecor);
@@ -44,7 +45,8 @@ private:
 
 //--solution _trace including [x_0,x_1,...,x_n -> x_d]
     std::vector<SVector> _solutionVecor;
-    std::unique_ptr<ObjectiveFunction> _function;
+    std::unique_ptr<SObjectiveFunction> _function;
+    Logger& _log;
 };
 
 #endif //SOLVER_POLAKRIBIEREMETHOD_HPP

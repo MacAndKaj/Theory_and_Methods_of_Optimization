@@ -6,7 +6,6 @@
 #define SOLVER_SFUNCTION_HPP
 
 #include <functional>
-#include <Definitions_and_Helpers/Optional.hpp>
 #include <Logger/Logger.hpp>
 
 class SVector;
@@ -19,7 +18,7 @@ public:
     SFunction(unsigned int& dimension, const std::function<float(SVector&)>& func);
 
     unsigned int getDimension() const;
-    Optional<float> operator ()(SVector&) const;
+    std::optional<float> operator ()(SVector&) const;
 private:
     unsigned int _dimension;
     std::function<float(SVector&)> _func;

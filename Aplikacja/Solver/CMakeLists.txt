@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.12)
 project(Solver)
 
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 set(EXECUTABLE_NAME "SolverTests")
 set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/build)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})

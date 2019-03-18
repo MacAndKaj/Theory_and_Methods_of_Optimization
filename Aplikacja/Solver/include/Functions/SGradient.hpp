@@ -7,7 +7,6 @@
 
 #include <functional>
 #include <vector>
-#include <Definitions_and_Helpers/Optional.hpp>
 
 class Logger;
 class SVector;
@@ -19,7 +18,7 @@ public:
     SGradient() = delete;
     explicit SGradient(const std::vector<Function>& gradientVector);
 
-    Optional<SVector> operator()(SVector&) const;
+    std::optional<SVector> operator()(SVector&) const;
 private:
     unsigned int _dimension;
     std::vector<Function> _gradientVector;

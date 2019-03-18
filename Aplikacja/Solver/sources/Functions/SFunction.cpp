@@ -4,7 +4,6 @@
 
 #include <Functions/SFunction.hpp>
 #include <SVector.hpp>
-#include <Definitions_and_Helpers/Optional.hpp>
 #include <Logger/LoggersFactory.hpp>
 
 SFunction::SFunction(unsigned int& dimension, const std::function<float(SVector&)>& func)
@@ -15,9 +14,9 @@ SFunction::SFunction(unsigned int& dimension, const std::function<float(SVector&
 
 }
 
-Optional<float> SFunction::operator ()(SVector& point) const
+std::optional<float> SFunction::operator ()(SVector& point) const
 {
-    Optional<float> result;
+    std::optional<float> result;
     if (point.getSize() != _dimension) return result;
     _log << std::string(__FUNCTION__) + " computing value of function in point " + point.toString();
     result = _func(point);

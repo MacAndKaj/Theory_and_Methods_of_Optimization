@@ -5,7 +5,6 @@
 #include <gtest/gtest.h>
 #include <Functions/SFunction.hpp>
 #include <SVector.hpp>
-#include <Definitions_and_Helpers/Optional.hpp>
 
 class SFunctionTests : public ::testing::Test
 {
@@ -38,7 +37,8 @@ TEST_F(SFunctionTests, ShouldReturnCorrectValuesForXVector)
 {
     SVector vector({1, 2});
     auto returnedValue = (*_sut)(vector);
+    ASSERT_TRUE(returnedValue);
     auto expectedValue = 1.f;
-    ASSERT_EQ(returnedValue.get(), expectedValue);
+    ASSERT_EQ(*returnedValue, expectedValue);
 }
 

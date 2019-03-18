@@ -13,9 +13,9 @@ public:
     SGradientTests()
     {
         std::vector<std::function<float(SVector&)>> gradient = {
-            [](SVector& point){ return point.x(1);},
-            [](SVector& point){ return point.x(2);},
-            [](SVector& point){ return point.x(3);},
+            [](SVector& point){ return 1*point.x(1);},
+            [](SVector& point){ return 2*point.x(2);},
+            [](SVector& point){ return 3*point.x(3);},
         };
 
         _sut = std::make_unique<SGradient>(gradient);
@@ -30,5 +30,6 @@ TEST_F(SGradientTests, ShouldReturnCorrectGradient)
     SVector expectedResult({1,2,3});
 
     auto result = (*_sut)(vector);
-    ASSERT_TRUE(result.get() == expectedResult);
+    ASSERT_TRUE(result);
+    ASSERT_TRUE(*result == expectedResult);
 }

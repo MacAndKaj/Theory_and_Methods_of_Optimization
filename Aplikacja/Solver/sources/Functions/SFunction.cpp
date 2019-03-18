@@ -17,8 +17,13 @@ SFunction::SFunction(unsigned int& dimension, const std::function<float(SVector&
 std::optional<float> SFunction::operator ()(SVector& point) const
 {
     std::optional<float> result;
-    if (point.getSize() != _dimension) return result;
-    _log << std::string(__FUNCTION__) + " computing value of function in point " + point.toString();
+    if (point.getSize() != _dimension)
+    {
+        _log << std::string(__FUNCTION__) + "Computing value of function in point " +
+                point.toString();
+        return result;
+    }
+    _log << "Computing value of function in point " + point.toString();
     result = _func(point);
     return result;
 }

@@ -33,3 +33,11 @@ TEST_F(SGradientTests, ShouldReturnCorrectGradient)
     ASSERT_TRUE(result);
     ASSERT_TRUE(*result == expectedResult);
 }
+
+TEST_F(SGradientTests, ShouldReturnEmptyOptionalIfDimensionsAreNotSame)
+{
+    SVector vector({1,1,1,1,1,1,1});
+    auto result = (*_sut)(vector);
+
+    ASSERT_FALSE(result);
+}

@@ -15,13 +15,14 @@ SGradient::SGradient(const std::vector<Function>& gradientVector)
 
 }
 
-std::optional<SVector> SGradient::operator()(SVector& point) const
+std::optional<SVector> SGradient::operator ()(SVector& point) const
 {
-    if (point.getSize() != _dimension) {
+    if (point.getSize() != _dimension)
+    {
         _log << std::string(__FUNCTION__) + "| Wrong dimension of point!";
         return std::optional<SVector>();
     }
-    _log << std::string(__FUNCTION__) + "| Computing gradient vector in point" + point.toString();
+    _log << "| Computing gradient vector in point" + point.toString();
     std::vector<float> gradient;
     for (auto&& func : _gradientVector)
     {

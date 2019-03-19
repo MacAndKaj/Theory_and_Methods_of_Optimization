@@ -32,4 +32,3 @@ unsigned int SFunction::getDimension() const
 {
     return _dimension;
 }
-

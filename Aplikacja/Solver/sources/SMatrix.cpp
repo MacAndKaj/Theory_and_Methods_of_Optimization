@@ -25,6 +25,7 @@ SMatrix::SMatrix(const std::vector<std::vector<float>>& vector)
     }
 }
 
+
 bool SMatrix::operator ==(const SMatrix& other) const
 {
     if ((_dimension.first != other._dimension.first) or
@@ -43,4 +44,10 @@ bool SMatrix::operator ==(const SMatrix& other) const
         }
     }
     return true;
+}
+
+std::optional<float> SMatrix::getMinor(unsigned int&) const
+{
+//    if()
+    return std::optional<float>();
 }

@@ -4,30 +4,51 @@
 
 #include <Functions/FunctionWrapper.hpp>
 #include <SVector.hpp>
+#include <iostream>
+#include <Logger/LoggersFactory.hpp>
 
-void FunctionWrapper::addSymbol(const std::string& name)
+FunctionWrapper::FunctionWrapper()
+    : _log(LoggersFactory::getLoggersFactory().getLogger("FunctionWrapper"))
 {
-    _symbols.emplace_back(0);
-    _symbolTable.add_variable(name, _symbols.back());
+
 }
 
-exprtk::expression<float>& FunctionWrapper::configAndGetExpression()
+void FunctionWrapper::addSymbols(const std::vector<std::pair<std::string, float>>& namesAndValuesMap)
 {
+    std::for_each(namesAndValuesMap.begin(), namesAndValuesMap.end(), [&](auto nameValuePair){
+        _symbols.emplace_back(nameValuePair.second);
+    });
+
+    auto symbolIterator = _symbols.begin();
+    for (const auto& nameAndValue : namesAndValuesMap)
+    {
+        _symbolTable.add_variable(nameAndValue.first, *symbolIterator);
+        symbolIterator++;
+    }
+}
+
+exprtk::expression<float>& FunctionWrapper::configAndGetExpression(const std::string& exprStr)
+{
+    _expressionString = exprStr;
     _expression.register_symbol_table(_symbolTable);
     return _expression;
 }
 
 std::optional<float> FunctionWrapper::operator ()(SVector& point)
 {
-    std::optional<float> result;
-    if (point.getSize() != _symbols.size()) return result;
+    if (point.getSize() != _symbols.size()) return std::optional<float>();
 
-    auto symbolsIterator = _symbols.begin();
-    for (const auto& x : point.getVector())
+    auto pointIterator = point.getVector().cbegin();
+    for (auto&& symbol : _symbols)
     {
-        *symbolsIterator = x;
-        symbolsIterator++;
+        symbol = *pointIterator;
+        pointIterator++;
     }
     return std::optional<float>(_expression.value());
+}
+
+const std::string FunctionWrapper::getExpressionString() const
+{
+    return _expressionString;
 }
 

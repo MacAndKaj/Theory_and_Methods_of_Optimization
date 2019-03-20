@@ -6,6 +6,7 @@
 #define SOLVER_PARSERWRAPPER_HPP
 
 #include <Functions/FunctionWrapper.hpp>
+#include <Logger/Logger.hpp>
 
 class SVector;
 
@@ -16,6 +17,7 @@ public:
     std::shared_ptr<FunctionWrapper> parseToFunction(unsigned int, const std::string&);
 private:
     exprtk::parser<float> _parser;
+    Logger& _log;
 };
 
 #endif //SOLVER_PARSERWRAPPER_HPP

@@ -20,13 +20,33 @@ public:
     std::unique_ptr<ParserWrapper> _sut;
 };
 
+
 TEST_F(ParserWrapperTests, ShouldCreateFunctionThatReturnsCorrectResult)
 {
-    std::string exampleFunction("x1 + 2*x2 + sin(x3)");
-    SVector point({1, 1, 0});
+    std::string exampleFunction("x1 + 2*x2");
+    SVector point({1, 1});
+
+    auto function = _sut->parseToFunction(2, exampleFunction);
+    auto result = (*function)(point);
+    ASSERT_TRUE(result);
+}
+
+TEST_F(ParserWrapperTests, ShouldReturnEmptyOptionalIfDimensionsAreNotSame)
+{
+    std::string exampleFunction("x1 + 2*x2");
+    SVector point({1, 1, 1, 1});
 
     auto function = _sut->parseToFunction(3, exampleFunction);
     auto result = (*function)(point);
-    ASSERT_TRUE(result);
-    ASSERT_EQ(*result, 4);
+    ASSERT_FALSE(result);
+}
+
+TEST_F(ParserWrapperTests, ShouldComputeCorrectValueForSpecializedFunction)
+{
+    std::string exampleFunction("x1 + 2*x2 + 1000");
+    SVector point({5, 1});
+
+    auto function = _sut->parseToFunction(2, exampleFunction);
+    auto result = (*function)(point);
+    ASSERT_EQ(*result, 1007);
 }

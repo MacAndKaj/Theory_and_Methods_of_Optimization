@@ -16,7 +16,7 @@ file(GLOB SRCS
         tests/*.cpp)
 
 
-add_executable(SolverTests ${SRCS} tests/ParserWrapperTests.cpp sources/Functions/FunctionWrapper.cpp)
+add_executable(SolverTests ${SRCS} )
 
 find_package(Threads REQUIRED)
 find_package(GTest REQUIRED)

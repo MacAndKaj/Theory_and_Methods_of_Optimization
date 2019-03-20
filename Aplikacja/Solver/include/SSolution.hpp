@@ -9,8 +9,9 @@
 
 class SSolution
 {
-public:
-    SVector vector;
+private:
+    SVector _trace;
+
 
 };
 

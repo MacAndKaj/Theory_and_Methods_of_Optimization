@@ -1,5 +1,15 @@
 @startuml
     actor User
-	participant QTApp
-	participant Solver
+    participant QTApp
+    participant Solver
+
+    User -> QTApp: ChooseFunction
+    User -> QTApp: ChooseAlgorithm
+    User -> QTApp: SetAlgorithmParameters
+    QTApp -> Solver: setMethod
+    User -> QTApp: start
+    QTApp -> Solver: computeSolution
+    QTApp -> Solver: getSolution
+    QTApp -> User: showSolution
+
 @enduml

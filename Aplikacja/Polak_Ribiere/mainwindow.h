@@ -23,6 +23,7 @@ private slots:
     inline void on_actionactionExit_triggered(){close();}
 
     void on_pushButton_StopShow_clicked();
+    unsigned int getNumberOfIterations() const;
 
 private:
     Ui::MainWindow* _ui;

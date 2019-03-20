@@ -19,10 +19,12 @@ MethodsFactory& MethodsFactory::getMethodsFactory()
     return *_instance;
 }
 
-MethodsFactory::MethodPtr MethodsFactory::getPolakRibiereMethod(float error, float minimalStep, float minimalStepValues,
+MethodsFactory::MethodPtr
+MethodsFactory::getPolakRibiereMethod(float error, float minimalStep, float minimalStepValues,
     unsigned int iterations, std::vector<SVector>& startingPoint) const
 {
-    return std::shared_ptr<PolakRibiereMethod>(new PolakRibiereMethod(error, minimalStep, minimalStepValues, iterations, startingPoint));
+    return std::shared_ptr<PolakRibiereMethod>(
+        new PolakRibiereMethod(error, minimalStep, minimalStepValues, iterations, startingPoint));
 }
 
 

@@ -9,15 +9,21 @@
 #include <Logger/Logger.hpp>
 
 class SVector;
+class FunctionsFactory;
 
 class ParserWrapper
 {
 public:
-    ParserWrapper();
+    ParserWrapper(const ParserWrapper&) = delete;
+    ParserWrapper& operator =(const ParserWrapper&) = delete;
+
     std::shared_ptr<FunctionWrapper> parseToFunction(unsigned int, const std::string&);
-private:
+protected:
+    ParserWrapper();
     exprtk::parser<float> _parser;
     Logger& _log;
+
+    friend class FunctionsFactory;
 };
 
 #endif //SOLVER_PARSERWRAPPER_HPP

@@ -25,6 +25,7 @@ void FunctionWrapper::addSymbols(const std::vector<std::pair<std::string, float>
         _symbolTable.add_variable(nameAndValue.first, *symbolIterator);
         symbolIterator++;
     }
+    _log << std::string(__FUNCTION__) + " operation succedded!";
 }
 
 exprtk::expression<float>& FunctionWrapper::configAndGetExpression(const std::string& exprStr)
@@ -34,9 +35,14 @@ exprtk::expression<float>& FunctionWrapper::configAndGetExpression(const std::st
     return _expression;
 }
 
-std::optional<float> FunctionWrapper::operator ()(SVector& point)
+std::optional<float> FunctionWrapper::operator()(SVector& point)
 {
-    if (point.getSize() != _symbols.size()) return std::optional<float>();
+    if (point.getSize() != _symbols.size()) {
+        std::stringstream strm;
+        strm << "| Computing value of function f(x)=" << _expressionString << " failed!";
+        _log << strm.str();
+        return std::optional<float>();
+    }
 
     auto pointIterator = point.getVector().cbegin();
     for (auto&& symbol : _symbols)
@@ -47,8 +53,14 @@ std::optional<float> FunctionWrapper::operator ()(SVector& point)
     return std::optional<float>(_expression.value());
 }
 
-const std::string FunctionWrapper::getExpressionString() const
+std::string FunctionWrapper::getExpressionString() const
 {
     return _expressionString;
 }
+
+unsigned int FunctionWrapper::getDimension() const
+{
+    return static_cast<unsigned int>(_symbols.size());
+}
+
 

@@ -7,19 +7,26 @@ set(EXECUTABLE_NAME "SolverTests")
 set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/build)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
-include_directories(include)
+include_directories(include
+        include/SymbolicOperations/headers
+        tests/mocks/IMethodMock.hpp)
+
 file(GLOB SRCS
         sources/*.cpp
+        sources/Definitions_and_Helpers/*.cpp
         sources/Functions/*.cpp
         sources/FunctionGetter/*.cpp
         sources/Logger/*.cpp
+        sources/SymbolicOperations/*.cpp
+        sources/Methods/*.cpp
         tests/*.cpp)
 
 
 add_executable(SolverTests ${SRCS} )
-
 find_package(Threads REQUIRED)
 find_package(GTest REQUIRED)
+
+include_directories(${SYMENGINE_INCLUDE_DIRS})
 if (GTEST_FOUND)
     include_directories(${GTEST_INCLUDE_DIRS} ${GMOCK_INCLUDE_DIRS})
 endif ()

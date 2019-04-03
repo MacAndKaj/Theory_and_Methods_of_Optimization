@@ -17,6 +17,8 @@ public:
     std::unique_ptr<FunctionWrapper> _sut;
 };
 
+
+
 TEST_F(FunctionWrapperTests, ShouldCorrectlyDoAFunctionAndComputeInInitialState)
 {
     std::string exampleFunction("x1 + 2*x2");
@@ -26,4 +28,15 @@ TEST_F(FunctionWrapperTests, ShouldCorrectlyDoAFunctionAndComputeInInitialState)
     auto expression = _sut->configAndGetExpression(exampleFunction);
     _parser.compile(exampleFunction, expression);
     ASSERT_EQ(expression.value(), 0);
+
+}
+
+TEST_F(FunctionWrapperTests, ShouldNotDoAFunction)
+{
+    std::string exampleFunction("x1 + 2*x2");
+    std::vector<std::pair<std::string, float>> namesAndValues = {{"x1", 0}};
+    _sut->addSymbols(namesAndValues);
+
+    auto expression = _sut->configAndGetExpression(exampleFunction);
+    ASSERT_FALSE(_parser.compile(exampleFunction, expression));
 }

@@ -6,23 +6,32 @@
 #define SOLVER__SOLVER_HPP
 
 
-#include <bits/unique_ptr.h>
-#include "Definitions_and_Helpers/Definitions.hpp"
-#include "Interface/ISolver.hpp"
+#include <memory>
+#include <Logger/LoggersFactory.hpp>
+#include "ISolver.hpp"
+#include <Functions/FunctionsFactory.hpp>
 
 class IMethod;
+class IApplicationStorage;
 
 class Solver: public ISolver
 {
 public:
-    Solver();
-    void setMethod(MethodType) override;
+    Solver() = delete;
+    explicit Solver(const std::shared_ptr<IApplicationStorage>&);
+    void computeSolution() override;
 
-    void computeSolution() const override;
     SSolution getSolution() const override;
+
+    void setAlgorithmParameters() override;
+    void setMethod(MethodType) override;
+    void setFunction(const unsigned int&,const std::string&) override;
 private:
     MethodType _methodType;
-    std::unique_ptr<IMethod> _method;
+    std::shared_ptr<IMethod> _method;
+    std::shared_ptr<IFunctionsFactory> _functionsFactory;
+    Logger& _log;
+    std::shared_ptr<IApplicationStorage> _applicationStorage;
 };
 
 #endif //SOLVERTESTS_SOLVER_HPP

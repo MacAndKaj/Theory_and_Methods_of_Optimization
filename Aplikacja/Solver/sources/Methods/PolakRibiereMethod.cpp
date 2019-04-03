@@ -2,7 +2,7 @@
 // Created by maciek on 08.03.19.
 //
 
-#include <PolakRibiereMethod.hpp>
+#include <Methods/PolakRibiereMethod.hpp>
 #include <Logger/LoggersFactory.hpp>
 
 PolakRibiereMethod::PolakRibiereMethod(float error, float minimalStepBetweenTwoPoints,
@@ -24,19 +24,26 @@ SSolution PolakRibiereMethod::getSolution() const
     return SSolution();
 }
 
+void PolakRibiereMethod::setCallbackWhenIterationDone(const std::function<void()>& callback)
+{
+    _callback = callback;
+}
+
 void PolakRibiereMethod::startComputing()
 {
-    while (isStopConditionFulfilled())
+    while (not isStopConditionFulfilled())
     {
 
 
+
+        _callback();
         ++_currentIteration;
     }
 }
 
-void PolakRibiereMethod::setFunction(std::unique_ptr<SObjectiveFunction>& function)
+void PolakRibiereMethod::setFunction(const std::shared_ptr<FunctionWrapper>& function)
 {
-    _function = std::move(function);
+    _function = function;
 }
 
 bool PolakRibiereMethod::isStopConditionFulfilled() const
@@ -62,25 +69,15 @@ float PolakRibiereMethod::getLastStepSize() const
     return 0;
 }
 
-
-
 unsigned int PolakRibiereMethod::getCurrentIteration() const
 {
     return 0;
 }
 
-//------------------------------- utils ---------------------------------------------
-
-float PolakRibiereMethod::getBeta() const
+void PolakRibiereMethod::updateParameters()
 {
-    return 0;
+    
 }
-
-SVector PolakRibiereMethod::getGradientInCurrentPoint() const
-{
-    return SVector();
-}
-
 
 
 //-----------------------------------------------------------------------------------

@@ -17,3 +17,4 @@ public:
 
     std::unique_ptr<SMatrix> _sut;
 };
+

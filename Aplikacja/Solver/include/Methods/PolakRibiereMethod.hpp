@@ -7,10 +7,10 @@
 
 #include <bits/unique_ptr.h>
 #include <Logger/Logger.hpp>
-#include "SVector.hpp"
-#include "Interface/IMethod.hpp"
+#include <SVector.hpp>
+#include "IMethod.hpp"
 
-class SObjectiveFunction;
+class FunctionWrapper;
 
 class PolakRibiereMethod : public IMethod
 {
@@ -22,15 +22,15 @@ public:
     PolakRibiereMethod(const PolakRibiereMethod&) = delete;
 
     void startComputing() override;
-    void setFunction(std::unique_ptr<SObjectiveFunction>&) override;
+    void setCallbackWhenIterationDone(const std::function<void()>&);
+    void setFunction(const std::shared_ptr<FunctionWrapper>&) override;
 private:
     PolakRibiereMethod(float error, float minimalStepBetweenTwoPoints, float minimalDifferenceBetweenStepsValues,
         unsigned int numberOfIterations, const std::vector<SVector>& solutionVecor);
-    float getBeta() const;
-    SVector getGradientInCurrentPoint() const;
 
 //--stop condition checking
     bool isStopConditionFulfilled() const;
+    void updateParameters();
     float getLastStepSize() const;
     float getErrorInCurrentPoint() const;
     float getLastStepFunctionDifference() const;
@@ -44,8 +44,9 @@ private:
     unsigned int _currentIteration;
 
 //--solution _trace including [x_0,x_1,...,x_n -> x_d]
+    std::function<void()> _callback;
     std::vector<SVector> _solutionVecor;
-    std::unique_ptr<SObjectiveFunction> _function;
+    std::shared_ptr<FunctionWrapper> _function;
     Logger& _log;
 };
 

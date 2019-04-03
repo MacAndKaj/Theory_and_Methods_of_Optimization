@@ -7,7 +7,7 @@
 
 #include <memory>
 #include <functional>
-#include <FunctionGetter/Parser/exprtk.hpp>
+#include "Parser/exprtk.hpp"
 #include <Logger/Logger.hpp>
 
 class SVector;
@@ -19,8 +19,9 @@ public:
 
     void addSymbols(const std::vector<std::pair<std::string, float>>&);
     exprtk::expression<float>& configAndGetExpression(const std::string&);
-    std::optional<float> operator()(SVector&);
-    const std::string getExpressionString() const;
+    std::optional<float> operator ()(SVector&);
+    std::string getExpressionString() const;
+    unsigned int getDimension() const;
 
 private:
     std::vector<float> _symbols;

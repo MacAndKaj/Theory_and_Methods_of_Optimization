@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+#include "standardfunctionsdefinitions.h"
 #include<QMessageBox>
 #include<QCloseEvent>
 
@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     _ui->setupUi(this);
     _ui->progressBar_computing->hide();
+    createComboBox();
 }
 
 MainWindow::~MainWindow()
@@ -38,4 +39,14 @@ void MainWindow::on_pushButton_StopShow_clicked()
 {
     _graph = std::make_unique<Graph>();
     _graph->show();
+}
+
+void MainWindow::createComboBox()
+{
+    QStringList listOfFunctions("-");
+    listOfFunctions.reserve(listOfFunctions.size());
+    std::for_each(standardFunctions.begin(),standardFunctions.end(),[&listOfFunctions](const std::string& fun){
+       listOfFunctions.append(fun.c_str());
+    });
+    _ui->comboBox_knownFunctions->addItems(listOfFunctions);
 }

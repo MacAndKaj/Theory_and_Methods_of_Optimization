@@ -35,7 +35,7 @@ exprtk::expression<float>& FunctionWrapper::configAndGetExpression(const std::st
     return _expression;
 }
 
-std::optional<float> FunctionWrapper::operator()(SVector& point)
+std::optional<float> FunctionWrapper::operator()(const SVector& point)
 {
     if (point.getSize() != _symbols.size()) {
         std::stringstream strm;

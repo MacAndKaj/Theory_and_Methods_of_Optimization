@@ -16,7 +16,7 @@ using GradientVector = std::vector<std::shared_ptr<FunctionWrapper>>;
 class ISymbolicOperator
 {
 public:
-    virtual GradientVector getDerivatives(std::shared_ptr<FunctionWrapper>&) const = 0;
+    virtual GradientVector getDerivatives(const std::shared_ptr<FunctionWrapper>&) const = 0;
 };
 
 #endif //SOLVER_ISYMBOLICOPERATOR_HPP

@@ -9,7 +9,7 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
 include_directories(include
         include/SymbolicOperations/headers
-        tests/mocks/IMethodMock.hpp)
+        tests)
 
 file(GLOB SRCS
         sources/*.cpp

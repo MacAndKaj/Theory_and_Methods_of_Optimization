@@ -2,22 +2,18 @@
 // Created by maciek on 08.03.19.
 //
 
-#include <Methods/PolakRibiereMethod.hpp>
 #include <Logger/LoggersFactory.hpp>
+#include <Methods/PolakRibiereMethod.hpp>
+#include <Functions/GradientWrapper.hpp>
 
-PolakRibiereMethod::PolakRibiereMethod(float error, float minimalStepBetweenTwoPoints,
-    float minimalDifferenceBetweenStepsValues, unsigned int numberOfIterations,
+PolakRibiereMethod::PolakRibiereMethod(const IterationMethodsParameters& parameters,
     const std::vector<SVector>& solutionVecor)
-    : _error(error)
-    , _minimalStepSize(minimalStepBetweenTwoPoints)
-    , _minimalStepFunctionDifference(minimalDifferenceBetweenStepsValues)
-    , _maxNumberOfIterations(numberOfIterations)
+    : _parameters(parameters)
     , _solutionVecor(solutionVecor)
     , _log(LoggersFactory::getLoggersFactory().getLogger("PolakRibiereMethod"))
 {
 
 }
-
 
 SSolution PolakRibiereMethod::getSolution() const
 {
@@ -31,14 +27,48 @@ void PolakRibiereMethod::setCallbackWhenIterationDone(const std::function<void()
 
 void PolakRibiereMethod::startComputing()
 {
+
+    auto gradient0 = _gradient->getGradientInPoint(*(_solutionVecor.end()));
+    if (not gradient0)
+    {
+        std::string strm{"Solution found in point " + _solutionVecor.end()->toString()};
+        _log << strm;
+        problemSolved();
+        return;
+    }
+    SVector vector_d = -(*gradient0);
+    auto
+    firstPoint = (*_solutionVecor.end()); //+
+    optimizationOngoing(firstPoint);
+    problemSolved();
+}
+
+bool PolakRibiereMethod::optimizationOngoing(SVector& firstPoint)
+{
+    _solutionVecor.reserve(
+        _parameters.getMaxNumberOfIterations() + 1); //first solution point is starting point
+
+    auto alfa = 0; //TODO obliczanie alfa!!!
+    auto beta = 0;
     while (not isStopConditionFulfilled())
     {
+        auto function_value_in_point = _function->operator ()(*_solutionVecor.end());
+        if (not function_value_in_point)
+        {
+            _log << "Problem when evaluating function" + _function->getExpressionString() +
+                    " in point " + firstPoint.toString();
+            return false;
+        }
 
-
-
-        _callback();
+        if (_callback) _callback();
         ++_currentIteration;
     }
+    return true;
+}
+
+void PolakRibiereMethod::problemSolved()
+{
+
 }
 
 void PolakRibiereMethod::setFunction(const std::shared_ptr<FunctionWrapper>& function)
@@ -48,10 +78,10 @@ void PolakRibiereMethod::setFunction(const std::shared_ptr<FunctionWrapper>& fun
 
 bool PolakRibiereMethod::isStopConditionFulfilled() const
 {
-    return getCurrentIteration() == _maxNumberOfIterations or
-           getErrorInCurrentPoint() <= _error or
-           getLastStepSize() <= _minimalStepSize or
-           getLastStepFunctionDifference() <= _minimalStepFunctionDifference;
+    return getCurrentIteration() == _parameters.getMaxNumberOfIterations() or
+           getErrorInCurrentPoint() <= _parameters.getError() or
+           getLastStepSize() <= _parameters.getMinimalStepSize() or
+           getLastStepFunctionDifference() <= _parameters.getMinimalStepFunctionDifference();
 }
 
 float PolakRibiereMethod::getLastStepFunctionDifference() const
@@ -76,8 +106,9 @@ unsigned int PolakRibiereMethod::getCurrentIteration() const
 
 void PolakRibiereMethod::updateParameters()
 {
-    
+
 }
+
 
 
 //-----------------------------------------------------------------------------------

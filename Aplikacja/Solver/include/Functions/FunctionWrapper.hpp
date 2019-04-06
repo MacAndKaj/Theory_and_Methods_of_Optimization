@@ -19,7 +19,7 @@ public:
 
     void addSymbols(const std::vector<std::pair<std::string, float>>&);
     exprtk::expression<float>& configAndGetExpression(const std::string&);
-    std::optional<float> operator ()(SVector&);
+    std::optional<float> operator ()(const SVector&);
     std::string getExpressionString() const;
     unsigned int getDimension() const;
 

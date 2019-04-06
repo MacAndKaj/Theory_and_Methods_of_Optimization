@@ -14,15 +14,14 @@ std::shared_ptr<SymbolicOperator> SymbolicOperator::_instance;
 std::once_flag SymbolicOperator::_onceFlag;
 
 SymbolicOperator::SymbolicOperator(const std::shared_ptr<IApplicationStorage>& applicationStorage)
-    : _log(LoggersFactory::getLoggersFactory()
-               .getLogger("SymbolicOperator"))
+    : _log(LoggersFactory::getLoggersFactory().getLogger("SymbolicOperator"))
     , _pythonFileHelper("derivatives.txt")
     , _functionsFactory(applicationStorage->getFunctionsFactory())
 {
 
 }
 
-GradientVector SymbolicOperator::getDerivatives(std::shared_ptr<FunctionWrapper>& wrapper) const
+GradientVector SymbolicOperator::getDerivatives(const std::shared_ptr<FunctionWrapper>& wrapper) const
 {
     if (not wrapper)
     {
@@ -38,7 +37,7 @@ GradientVector SymbolicOperator::getDerivatives(std::shared_ptr<FunctionWrapper>
 
 GradientVector
 SymbolicOperator::readFromFile(std::string& scriptname,
-    std::shared_ptr<FunctionWrapper>& wrapper) const
+    const std::shared_ptr<FunctionWrapper>& wrapper) const
 {
     if (scriptname.empty())
     {

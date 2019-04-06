@@ -13,7 +13,7 @@ MethodsFactory::MethodsFactory() = default;
 const std::shared_ptr<IMethodsFactory> MethodsFactory::getInstance()
 {
     std::call_once(MethodsFactory::_onceFlag, [](){
-        _instance.reset();
+        _instance.reset(new MethodsFactory());
     });
 
     return _instance;
@@ -24,7 +24,7 @@ MethodsFactory::getPolakRibiereMethod(float error, float minimalStep, float mini
     unsigned int iterations, std::vector<SVector>& startingPoint) const
 {
     return std::shared_ptr<PolakRibiereMethod>(
-        new PolakRibiereMethod(error, minimalStep, minimalStepValues, iterations, startingPoint));
+        new PolakRibiereMethod({error, minimalStep, minimalStepValues, iterations}, startingPoint));
 }
 
 

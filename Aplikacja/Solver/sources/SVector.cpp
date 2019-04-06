@@ -2,19 +2,20 @@
 // Created by maciek on 06.03.19.
 //
 
+#include <algorithm>
 #include <SVector.hpp>
-#include <iostream>
-#include <cmath>
 #include <Logger/LoggersFactory.hpp>
 
 SVector::SVector()
     : _log(LoggersFactory::getLoggersFactory().getLogger("SVector"))
+    , _colummnVector(true)
 {
 
 }
 
 SVector::SVector(const SVector& arg)
     : _log(LoggersFactory::getLoggersFactory().getLogger("SVector"))
+    , _colummnVector(true)
 {
     for (const auto& item : arg._vector)
     {
@@ -25,6 +26,7 @@ SVector::SVector(const SVector& arg)
 SVector::SVector(const std::vector<float>& vector)
     : _vector(vector)
     , _log(LoggersFactory::getLoggersFactory().getLogger("SVector"))
+    , _colummnVector(true)
 {
 
 }
@@ -39,7 +41,92 @@ void SVector::setVector(const std::vector<float>& vector)
     _vector = vector;
 }
 
-//------------------------------- NON MEMBER OPERATORS --------------------------------------------
+float SVector::getCartesianNorm() const
+{
+    float sum = 0;
+    for (const auto& item : _vector)
+    {
+        sum += (item * item);
+    }
+
+    return std::sqrt(sum);
+}
+
+void SVector::transpose()
+{
+    _colummnVector = false;
+}
+
+unsigned long SVector::getSize() const
+{
+    return _vector.size();
+}
+
+
+/// Returns x_i from vector x = [x_1 x_2 ... x_n]
+/// \param index from range 1...n
+/// \return x - float
+float SVector::x(unsigned int&& index) const
+{
+    if (_vector.size() < index)
+    {
+        _log << "Index is out of range for vector!";
+        return 0;
+    }
+    return _vector[index - 1];
+}
+
+bool SVector::containsOnlyZeros() const
+{
+    return _vector.cend() == std::find_if(_vector.cbegin(),_vector.cend(),[](const float& elem){
+        return elem != 0;
+    });
+}
+
+const SVector& SVector::operator -()
+{
+    std::for_each(_vector.begin(),_vector.end(),[](float& element){
+        element*=(-1);
+    });
+    return *this;
+}
+
+bool SVector::operator ==(const SVector& arg) const
+{
+    if (arg.getSize() != getSize())return false;
+    for (int i = 0; i < getSize(); ++i)
+    {
+        if (_vector[i] != arg._vector[i]) return false;
+    }
+    return true;
+}
+
+std::string SVector::toString() const
+{
+    std::string result("[");
+    for (const auto& item : _vector)
+    {
+        result.append(" ");
+        result.append(std::to_string(item));
+    }
+    result.append(" ]");
+    return result;
+}
+
+
+//===================== friends ========================================
+
+//TODO - matrix and multiplying vectors
+SVector operator *(const SVector&, const SVector&)
+{
+    return SVector();
+}
+
+SVector operator -(const SVector& lhs, const SVector& rhs)
+{
+    return lhs + (rhs * (-1));
+}
+
 
 SVector operator *(const SVector& lhs, float a)
 {
@@ -67,63 +154,6 @@ SVector operator +(const SVector& lhs, const SVector& rhs)
     }
     return SVector(vector);
 }
-
-SVector operator -(const SVector& lhs, const SVector& rhs)
-{
-    return lhs + (rhs * (-1));
-}
-
-float SVector::getCartesianNorm() const
-{
-    float sum = 0;
-    for (const auto& item : _vector)
-    {
-        sum += (item * item);
-    }
-
-    return std::sqrt(sum);
-}
-
-unsigned long SVector::getSize() const
-{
-    return _vector.size();
-}
-
-/// Returns x_i from vector x = [x_1 x_2 ... x_n]
-/// \param index from range 1...n
-/// \return x - float
-float SVector::x(unsigned int&& index) const
-{
-    if (_vector.size() < index)
-    {
-        _log << "Index is out of range for vector!";
-        return 0;
-    }
-    return _vector[index - 1];
-}
-
-std::string SVector::toString() const
-{
-    std::string result("[");
-    for (const auto& item : _vector)
-    {
-        result.append(" ");
-        result.append(std::to_string(item));
-    }
-    result.append(" ]");
-    return result;
-}
-
-bool SVector::operator ==(const SVector& arg) const
-{
-    if (arg.getSize() != getSize())return false;
-    for (int i = 0; i < getSize(); ++i)
-    {
-        if (_vector[i] != arg._vector[i]) return false;
-    }
-    return true;
-}
-
 
 
 //---------------------------------------------------------------------------------------------

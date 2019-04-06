@@ -22,20 +22,28 @@ public:
     float x(unsigned int&&) const;
     unsigned long getSize() const;
     float getCartesianNorm() const;
+
     std::string toString() const;
 
+    void transpose();
+    bool containsOnlyZeros()const;
     bool operator==(const SVector&)const;
+    const SVector& operator -();
 private:
     std::vector<float> _vector;
     Logger& _log;
+    bool _colummnVector;
+
 
     friend SVector operator *(const SVector&, float);
+    friend SVector operator *(const SVector&, const SVector&);
     friend SVector operator +(const SVector&, const SVector&);
     friend SVector operator -(const SVector&, const SVector&);
 
 };
 
 SVector operator *(const SVector&, float);
+SVector operator *(const SVector&, const SVector&);
 SVector operator +(const SVector&, const SVector&);
 SVector operator -(const SVector&, const SVector&);
 

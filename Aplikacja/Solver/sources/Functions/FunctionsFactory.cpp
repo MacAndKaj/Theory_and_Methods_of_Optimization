@@ -12,7 +12,7 @@ std::once_flag FunctionsFactory::_onceFlag;
 const std::shared_ptr<IFunctionsFactory> FunctionsFactory::getInstance()
 {
     std::call_once(FunctionsFactory::_onceFlag, [](){
-        _instance.reset();
+        _instance.reset(new FunctionsFactory());
     });
 
     return _instance;

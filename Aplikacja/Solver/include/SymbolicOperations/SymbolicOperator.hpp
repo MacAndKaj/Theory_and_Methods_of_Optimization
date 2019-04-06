@@ -20,10 +20,10 @@ public:
     SymbolicOperator(const SymbolicOperator&) = delete;
     static const std::shared_ptr<ISymbolicOperator> getInstance(const std::shared_ptr<IApplicationStorage>&);
 
-    GradientVector getDerivatives(std::shared_ptr<FunctionWrapper>&) const override;
+    GradientVector getDerivatives(const std::shared_ptr<FunctionWrapper>&) const override;
 private:
     explicit SymbolicOperator(const std::shared_ptr<IApplicationStorage>&);
-    GradientVector readFromFile(std::string&, std::shared_ptr<FunctionWrapper>&) const;
+    GradientVector readFromFile(std::string&, const std::shared_ptr<FunctionWrapper>&) const;
 
     PythonFileHelper _pythonFileHelper;
     std::shared_ptr<IFunctionsFactory> _functionsFactory;

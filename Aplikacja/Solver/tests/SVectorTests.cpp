@@ -103,3 +103,39 @@ TEST_F(SVectorTests,ShouldComputeCartesianCorrectlyNormForNegativeElements)
     auto norm = _sut->getCartesianNorm();
     ASSERT_EQ(expectedNorm,norm);
 }
+
+TEST_F(SVectorTests, ShouldCorrectlyCheckIfVectorContainsOnlyZeros)
+{
+    unsigned long numberOfElements = 121;
+    std::vector<float> vec(numberOfElements, 0);
+    startService(vec);
+    auto containsOnlyZeros = _sut->containsOnlyZeros();
+    ASSERT_TRUE(containsOnlyZeros);
+}
+
+TEST_F(SVectorTests, ShouldCorrectlyCheckIfVectorContainsNotOnlyZeros)
+{
+    unsigned long numberOfElements = 121;
+    std::vector<float> vec(numberOfElements, 0);
+    vec[numberOfElements-1] = 1;
+    startService(vec);
+    auto containsOnlyZeros = _sut->containsOnlyZeros();
+    ASSERT_FALSE(containsOnlyZeros);
+
+    vec[numberOfElements-1] = 0;
+    vec[0] = 1;
+    _sut->setVector(vec);
+    ASSERT_FALSE(containsOnlyZeros);
+}
+
+TEST_F(SVectorTests, ShouldReturnNegativeVector)
+{
+    std::vector<float> vec{-1.f,-5.2,2.f,0,111.21,-123.f};
+    startService(vec);
+    auto negative = -(*_sut);
+
+    for (int i = 0; i < negative.getSize(); ++i)
+    {
+        ASSERT_EQ(-vec[i],negative.x(i+1));
+    }
+}

@@ -23,11 +23,14 @@ private slots:
     inline void on_actionactionExit_triggered(){close();}
 
     void on_pushButton_StopShow_clicked();
-    unsigned int getNumberOfIterations() const;
 
 private:
+    void createComboBox();
+
+
     Ui::MainWindow* _ui;
     std::unique_ptr<Graph> _graph;
+//    std::unique_ptr<ISolver> _solver;
 };
 
 #endif // MAINWINDOW_H

@@ -3,30 +3,37 @@
 //
 
 #include <gtest/gtest.h>
+#include <gmock/gmock.h>
 #include <SymbolicOperations/SymbolicOperator.hpp>
 #include <fstream>
 #include <Functions/FunctionsFactory.hpp>
-#include <ApplicationStorage.hpp>
+#include <mocks/IApplicationStorageMock.hpp>
 
-class SymbolicOperatorTests : public ::testing::Test
+using namespace::testing;
+
+class SymbolicOperatorTests : public Test
 {
 public:
     SymbolicOperatorTests()
+        : _applicationStorageMock(new IApplicationStorageMock())
     {
-        _applicationStorage= std::make_shared<ApplicationStorage>();
-        _sut = SymbolicOperator::getInstance(_applicationStorage);
+        _functionsFactory = FunctionsFactory::getInstance();
+        EXPECT_CALL(*_applicationStorageMock, getFunctionsFactory)
+            .WillOnce(ReturnRef(_functionsFactory));
+        _sut = SymbolicOperator::getInstance(_applicationStorageMock);
     }
 
-    std::shared_ptr<IApplicationStorage> _applicationStorage;
+    std::shared_ptr<IFunctionsFactory> _functionsFactory;
+    std::shared_ptr<IApplicationStorageMock> _applicationStorageMock;
     std::shared_ptr<ISymbolicOperator> _sut;
 };
 
 TEST_F(SymbolicOperatorTests, ShouldPass)
 {
     std::string exampleFunction("x1 + 2*x2 + sin(x3) + 100");
-//
-//    auto function = _functionGetter->parseStringToSFunction(exampleFunction, 3);
-//
-//    auto ret = _sut->getDerivatives(function);
-//    ASSERT_EQ(ret.size(),3);
+
+    auto function = _functionsFactory->parseStringToSFunction(exampleFunction, 3);
+
+    auto ret = _sut->getDerivatives(function);
+    ASSERT_EQ(ret.size(),3);
 }

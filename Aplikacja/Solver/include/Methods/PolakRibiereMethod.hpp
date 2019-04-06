@@ -5,12 +5,14 @@
 #ifndef SOLVER_POLAKRIBIEREMETHOD_HPP
 #define SOLVER_POLAKRIBIEREMETHOD_HPP
 
-#include <bits/unique_ptr.h>
+#include <memory>
 #include <Logger/Logger.hpp>
 #include <SVector.hpp>
 #include "IMethod.hpp"
+#include "IterationMethodsParameters.hpp"
 
 class FunctionWrapper;
+class GradientWrapper;
 
 class PolakRibiereMethod : public IMethod
 {
@@ -25,8 +27,7 @@ public:
     void setCallbackWhenIterationDone(const std::function<void()>&);
     void setFunction(const std::shared_ptr<FunctionWrapper>&) override;
 private:
-    PolakRibiereMethod(float error, float minimalStepBetweenTwoPoints, float minimalDifferenceBetweenStepsValues,
-        unsigned int numberOfIterations, const std::vector<SVector>& solutionVecor);
+    PolakRibiereMethod(const IterationMethodsParameters&, const std::vector<SVector>& solutionVecor);
 
 //--stop condition checking
     bool isStopConditionFulfilled() const;
@@ -36,17 +37,21 @@ private:
     float getLastStepFunctionDifference() const;
     unsigned int getCurrentIteration() const;
 
-//--Algorithm parameters
-    float _error;
-    float _minimalStepSize;
-    float _minimalStepFunctionDifference;
-    unsigned int _maxNumberOfIterations;
+    /// Main optimization function iterating to find a solution
+    /// \return Returns true if succesfully done, false otherwise
+    bool optimizationOngoing(SVector&);
+    void problemSolved();
+
+
     unsigned int _currentIteration;
+    SVector _currentGradient;
 
 //--solution _trace including [x_0,x_1,...,x_n -> x_d]
     std::function<void()> _callback;
     std::vector<SVector> _solutionVecor;
     std::shared_ptr<FunctionWrapper> _function;
+    std::shared_ptr<GradientWrapper> _gradient;
+    IterationMethodsParameters _parameters;
     Logger& _log;
 };
 

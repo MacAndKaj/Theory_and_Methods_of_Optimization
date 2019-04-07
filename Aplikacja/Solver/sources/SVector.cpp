@@ -2,6 +2,7 @@
 // Created by maciek on 06.03.19.
 //
 
+#include <cmath>
 #include <algorithm>
 #include <SVector.hpp>
 #include <Logger/LoggersFactory.hpp>
@@ -52,16 +53,16 @@ float SVector::getCartesianNorm() const
     return std::sqrt(sum);
 }
 
-void SVector::transpose()
+SVector& SVector::transpose()
 {
     _colummnVector = false;
+    return *this;
 }
 
 unsigned long SVector::getSize() const
 {
     return _vector.size();
 }
-
 
 /// Returns x_i from vector x = [x_1 x_2 ... x_n]
 /// \param index from range 1...n
@@ -78,15 +79,15 @@ float SVector::x(unsigned int&& index) const
 
 bool SVector::containsOnlyZeros() const
 {
-    return _vector.cend() == std::find_if(_vector.cbegin(),_vector.cend(),[](const float& elem){
+    return _vector.cend() == std::find_if(_vector.cbegin(), _vector.cend(), [](const float& elem){
         return elem != 0;
     });
 }
 
 const SVector& SVector::operator -()
 {
-    std::for_each(_vector.begin(),_vector.end(),[](float& element){
-        element*=(-1);
+    std::for_each(_vector.begin(), _vector.end(), [](float& element){
+        element *= (-1);
     });
     return *this;
 }
@@ -96,7 +97,10 @@ bool SVector::operator ==(const SVector& arg) const
     if (arg.getSize() != getSize())return false;
     for (int i = 0; i < getSize(); ++i)
     {
-        if (_vector[i] != arg._vector[i]) return false;
+        if (std::fabs(_vector[i] - arg._vector[i]) > std::numeric_limits<float>::epsilon())
+        {
+            return false;
+        }
     }
     return true;
 }
@@ -116,17 +120,16 @@ std::string SVector::toString() const
 
 //===================== friends ========================================
 
-//TODO - matrix and multiplying vectors
-SVector operator *(const SVector&, const SVector&)
+SVector operator *(const SVector& lhs, int a)
 {
-    return SVector();
-}
+    std::vector<float> tempVector;
+    for (auto&& item : lhs._vector)
+    {
+        tempVector.emplace_back(item*a);
+    }
 
-SVector operator -(const SVector& lhs, const SVector& rhs)
-{
-    return lhs + (rhs * (-1));
+    return SVector(tempVector);
 }
-
 
 SVector operator *(const SVector& lhs, float a)
 {
@@ -137,6 +140,27 @@ SVector operator *(const SVector& lhs, float a)
     }
 
     return SVector(tempVector);
+}
+
+
+/// Doesn't support multitplying column vector by row vector.
+/// \param lhs row vector
+/// \param rhs column vector
+/// \return float - product of multilying row vector by column one
+std::optional<float> operator *(const SVector& lhs, const SVector& rhs)
+{
+    if (lhs._colummnVector or not rhs._colummnVector) return {};
+    auto sum = 0.f;
+    for (int i = 0; i < lhs._vector.size(); ++i)
+    {
+        sum += (lhs._vector[i] * rhs._vector[i]);
+    }
+    return sum;
+}
+
+SVector operator -(const SVector& lhs, const SVector& rhs)
+{
+    return lhs + (rhs * (-1));
 }
 
 SVector operator +(const SVector& lhs, const SVector& rhs)
@@ -153,6 +177,13 @@ SVector operator +(const SVector& lhs, const SVector& rhs)
         }
     }
     return SVector(vector);
+}
+
+SVector& SVector::operator =(const SVector& other)
+{
+    _vector = other._vector;
+    _colummnVector = other._colummnVector;
+    return *this;
 }
 
 

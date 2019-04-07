@@ -1,9 +1,13 @@
+#include <cmath>
+
 //
 // Created by maciek on 06.03.19.
 //
 
 #include <SMatrix.hpp>
 #include <Logger/LoggersFactory.hpp>
+#include <sstream>
+#include <iostream>
 
 SMatrix::SMatrix()
     : _log(LoggersFactory::getLoggersFactory().getLogger("SMatrix"))
@@ -38,7 +42,11 @@ bool SMatrix::operator ==(const SMatrix& other) const
         {
             for (int j = 0; j < _vector[0].size(); ++j)
             {
-                if (_vector[i][j] != other._vector[i][j]) return false;
+                if (std::fabs(_vector[i][j] - other._vector[i][j]) >
+                    std::numeric_limits<float>::epsilon())
+                {
+                    return false;
+                }
             }
         }
     }
@@ -150,11 +158,39 @@ void SMatrix::setVector(const std::vector<std::vector<float>>& vector)
     _vector = vector;
 }
 
-//TODO multiplying matrices
 SMatrix operator *(const SMatrix& lhs, const SMatrix& rhs)
 {
-    if(lhs._dimension.second != rhs._dimension.first) return SMatrix();
+    if (lhs._dimension.second != rhs._dimension.first) return SMatrix();
 
     std::vector<std::vector<float>> matrixReturned(lhs._dimension.first);
+    auto matrixRowsIter = matrixReturned.begin();
+    for (const auto& row : lhs._vector)
+    {
+        matrixRowsIter->reserve(rhs._dimension.second);
+        for (const auto& column : rhs._vector)
+        {
+            matrixRowsIter->emplace_back(0.f);
+            for (int j = 0; j < lhs._dimension.second; ++j)
+            {
+                (*matrixRowsIter->rbegin()) += row[j] * column[j];
+            }
+        }
+        ++matrixRowsIter;
+    }
+    return SMatrix(matrixReturned);
+}
 
+std::string SMatrix::toString() const
+{
+    std::stringstream strm;
+    for (const auto& row : _vector)
+    {
+        strm << "[ ";
+        for (const auto& column : row)
+        {
+            strm << std::to_string(column) << ' ';
+        }
+        strm << "]\n";
+    }
+    return strm.str();
 }

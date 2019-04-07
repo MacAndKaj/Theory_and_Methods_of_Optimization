@@ -22,6 +22,7 @@ public:
     bool operator==(const SMatrix&)const;
     bool operator!=(const SMatrix&)const;
     const SMatrix& operator -();
+    std::string toString() const;
 
 private:
     /// First-number of rows, Second-number of columns

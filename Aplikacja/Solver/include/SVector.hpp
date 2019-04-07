@@ -16,6 +16,7 @@ public:
     SVector(const SVector&);
     explicit SVector(const std::vector<float>& vector);
 
+
     const std::vector<float>& getVector() const;
     void setVector(const std::vector<float>& vector);
 
@@ -25,9 +26,10 @@ public:
 
     std::string toString() const;
 
-    void transpose();
+    SVector& transpose();
     bool containsOnlyZeros()const;
     bool operator==(const SVector&)const;
+    SVector& operator = (const SVector&);
     const SVector& operator -();
 private:
     std::vector<float> _vector;
@@ -36,14 +38,16 @@ private:
 
 
     friend SVector operator *(const SVector&, float);
-    friend SVector operator *(const SVector&, const SVector&);
+    friend SVector operator *(const SVector&, int);
+    friend std::optional<float> operator *(const SVector&, const SVector&);
     friend SVector operator +(const SVector&, const SVector&);
     friend SVector operator -(const SVector&, const SVector&);
 
 };
 
+std::optional<float> operator *(const SVector&, const SVector&);
 SVector operator *(const SVector&, float);
-SVector operator *(const SVector&, const SVector&);
+SVector operator *(const SVector&, int);
 SVector operator +(const SVector&, const SVector&);
 SVector operator -(const SVector&, const SVector&);
 

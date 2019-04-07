@@ -10,6 +10,7 @@
 #include <SVector.hpp>
 #include "IMethod.hpp"
 #include "IterationMethodsParameters.hpp"
+#include "MinimalizeInDirectionHelper.hpp"
 
 class FunctionWrapper;
 class GradientWrapper;
@@ -39,19 +40,20 @@ private:
 
     /// Main optimization function iterating to find a solution
     /// \return Returns true if succesfully done, false otherwise
-    bool optimizationOngoing(SVector&);
+    bool optimizationOngoing();
+    float getBeta(const SVector&, const SVector&) const;
     void problemSolved();
-
 
     unsigned int _currentIteration;
     SVector _currentGradient;
 
 //--solution _trace including [x_0,x_1,...,x_n -> x_d]
     std::function<void()> _callback;
-    std::vector<SVector> _solutionVecor;
+    std::vector<SVector> _solutionVector;
     std::shared_ptr<FunctionWrapper> _function;
     std::shared_ptr<GradientWrapper> _gradient;
     IterationMethodsParameters _parameters;
+    MinimalizeInDirectionHelper _minimalizeInDirectionHelper;
     Logger& _log;
 };
 

@@ -28,7 +28,7 @@ public:
     std::shared_ptr<ISymbolicOperator> _sut;
 };
 
-TEST_F(SymbolicOperatorTests, ShouldPass)
+TEST_F(SymbolicOperatorTests, ShouldReturnFunctionInCorrectDimension)
 {
     std::string exampleFunction("x1 + 2*x2 + sin(x3) + 100");
 

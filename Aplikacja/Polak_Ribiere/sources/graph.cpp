@@ -1,5 +1,5 @@
-#include "graph.h"
-#include "ui_graph.h"
+#include <include/graph.h>
+#include <ui_graph.h>
 #include <QtDataVisualization/Q3DSurface>
 #include <QtDataVisualization/QSurfaceDataProxy>
 #include <QtDataVisualization/QSurfaceDataArray>
@@ -8,8 +8,8 @@
 #include <QtDataVisualization/QSurface3DSeries>
 
 
-Graph::Graph(QWidget *parent)
-    : QWidget(parent)
+Graph::Graph(QDialog *parent)
+    : QDialog(parent)
     , ui(new Ui::Graph)
 {
     ui->setupUi(this);

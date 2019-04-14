@@ -14,15 +14,15 @@ class SVector
 public:
     SVector();
     SVector(const SVector&);
-    explicit SVector(const std::vector<float>& vector);
+    SVector(const std::vector<double>& vector);
 
 
-    const std::vector<float>& getVector() const;
-    void setVector(const std::vector<float>& vector);
+    const std::vector<double>& getVector() const;
+    void setVector(const std::vector<double>& vector);
 
-    float x(unsigned int&&) const;
+    double x(unsigned int&&) const;
     unsigned long getSize() const;
-    float getCartesianNorm() const;
+    double getCartesianNorm() const;
 
     std::string toString() const;
 
@@ -32,22 +32,26 @@ public:
     SVector& operator = (const SVector&);
     const SVector& operator -();
 private:
-    std::vector<float> _vector;
+    std::vector<double> _vector;
     Logger& _log;
     bool _colummnVector;
 
 
-    friend SVector operator *(const SVector&, float);
+    friend SVector operator *(const SVector&, double);
+    friend SVector operator *(double,const SVector&);
     friend SVector operator *(const SVector&, int);
-    friend std::optional<float> operator *(const SVector&, const SVector&);
+    friend SVector operator *(int,const SVector&);
+    friend std::optional<double> operator *(const SVector&, const SVector&);
     friend SVector operator +(const SVector&, const SVector&);
     friend SVector operator -(const SVector&, const SVector&);
 
 };
 
-std::optional<float> operator *(const SVector&, const SVector&);
-SVector operator *(const SVector&, float);
+std::optional<double> operator *(const SVector&, const SVector&);
+SVector operator *(const SVector&, double);
+SVector operator *(double,const SVector&);
 SVector operator *(const SVector&, int);
+SVector operator *(int,const SVector&);
 SVector operator +(const SVector&, const SVector&);
 SVector operator -(const SVector&, const SVector&);
 

@@ -6,6 +6,8 @@
 #include <algorithm>
 #include <SVector.hpp>
 #include <Logger/LoggersFactory.hpp>
+#include <sstream>
+#include <iomanip>
 
 SVector::SVector()
     : _log(LoggersFactory::getLoggersFactory().getLogger("SVector"))
@@ -24,7 +26,7 @@ SVector::SVector(const SVector& arg)
     }
 }
 
-SVector::SVector(const std::vector<float>& vector)
+SVector::SVector(const std::vector<double>& vector)
     : _vector(vector)
     , _log(LoggersFactory::getLoggersFactory().getLogger("SVector"))
     , _colummnVector(true)
@@ -32,19 +34,19 @@ SVector::SVector(const std::vector<float>& vector)
 
 }
 
-const std::vector<float>& SVector::getVector() const
+const std::vector<double>& SVector::getVector() const
 {
     return _vector;
 }
 
-void SVector::setVector(const std::vector<float>& vector)
+void SVector::setVector(const std::vector<double>& vector)
 {
     _vector = vector;
 }
 
-float SVector::getCartesianNorm() const
+double SVector::getCartesianNorm() const
 {
-    float sum = 0;
+    double sum = 0;
     for (const auto& item : _vector)
     {
         sum += (item * item);
@@ -66,8 +68,8 @@ unsigned long SVector::getSize() const
 
 /// Returns x_i from vector x = [x_1 x_2 ... x_n]
 /// \param index from range 1...n
-/// \return x - float
-float SVector::x(unsigned int&& index) const
+/// \return x - double
+double SVector::x(unsigned int&& index) const
 {
     if (_vector.size() < index)
     {
@@ -79,14 +81,14 @@ float SVector::x(unsigned int&& index) const
 
 bool SVector::containsOnlyZeros() const
 {
-    return _vector.cend() == std::find_if(_vector.cbegin(), _vector.cend(), [](const float& elem){
+    return _vector.cend() == std::find_if(_vector.cbegin(), _vector.cend(), [](const double& elem){
         return elem != 0;
     });
 }
 
 const SVector& SVector::operator -()
 {
-    std::for_each(_vector.begin(), _vector.end(), [](float& element){
+    std::for_each(_vector.begin(), _vector.end(), [](double& element){
         element *= (-1);
     });
     return *this;
@@ -97,7 +99,7 @@ bool SVector::operator ==(const SVector& arg) const
     if (arg.getSize() != getSize())return false;
     for (int i = 0; i < getSize(); ++i)
     {
-        if (std::fabs(_vector[i] - arg._vector[i]) > std::numeric_limits<float>::epsilon())
+        if (std::fabs(_vector[i] - arg._vector[i]) > std::numeric_limits<double>::epsilon())
         {
             return false;
         }
@@ -107,14 +109,16 @@ bool SVector::operator ==(const SVector& arg) const
 
 std::string SVector::toString() const
 {
-    std::string result("[");
+    std::stringstream strm;
+    strm << "[";
     for (const auto& item : _vector)
     {
-        result.append(" ");
-        result.append(std::to_string(item));
+
+        strm<<" ";
+        strm << item << std::setprecision(20);
     }
-    result.append(" ]");
-    return result;
+    strm << " ]";
+    return strm.str();
 }
 
 
@@ -122,7 +126,7 @@ std::string SVector::toString() const
 
 SVector operator *(const SVector& lhs, int a)
 {
-    std::vector<float> tempVector;
+    std::vector<double> tempVector;
     for (auto&& item : lhs._vector)
     {
         tempVector.emplace_back(item*a);
@@ -131,9 +135,9 @@ SVector operator *(const SVector& lhs, int a)
     return SVector(tempVector);
 }
 
-SVector operator *(const SVector& lhs, float a)
+SVector operator *(const SVector& lhs, double a)
 {
-    std::vector<float> tempVector;
+    std::vector<double> tempVector;
     for (auto&& item : lhs._vector)
     {
         tempVector.emplace_back(item * a);
@@ -146,8 +150,8 @@ SVector operator *(const SVector& lhs, float a)
 /// Doesn't support multitplying column vector by row vector.
 /// \param lhs row vector
 /// \param rhs column vector
-/// \return float - product of multilying row vector by column one
-std::optional<float> operator *(const SVector& lhs, const SVector& rhs)
+/// \return double - product of multilying row vector by column one
+std::optional<double> operator *(const SVector& lhs, const SVector& rhs)
 {
     if (lhs._colummnVector or not rhs._colummnVector) return {};
     auto sum = 0.f;
@@ -165,7 +169,7 @@ SVector operator -(const SVector& lhs, const SVector& rhs)
 
 SVector operator +(const SVector& lhs, const SVector& rhs)
 {
-    std::vector<float> vector;
+    std::vector<double> vector;
     if (not(lhs._vector.empty() and rhs._vector.empty())
         and lhs._vector.size() == rhs._vector.size())
     {
@@ -184,6 +188,16 @@ SVector& SVector::operator =(const SVector& other)
     _vector = other._vector;
     _colummnVector = other._colummnVector;
     return *this;
+}
+
+SVector operator *(double a, const SVector& sVector)
+{
+    return sVector*a;
+}
+
+SVector operator *(int a, const SVector& sVector)
+{
+    return sVector*a;
 }
 
 

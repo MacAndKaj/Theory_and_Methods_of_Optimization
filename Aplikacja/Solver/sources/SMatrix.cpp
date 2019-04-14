@@ -15,7 +15,7 @@ SMatrix::SMatrix()
 
 }
 
-SMatrix::SMatrix(const std::vector<std::vector<float>>& vector)
+SMatrix::SMatrix(const std::vector<std::vector<double>>& vector)
     : _vector(vector)
     , _log(LoggersFactory::getLoggersFactory().getLogger("SMatrix"))
 {
@@ -43,7 +43,7 @@ bool SMatrix::operator ==(const SMatrix& other) const
             for (int j = 0; j < _vector[0].size(); ++j)
             {
                 if (std::fabs(_vector[i][j] - other._vector[i][j]) >
-                    std::numeric_limits<float>::epsilon())
+                    std::numeric_limits<double>::epsilon())
                 {
                     return false;
                 }
@@ -58,10 +58,10 @@ bool SMatrix::operator !=(const SMatrix& secondMatrix) const
     return not(*this == secondMatrix);
 }
 
-std::optional<float> SMatrix::getMinor(unsigned int&) const
+std::optional<double> SMatrix::getMinor(unsigned int&) const
 {
 //    if()
-    return std::optional<float>();
+    return std::optional<double>();
 }
 
 const SMatrix& SMatrix::operator -()
@@ -77,9 +77,9 @@ const SMatrix& SMatrix::operator -()
     return *this;
 }
 
-SMatrix operator *(const SMatrix& matrix, float multiplier)
+SMatrix operator *(const SMatrix& matrix, double multiplier)
 {
-    std::vector<std::vector<float>> matrixReturned(matrix._dimension.first);
+    std::vector<std::vector<double>> matrixReturned(matrix._dimension.first);
     auto matrixRowsIter = matrixReturned.begin();
     for (auto&& row : matrix._vector)
     {
@@ -100,7 +100,7 @@ SMatrix operator +(const SMatrix& lhs, const SMatrix& rhs)
     {
         return SMatrix();
     }
-    std::vector<std::vector<float>> matrixReturned(lhs._dimension.first);
+    std::vector<std::vector<double>> matrixReturned(lhs._dimension.first);
     auto matrixRowsIter = matrixReturned.begin();
     for (int row_nr = 0; row_nr < lhs._dimension.first; ++row_nr)
     {
@@ -123,7 +123,7 @@ SMatrix operator -(const SMatrix& lhs, const SMatrix& rhs)
     {
         return SMatrix();
     }
-    std::vector<std::vector<float>> matrixReturned(lhs._dimension.first);
+    std::vector<std::vector<double>> matrixReturned(lhs._dimension.first);
     auto matrixRowsIter = matrixReturned.begin();
     for (int row_nr = 0; row_nr < lhs._dimension.first; ++row_nr)
     {
@@ -140,12 +140,12 @@ SMatrix operator -(const SMatrix& lhs, const SMatrix& rhs)
 
 }
 
-const std::vector<std::vector<float>>& SMatrix::getVector() const
+const std::vector<std::vector<double>>& SMatrix::getVector() const
 {
     return _vector;
 }
 
-void SMatrix::setVector(const std::vector<std::vector<float>>& vector)
+void SMatrix::setVector(const std::vector<std::vector<double>>& vector)
 {
     if (not vector.empty())
     {
@@ -162,7 +162,7 @@ SMatrix operator *(const SMatrix& lhs, const SMatrix& rhs)
 {
     if (lhs._dimension.second != rhs._dimension.first) return SMatrix();
 
-    std::vector<std::vector<float>> matrixReturned(lhs._dimension.first);
+    std::vector<std::vector<double>> matrixReturned(lhs._dimension.first);
     auto matrixRowsIter = matrixReturned.begin();
     for (const auto& row : lhs._vector)
     {

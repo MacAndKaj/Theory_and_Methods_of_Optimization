@@ -25,23 +25,25 @@ public:
     PolakRibiereMethod(const PolakRibiereMethod&) = delete;
 
     void startComputing() override;
-    void setCallbackWhenIterationDone(const std::function<void()>&);
+    void setCallbackWhenIterationDone(const std::function<void()>&) override;
+
+    void setGradient(const std::shared_ptr<GradientWrapper>&) override;
     void setFunction(const std::shared_ptr<FunctionWrapper>&) override;
 private:
-    PolakRibiereMethod(const IterationMethodsParameters&, const std::vector<SVector>& solutionVecor);
+    PolakRibiereMethod(const IterationMethodsParameters&, const std::vector<SVector>&);
 
 //--stop condition checking
     bool isStopConditionFulfilled() const;
     void updateParameters();
-    float getLastStepSize() const;
-    float getErrorInCurrentPoint() const;
-    float getLastStepFunctionDifference() const;
+    double getLastStepSize() const;
+    double getErrorInCurrentPoint() const;
+    double getLastStepFunctionDifference() const;
     unsigned int getCurrentIteration() const;
 
     /// Main optimization function iterating to find a solution
     /// \return Returns true if succesfully done, false otherwise
     bool optimizationOngoing();
-    float getBeta(const SVector&, const SVector&) const;
+    double getBeta(const SVector&, const SVector&) const;
     void problemSolved();
 
     unsigned int _currentIteration;

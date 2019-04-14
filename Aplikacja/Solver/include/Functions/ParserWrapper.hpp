@@ -20,7 +20,7 @@ public:
     std::shared_ptr<FunctionWrapper> parseToFunction(unsigned int, const std::string&);
 protected:
     ParserWrapper();
-    exprtk::parser<float> _parser;
+    exprtk::parser<double> _parser;
     Logger& _log;
 
     friend class FunctionsFactory;

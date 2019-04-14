@@ -20,6 +20,7 @@ public:
     const std::vector<std::string> getGradientSymbolicForm() const;
     std::optional<SVector> getGradientInPoint(const SVector&);
     const std::string& getOriginalFunction() const;
+    unsigned int getDimension() const;
 private:
     std::string _originalFunction;
     std::vector<std::shared_ptr<FunctionWrapper>> _gradientVector;

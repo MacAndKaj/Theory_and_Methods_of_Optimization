@@ -13,7 +13,7 @@ public:
         _sut = std::make_unique<FunctionWrapper>();
     }
 
-    exprtk::parser<float> _parser;
+    exprtk::parser<double> _parser;
     std::unique_ptr<FunctionWrapper> _sut;
 };
 
@@ -22,7 +22,7 @@ public:
 TEST_F(FunctionWrapperTests, ShouldCorrectlyDoAFunctionAndComputeInInitialState)
 {
     std::string exampleFunction("x1 + 2*x2");
-    std::vector<std::pair<std::string, float>> namesAndValues = {{"x1", 0}, {"x2", 0}};
+    std::vector<std::pair<std::string, double>> namesAndValues = {{"x1", 0}, {"x2", 0}};
     _sut->addSymbols(namesAndValues);
 
     auto expression = _sut->configAndGetExpression(exampleFunction);
@@ -34,7 +34,7 @@ TEST_F(FunctionWrapperTests, ShouldCorrectlyDoAFunctionAndComputeInInitialState)
 TEST_F(FunctionWrapperTests, ShouldNotDoAFunction)
 {
     std::string exampleFunction("x1 + 2*x2");
-    std::vector<std::pair<std::string, float>> namesAndValues = {{"x1", 0}};
+    std::vector<std::pair<std::string, double>> namesAndValues = {{"x1", 0}};
     _sut->addSymbols(namesAndValues);
 
     auto expression = _sut->configAndGetExpression(exampleFunction);

@@ -30,6 +30,10 @@ GradientVector SymbolicOperator::getDerivatives(const std::shared_ptr<FunctionWr
         _log << strm.str();
         return {};
     }
+    std::stringstream strm;
+    strm << __FUNCTION__ << "| Computing derivative for " << wrapper->getExpressionString();
+    _log << strm.str();
+
     auto scriptname = _pythonFileHelper
         .createPythonScript(wrapper->getExpressionString(), wrapper->getDimension());
     return readFromFile(scriptname, wrapper);
@@ -41,7 +45,7 @@ SymbolicOperator::readFromFile(std::string& scriptname,
 {
     if (scriptname.empty())
     {
-        _log << std::string(__FUNCTION__) + "| Error! Creating python file failed!";
+        _log << "["+std::string(__FUNCTION__) + "]| Error! Creating python file failed!";
         return {};
     }
 
@@ -51,20 +55,21 @@ SymbolicOperator::readFromFile(std::string& scriptname,
     std::ifstream file("derivatives.txt", std::ios::in);
     if (file.bad())
     {
-        _log << std::string(__FUNCTION__) + "| Error! Reading from file derivatives went wrong!";
+        _log << "["+std::string(__FUNCTION__) + "]| Error! Reading from file derivatives went wrong!";
         system(command.c_str());
         return {};
     }
     GradientVector ret;
     std::string buffer;
-    while (file >> buffer)
+    while (std::getline(file,buffer))
     {
+        _log << "["+std::string(__FUNCTION__) + "] derivative " + buffer;
         ret.emplace_back(
-            _functionsFactory->parseStringToSFunction(buffer, wrapper->getDimension()));
+            _functionsFactory->getFunctionFromString(buffer, wrapper->getDimension()));
     }
     file.close();
     system(command.c_str());
-    _log << std::string(__FUNCTION__) + "| Completed successfully";
+    _log << "["+std::string(__FUNCTION__) + "]| Completed successfully";
     return ret;
 }
 

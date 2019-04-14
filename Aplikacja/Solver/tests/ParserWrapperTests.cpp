@@ -46,3 +46,12 @@ TEST_F(ParserWrapperTests, ShouldComputeCorrectValueForSpecializedFunction)
     auto result = (*function)(point);
     ASSERT_EQ(*result, 108);
 }
+
+TEST_F(ParserWrapperTests,ShouldReturnCorrectDimensionVector)
+{
+    std::string exampleFunction("x1*x2 + sin(x3) + exp(x4) + x5^3");
+    unsigned int dimension=5;
+    auto function = parseToFunction(dimension, exampleFunction);
+
+    ASSERT_EQ(function->getDimension(),dimension);
+}

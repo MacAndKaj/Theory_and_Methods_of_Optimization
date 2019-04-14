@@ -7,7 +7,8 @@
 
 #include "IApplicationStorage.hpp"
 
-class ApplicationStorage : public IApplicationStorage, std::enable_shared_from_this<ApplicationStorage>
+class ApplicationStorage : public IApplicationStorage
+    , public std::enable_shared_from_this<IApplicationStorage>
 {
 public:
     ApplicationStorage() = default;

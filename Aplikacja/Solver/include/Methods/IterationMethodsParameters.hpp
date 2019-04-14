@@ -8,16 +8,18 @@
 class IterationMethodsParameters
 {
 public:
-    IterationMethodsParameters(float error, float minimalStepSize,
-        float minimalStepFunctionDifference, unsigned int maxNumberOfIterations);
-    const float getError() const;
-    const float getMinimalStepSize() const;
-    const float getMinimalStepFunctionDifference() const;
+    IterationMethodsParameters(double error, double minimalStepSize,
+        double minimalStepFunctionDifference, unsigned int maxNumberOfIterations);
+    IterationMethodsParameters(const IterationMethodsParameters&);
+
+    const double getError() const;
+    const double getMinimalStepSize() const;
+    const double getMinimalStepFunctionDifference() const;
     const unsigned int getMaxNumberOfIterations() const;
 private:
-    const float _error;
-    const float _minimalStepSize;
-    const float _minimalStepFunctionDifference;
+    const double _error;
+    const double _minimalStepSize;
+    const double _minimalStepFunctionDifference;
     const unsigned int _maxNumberOfIterations;
 };
 

@@ -1,6 +1,8 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
-#include "standardfunctionsdefinitions.h"
+#include <include/mainwindow.h>
+#include <include/graph.h>
+#include <include/functioninput.h>
+#include <ui_mainwindow.h>
+#include <iostream>
 #include<QMessageBox>
 #include<QCloseEvent>
 
@@ -10,7 +12,6 @@ MainWindow::MainWindow(QWidget *parent)
 {
     _ui->setupUi(this);
     _ui->progressBar_computing->hide();
-    createComboBox();
 }
 
 MainWindow::~MainWindow()
@@ -31,22 +32,19 @@ void MainWindow::closeEvent(QCloseEvent *event)
     event->ignore();
 }
 
-
-
-
+void MainWindow::setFunction(const std::string &function)
+{
+    std::cout << function << std::endl;
+}
 
 void MainWindow::on_pushButton_StopShow_clicked()
 {
     _graph = std::make_unique<Graph>();
-    _graph->show();
+    _graph->exec();
 }
 
-void MainWindow::createComboBox()
+void MainWindow::on_pushButton_chooseFunction_clicked()
 {
-    QStringList listOfFunctions("-");
-    listOfFunctions.reserve(listOfFunctions.size());
-    std::for_each(standardFunctions.begin(),standardFunctions.end(),[&listOfFunctions](const std::string& fun){
-       listOfFunctions.append(fun.c_str());
-    });
-    _ui->comboBox_knownFunctions->addItems(listOfFunctions);
+    _functionInput = std::make_unique<FunctionInput>();
+    _functionInput->exec();
 }

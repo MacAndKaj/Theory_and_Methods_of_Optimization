@@ -7,10 +7,10 @@
 
 #include <iostream>
 
-const unsigned int defaultIterationsNumber = 100;
-const float defaultSolutionError = 1e-3;
-const float defaultSolutionError1 = 1e-3;
-const float defaultSolutionError2 = 1e-3;
+const unsigned int defaultIterationsNumber = 200;
+const double defaultSolutionError = 1e-20;
+const double defaultSolutionError1 = 1e-20;
+const double defaultSolutionError2 = 1e-20;
 
 enum class MethodType
 {
@@ -18,12 +18,6 @@ enum class MethodType
     MethodType_PolakRibiere = 1
 };
 
-enum class ParameterType
-{
-    ParameterType_Unkown = 1,
-    ParameterType_Iterations = 1,
-    ParameterType_SolutionError = 1
-};
 
 std::ostream& operator << (std::ostream& strm,MethodType methodType);
 

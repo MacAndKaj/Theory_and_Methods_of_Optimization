@@ -20,7 +20,7 @@ std::string PythonFileHelper::createPythonScript(const std::string& fun, unsigne
     {
         file << getBegingOfFile();
         file << getSymbolsForDerivative(dim);
-        file << "fun = " + fun + "\n";
+        file << "fun = " + changePowerOperators(fun) + "\n";
         file << getWriteFunctions(dim);
         file << "fileForEquetions.close()";
         file.close();
@@ -61,3 +61,15 @@ std::string PythonFileHelper::getWriteFunctions(unsigned int dimension) const
     }
     return ret;
 }
+
+std::string PythonFileHelper::changePowerOperators(const std::string& fun) const
+{
+    std::string ret;
+    for (char i : fun)
+    {
+        if (i == '^') ret += ("**");
+        else ret += i;
+    }
+    return ret;
+}
+

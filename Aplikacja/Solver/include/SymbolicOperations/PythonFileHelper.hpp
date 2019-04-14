@@ -17,7 +17,7 @@ private:
     std::string getBegingOfFile()const;
     std::string getSymbolsForDerivative(unsigned int) const;
     std::string getWriteFunctions(unsigned int) const;
-
+    std::string changePowerOperators(const std::string&)const;
     std::string _filename;
 };
 

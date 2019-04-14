@@ -18,7 +18,7 @@ class MethodsFactory: public IMethodsFactory
 {
     using MethodPtr = std::shared_ptr<IMethod>;
 public:
-    MethodsFactory::MethodPtr getPolakRibiereMethod(float error, float minimalStep, float minimalStepValues, unsigned int iterations,
+    MethodsFactory::MethodPtr getPolakRibiereMethod(double error, double minimalStep, double minimalStepValues, unsigned int iterations,
         std::vector<SVector>& startingPoint) const override;
 
     static const std::shared_ptr<IMethodsFactory> getInstance();

@@ -16,7 +16,11 @@ class IMethodsFactory
 public:
     using MethodPtr = std::shared_ptr<IMethod>;
 
-    virtual MethodPtr getPolakRibiereMethod(float error, float minimalStep, float minimalStepValues, unsigned int iterations,
+    virtual MethodPtr getPolakRibiereMethod(
+        double error,
+        double minimalStep,
+        double minimalStepValues,
+        unsigned int iterations,
         std::vector<SVector>& startingPoint) const = 0;
 };
 

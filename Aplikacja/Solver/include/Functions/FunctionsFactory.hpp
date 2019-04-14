@@ -6,19 +6,24 @@
 #define SOLVER_FUNCTIONGETTER_HPP
 
 #include <Functions/IFunctionsFactory.hpp>
+#include <IApplicationStorage.hpp>
 #include "ParserWrapper.hpp"
 
 class ParserWrapper;
-class ApplicationStorage;
 
 class FunctionsFactory : public IFunctionsFactory
 {
 public:
-    static const std::shared_ptr<IFunctionsFactory> getInstance();
-    std::shared_ptr<FunctionWrapper> parseStringToSFunction(const std::string&, unsigned int) override;
+    static const std::shared_ptr<IFunctionsFactory> getInstance(
+        const std::shared_ptr<IApplicationStorage>&);
+    std::shared_ptr<FunctionWrapper> getFunctionFromString(const std::string&,
+        unsigned int) override;
+    std::shared_ptr<GradientWrapper> getGradientForFunction(
+        const std::shared_ptr<FunctionWrapper>&) override;
 private:
-    FunctionsFactory();
+    FunctionsFactory(const std::shared_ptr<IApplicationStorage>&);
 
+    std::shared_ptr<IApplicationStorage> _applicationStorage;
     ParserWrapper _parser;
     Logger& _log;
 

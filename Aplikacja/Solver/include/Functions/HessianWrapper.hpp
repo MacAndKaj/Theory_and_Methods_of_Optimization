@@ -18,7 +18,7 @@ class HessianWrapper
 public:
     HessianWrapper() = delete;
     HessianWrapper(const std::shared_ptr<GradientWrapper>&,
-        const std::shared_ptr<IApplicationStorage>& applicationStorage);
+        const std::shared_ptr<IApplicationStorage>&);
 
     std::optional<SMatrix> getHessianInPoint(const SVector&);
 private:

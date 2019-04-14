@@ -19,9 +19,8 @@ void Solver::setMethod(MethodType methodType)
     _methodType = methodType;
     if (_methodType == MethodType::MethodType_PolakRibiere)
     {
-
         std::stringstream strm;
-        strm << "Method type set to: " << methodType;
+        strm << "[" << __FUNCTION__ << "] to: " << methodType;
         _log << strm.str();
     }
     else
@@ -32,7 +31,12 @@ void Solver::setMethod(MethodType methodType)
 
 void Solver::computeSolution()
 {
-
+    if(not _method)
+    {
+        _log << "["+std::string(__FUNCTION__) + "] WARNING! Method not set, returning!";
+        return;
+    }
+//    std::thread computingThread(&PolakRibiereMethod::startComputing,*_method);
 }
 
 SSolution Solver::getSolution() const
@@ -45,11 +49,11 @@ void Solver::setFunction(const unsigned int& dimension, const std::string& funct
     if (not _method)
     {
         std::stringstream strm;
-        strm << __FUNCTION__ << "Method not set! Function " << function << " not set! Returning...";
+        strm << "[" << __FUNCTION__ << "]Method not set! Function " << function << " not set! Returning...";
         _log << strm.str();
         return;
     }
-    auto functionWrapper = _functionsFactory->parseStringToSFunction(function,dimension);
+    auto functionWrapper = _functionsFactory->getFunctionFromString(function, dimension);
     _method->setFunction(functionWrapper);
 }
 

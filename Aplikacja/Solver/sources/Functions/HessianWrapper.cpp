@@ -17,7 +17,7 @@ HessianWrapper::HessianWrapper(const std::shared_ptr<GradientWrapper>& gradient,
 
 std::optional <SMatrix> HessianWrapper::getHessianInPoint(const SVector& point)
 {
-    std::vector<std::vector<float>> matrixReturned(point.getSize());
+    std::vector<std::vector<double>> matrixReturned(point.getSize());
     auto returnedMatrixRowsIter = matrixReturned.begin();
     for (const auto& rows : _hessianMatrix)
     {

@@ -20,7 +20,7 @@ const std::shared_ptr<IMethodsFactory> MethodsFactory::getInstance()
 }
 
 MethodsFactory::MethodPtr
-MethodsFactory::getPolakRibiereMethod(float error, float minimalStep, float minimalStepValues,
+MethodsFactory::getPolakRibiereMethod(double error, double minimalStep, double minimalStepValues,
     unsigned int iterations, std::vector<SVector>& startingPoint) const
 {
     return std::shared_ptr<PolakRibiereMethod>(

@@ -2,7 +2,7 @@
 #define GRAPH_H
 
 #include <memory>
-#include <QWidget>
+#include <QDialog>
 
 namespace Ui {
     class Graph;
@@ -12,12 +12,12 @@ namespace QtDataVisualization {
     class Q3DSurface;
 }
 
-class Graph : public QWidget
+class Graph : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit Graph(QWidget *parent = nullptr);
+    explicit Graph(QDialog *parent = nullptr);
     ~Graph();
 
 private slots:

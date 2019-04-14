@@ -5,10 +5,10 @@
 #include <gtest/gtest.h>
 #include <Functions/FunctionsFactory.hpp>
 
-//class FunctionGetterTests : public ::testing::Test
+//class FunctionFactoryTests : public ::testing::Test
 //{
 //public:
-//    FunctionGetterTests()
+//    FunctionFactoryTests()
 //    {
 ////        _sut = std::make_unique<FunctionGetter>();
 //    }

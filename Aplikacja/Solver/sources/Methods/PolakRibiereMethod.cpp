@@ -175,6 +175,11 @@ void PolakRibiereMethod::setGradient(const std::shared_ptr<GradientWrapper>& ptr
     _minimalizeInDirectionHelper.setGradientWrapper(_gradient);
 }
 
+bool PolakRibiereMethod::isReadyToCompute() const
+{
+    return _function and _gradient;
+}
+
 
 
 //-----------------------------------------------------------------------------------

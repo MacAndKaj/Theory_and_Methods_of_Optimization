@@ -1,0 +1,23 @@
+file(REMOVE_RECURSE
+  "Optimization_autogen"
+  "CMakeFiles/Optimization_autogen.dir/AutogenOldSettings.cmake"
+  "MOCS_autogen"
+  "CMakeFiles/MOCS_autogen.dir/AutogenOldSettings.cmake"
+  "Polak_Ribiere/include/moc_FunctionInput.cpp"
+  "Polak_Ribiere/include/moc_Graph.cpp"
+  "Polak_Ribiere/include/moc_MainWindow.cpp"
+  "ui_functioninput.h"
+  "ui_graph.h"
+  "ui_mainwindow.h"
+  "CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_FunctionInput.cpp.o"
+  "CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_Graph.cpp.o"
+  "CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o"
+  "CMakeFiles/MOCS.dir/MOCS_autogen/mocs_compilation.cpp.o"
+  "libMOCS.pdb"
+  "libMOCS.a"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/MOCS.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

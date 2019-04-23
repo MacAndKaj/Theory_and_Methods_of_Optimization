@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = /home/maciek/Clion/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E remove -f
+RM = /home/maciek/Clion/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/The
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/maciek/Clion/bin/cmake/linux/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/local/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/maciek/Clion/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -124,6 +124,19 @@ Optimization/fast:
 .PHONY : Optimization/fast
 
 #=============================================================================
+# Target rules for targets named MOCS
+
+# Build rule for target.
+MOCS: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 MOCS
+.PHONY : MOCS
+
+# fast build rule for target.
+MOCS/fast:
+	$(MAKE) -f CMakeFiles/MOCS.dir/build.make CMakeFiles/MOCS.dir/build
+.PHONY : MOCS/fast
+
+#=============================================================================
 # Target rules for targets named Optimization_autogen
 
 # Build rule for target.
@@ -135,6 +148,46 @@ Optimization_autogen: cmake_check_build_system
 Optimization_autogen/fast:
 	$(MAKE) -f CMakeFiles/Optimization_autogen.dir/build.make CMakeFiles/Optimization_autogen.dir/build
 .PHONY : Optimization_autogen/fast
+
+#=============================================================================
+# Target rules for targets named MOCS_autogen
+
+# Build rule for target.
+MOCS_autogen: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 MOCS_autogen
+.PHONY : MOCS_autogen
+
+# fast build rule for target.
+MOCS_autogen/fast:
+	$(MAKE) -f CMakeFiles/MOCS_autogen.dir/build.make CMakeFiles/MOCS_autogen.dir/build
+.PHONY : MOCS_autogen/fast
+
+MOCS_autogen/mocs_compilation.o: MOCS_autogen/mocs_compilation.cpp.o
+
+.PHONY : MOCS_autogen/mocs_compilation.o
+
+# target to build an object file
+MOCS_autogen/mocs_compilation.cpp.o:
+	$(MAKE) -f CMakeFiles/MOCS.dir/build.make CMakeFiles/MOCS.dir/MOCS_autogen/mocs_compilation.cpp.o
+.PHONY : MOCS_autogen/mocs_compilation.cpp.o
+
+MOCS_autogen/mocs_compilation.i: MOCS_autogen/mocs_compilation.cpp.i
+
+.PHONY : MOCS_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+MOCS_autogen/mocs_compilation.cpp.i:
+	$(MAKE) -f CMakeFiles/MOCS.dir/build.make CMakeFiles/MOCS.dir/MOCS_autogen/mocs_compilation.cpp.i
+.PHONY : MOCS_autogen/mocs_compilation.cpp.i
+
+MOCS_autogen/mocs_compilation.s: MOCS_autogen/mocs_compilation.cpp.s
+
+.PHONY : MOCS_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+MOCS_autogen/mocs_compilation.cpp.s:
+	$(MAKE) -f CMakeFiles/MOCS.dir/build.make CMakeFiles/MOCS.dir/MOCS_autogen/mocs_compilation.cpp.s
+.PHONY : MOCS_autogen/mocs_compilation.cpp.s
 
 Optimization_autogen/mocs_compilation.o: Optimization_autogen/mocs_compilation.cpp.o
 
@@ -162,6 +215,231 @@ Optimization_autogen/mocs_compilation.s: Optimization_autogen/mocs_compilation.c
 Optimization_autogen/mocs_compilation.cpp.s:
 	$(MAKE) -f CMakeFiles/Optimization.dir/build.make CMakeFiles/Optimization.dir/Optimization_autogen/mocs_compilation.cpp.s
 .PHONY : Optimization_autogen/mocs_compilation.cpp.s
+
+Polak_Ribiere/include/moc_FunctionInput.o: Polak_Ribiere/include/moc_FunctionInput.cpp.o
+
+.PHONY : Polak_Ribiere/include/moc_FunctionInput.o
+
+# target to build an object file
+Polak_Ribiere/include/moc_FunctionInput.cpp.o:
+	$(MAKE) -f CMakeFiles/Optimization.dir/build.make CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_FunctionInput.cpp.o
+	$(MAKE) -f CMakeFiles/MOCS.dir/build.make CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_FunctionInput.cpp.o
+.PHONY : Polak_Ribiere/include/moc_FunctionInput.cpp.o
+
+Polak_Ribiere/include/moc_FunctionInput.i: Polak_Ribiere/include/moc_FunctionInput.cpp.i
+
+.PHONY : Polak_Ribiere/include/moc_FunctionInput.i
+
+# target to preprocess a source file
+Polak_Ribiere/include/moc_FunctionInput.cpp.i:
+	$(MAKE) -f CMakeFiles/Optimization.dir/build.make CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_FunctionInput.cpp.i
+	$(MAKE) -f CMakeFiles/MOCS.dir/build.make CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_FunctionInput.cpp.i
+.PHONY : Polak_Ribiere/include/moc_FunctionInput.cpp.i
+
+Polak_Ribiere/include/moc_FunctionInput.s: Polak_Ribiere/include/moc_FunctionInput.cpp.s
+
+.PHONY : Polak_Ribiere/include/moc_FunctionInput.s
+
+# target to generate assembly for a file
+Polak_Ribiere/include/moc_FunctionInput.cpp.s:
+	$(MAKE) -f CMakeFiles/Optimization.dir/build.make CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_FunctionInput.cpp.s
+	$(MAKE) -f CMakeFiles/MOCS.dir/build.make CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_FunctionInput.cpp.s
+.PHONY : Polak_Ribiere/include/moc_FunctionInput.cpp.s
+
+Polak_Ribiere/include/moc_Graph.o: Polak_Ribiere/include/moc_Graph.cpp.o
+
+.PHONY : Polak_Ribiere/include/moc_Graph.o
+
+# target to build an object file
+Polak_Ribiere/include/moc_Graph.cpp.o:
+	$(MAKE) -f CMakeFiles/Optimization.dir/build.make CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_Graph.cpp.o
+	$(MAKE) -f CMakeFiles/MOCS.dir/build.make CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_Graph.cpp.o
+.PHONY : Polak_Ribiere/include/moc_Graph.cpp.o
+
+Polak_Ribiere/include/moc_Graph.i: Polak_Ribiere/include/moc_Graph.cpp.i
+
+.PHONY : Polak_Ribiere/include/moc_Graph.i
+
+# target to preprocess a source file
+Polak_Ribiere/include/moc_Graph.cpp.i:
+	$(MAKE) -f CMakeFiles/Optimization.dir/build.make CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_Graph.cpp.i
+	$(MAKE) -f CMakeFiles/MOCS.dir/build.make CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_Graph.cpp.i
+.PHONY : Polak_Ribiere/include/moc_Graph.cpp.i
+
+Polak_Ribiere/include/moc_Graph.s: Polak_Ribiere/include/moc_Graph.cpp.s
+
+.PHONY : Polak_Ribiere/include/moc_Graph.s
+
+# target to generate assembly for a file
+Polak_Ribiere/include/moc_Graph.cpp.s:
+	$(MAKE) -f CMakeFiles/Optimization.dir/build.make CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_Graph.cpp.s
+	$(MAKE) -f CMakeFiles/MOCS.dir/build.make CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_Graph.cpp.s
+.PHONY : Polak_Ribiere/include/moc_Graph.cpp.s
+
+Polak_Ribiere/include/moc_MainWindow.o: Polak_Ribiere/include/moc_MainWindow.cpp.o
+
+.PHONY : Polak_Ribiere/include/moc_MainWindow.o
+
+# target to build an object file
+Polak_Ribiere/include/moc_MainWindow.cpp.o:
+	$(MAKE) -f CMakeFiles/Optimization.dir/build.make CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o
+	$(MAKE) -f CMakeFiles/MOCS.dir/build.make CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o
+.PHONY : Polak_Ribiere/include/moc_MainWindow.cpp.o
+
+Polak_Ribiere/include/moc_MainWindow.i: Polak_Ribiere/include/moc_MainWindow.cpp.i
+
+.PHONY : Polak_Ribiere/include/moc_MainWindow.i
+
+# target to preprocess a source file
+Polak_Ribiere/include/moc_MainWindow.cpp.i:
+	$(MAKE) -f CMakeFiles/Optimization.dir/build.make CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_MainWindow.cpp.i
+	$(MAKE) -f CMakeFiles/MOCS.dir/build.make CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_MainWindow.cpp.i
+.PHONY : Polak_Ribiere/include/moc_MainWindow.cpp.i
+
+Polak_Ribiere/include/moc_MainWindow.s: Polak_Ribiere/include/moc_MainWindow.cpp.s
+
+.PHONY : Polak_Ribiere/include/moc_MainWindow.s
+
+# target to generate assembly for a file
+Polak_Ribiere/include/moc_MainWindow.cpp.s:
+	$(MAKE) -f CMakeFiles/Optimization.dir/build.make CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_MainWindow.cpp.s
+	$(MAKE) -f CMakeFiles/MOCS.dir/build.make CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_MainWindow.cpp.s
+.PHONY : Polak_Ribiere/include/moc_MainWindow.cpp.s
+
+Polak_Ribiere/main.o: Polak_Ribiere/main.cpp.o
+
+.PHONY : Polak_Ribiere/main.o
+
+# target to build an object file
+Polak_Ribiere/main.cpp.o:
+	$(MAKE) -f CMakeFiles/Optimization.dir/build.make CMakeFiles/Optimization.dir/Polak_Ribiere/main.cpp.o
+.PHONY : Polak_Ribiere/main.cpp.o
+
+Polak_Ribiere/main.i: Polak_Ribiere/main.cpp.i
+
+.PHONY : Polak_Ribiere/main.i
+
+# target to preprocess a source file
+Polak_Ribiere/main.cpp.i:
+	$(MAKE) -f CMakeFiles/Optimization.dir/build.make CMakeFiles/Optimization.dir/Polak_Ribiere/main.cpp.i
+.PHONY : Polak_Ribiere/main.cpp.i
+
+Polak_Ribiere/main.s: Polak_Ribiere/main.cpp.s
+
+.PHONY : Polak_Ribiere/main.s
+
+# target to generate assembly for a file
+Polak_Ribiere/main.cpp.s:
+	$(MAKE) -f CMakeFiles/Optimization.dir/build.make CMakeFiles/Optimization.dir/Polak_Ribiere/main.cpp.s
+.PHONY : Polak_Ribiere/main.cpp.s
+
+Polak_Ribiere/qrc_images.o: Polak_Ribiere/qrc_images.cpp.o
+
+.PHONY : Polak_Ribiere/qrc_images.o
+
+# target to build an object file
+Polak_Ribiere/qrc_images.cpp.o:
+	$(MAKE) -f CMakeFiles/Optimization.dir/build.make CMakeFiles/Optimization.dir/Polak_Ribiere/qrc_images.cpp.o
+.PHONY : Polak_Ribiere/qrc_images.cpp.o
+
+Polak_Ribiere/qrc_images.i: Polak_Ribiere/qrc_images.cpp.i
+
+.PHONY : Polak_Ribiere/qrc_images.i
+
+# target to preprocess a source file
+Polak_Ribiere/qrc_images.cpp.i:
+	$(MAKE) -f CMakeFiles/Optimization.dir/build.make CMakeFiles/Optimization.dir/Polak_Ribiere/qrc_images.cpp.i
+.PHONY : Polak_Ribiere/qrc_images.cpp.i
+
+Polak_Ribiere/qrc_images.s: Polak_Ribiere/qrc_images.cpp.s
+
+.PHONY : Polak_Ribiere/qrc_images.s
+
+# target to generate assembly for a file
+Polak_Ribiere/qrc_images.cpp.s:
+	$(MAKE) -f CMakeFiles/Optimization.dir/build.make CMakeFiles/Optimization.dir/Polak_Ribiere/qrc_images.cpp.s
+.PHONY : Polak_Ribiere/qrc_images.cpp.s
+
+Polak_Ribiere/sources/FunctionInput.o: Polak_Ribiere/sources/FunctionInput.cpp.o
+
+.PHONY : Polak_Ribiere/sources/FunctionInput.o
+
+# target to build an object file
+Polak_Ribiere/sources/FunctionInput.cpp.o:
+	$(MAKE) -f CMakeFiles/Optimization.dir/build.make CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.o
+.PHONY : Polak_Ribiere/sources/FunctionInput.cpp.o
+
+Polak_Ribiere/sources/FunctionInput.i: Polak_Ribiere/sources/FunctionInput.cpp.i
+
+.PHONY : Polak_Ribiere/sources/FunctionInput.i
+
+# target to preprocess a source file
+Polak_Ribiere/sources/FunctionInput.cpp.i:
+	$(MAKE) -f CMakeFiles/Optimization.dir/build.make CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.i
+.PHONY : Polak_Ribiere/sources/FunctionInput.cpp.i
+
+Polak_Ribiere/sources/FunctionInput.s: Polak_Ribiere/sources/FunctionInput.cpp.s
+
+.PHONY : Polak_Ribiere/sources/FunctionInput.s
+
+# target to generate assembly for a file
+Polak_Ribiere/sources/FunctionInput.cpp.s:
+	$(MAKE) -f CMakeFiles/Optimization.dir/build.make CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.s
+.PHONY : Polak_Ribiere/sources/FunctionInput.cpp.s
+
+Polak_Ribiere/sources/Graph.o: Polak_Ribiere/sources/Graph.cpp.o
+
+.PHONY : Polak_Ribiere/sources/Graph.o
+
+# target to build an object file
+Polak_Ribiere/sources/Graph.cpp.o:
+	$(MAKE) -f CMakeFiles/Optimization.dir/build.make CMakeFiles/Optimization.dir/Polak_Ribiere/sources/Graph.cpp.o
+.PHONY : Polak_Ribiere/sources/Graph.cpp.o
+
+Polak_Ribiere/sources/Graph.i: Polak_Ribiere/sources/Graph.cpp.i
+
+.PHONY : Polak_Ribiere/sources/Graph.i
+
+# target to preprocess a source file
+Polak_Ribiere/sources/Graph.cpp.i:
+	$(MAKE) -f CMakeFiles/Optimization.dir/build.make CMakeFiles/Optimization.dir/Polak_Ribiere/sources/Graph.cpp.i
+.PHONY : Polak_Ribiere/sources/Graph.cpp.i
+
+Polak_Ribiere/sources/Graph.s: Polak_Ribiere/sources/Graph.cpp.s
+
+.PHONY : Polak_Ribiere/sources/Graph.s
+
+# target to generate assembly for a file
+Polak_Ribiere/sources/Graph.cpp.s:
+	$(MAKE) -f CMakeFiles/Optimization.dir/build.make CMakeFiles/Optimization.dir/Polak_Ribiere/sources/Graph.cpp.s
+.PHONY : Polak_Ribiere/sources/Graph.cpp.s
+
+Polak_Ribiere/sources/MainWindow.o: Polak_Ribiere/sources/MainWindow.cpp.o
+
+.PHONY : Polak_Ribiere/sources/MainWindow.o
+
+# target to build an object file
+Polak_Ribiere/sources/MainWindow.cpp.o:
+	$(MAKE) -f CMakeFiles/Optimization.dir/build.make CMakeFiles/Optimization.dir/Polak_Ribiere/sources/MainWindow.cpp.o
+.PHONY : Polak_Ribiere/sources/MainWindow.cpp.o
+
+Polak_Ribiere/sources/MainWindow.i: Polak_Ribiere/sources/MainWindow.cpp.i
+
+.PHONY : Polak_Ribiere/sources/MainWindow.i
+
+# target to preprocess a source file
+Polak_Ribiere/sources/MainWindow.cpp.i:
+	$(MAKE) -f CMakeFiles/Optimization.dir/build.make CMakeFiles/Optimization.dir/Polak_Ribiere/sources/MainWindow.cpp.i
+.PHONY : Polak_Ribiere/sources/MainWindow.cpp.i
+
+Polak_Ribiere/sources/MainWindow.s: Polak_Ribiere/sources/MainWindow.cpp.s
+
+.PHONY : Polak_Ribiere/sources/MainWindow.s
+
+# target to generate assembly for a file
+Polak_Ribiere/sources/MainWindow.cpp.s:
+	$(MAKE) -f CMakeFiles/Optimization.dir/build.make CMakeFiles/Optimization.dir/Polak_Ribiere/sources/MainWindow.cpp.s
+.PHONY : Polak_Ribiere/sources/MainWindow.cpp.s
 
 Solver/sources/ApplicationStorage.o: Solver/sources/ApplicationStorage.cpp.o
 
@@ -683,12 +961,41 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... Optimization"
 	@echo "... edit_cache"
+	@echo "... Optimization"
+	@echo "... MOCS"
 	@echo "... Optimization_autogen"
+	@echo "... MOCS_autogen"
+	@echo "... MOCS_autogen/mocs_compilation.o"
+	@echo "... MOCS_autogen/mocs_compilation.i"
+	@echo "... MOCS_autogen/mocs_compilation.s"
 	@echo "... Optimization_autogen/mocs_compilation.o"
 	@echo "... Optimization_autogen/mocs_compilation.i"
 	@echo "... Optimization_autogen/mocs_compilation.s"
+	@echo "... Polak_Ribiere/include/moc_FunctionInput.o"
+	@echo "... Polak_Ribiere/include/moc_FunctionInput.i"
+	@echo "... Polak_Ribiere/include/moc_FunctionInput.s"
+	@echo "... Polak_Ribiere/include/moc_Graph.o"
+	@echo "... Polak_Ribiere/include/moc_Graph.i"
+	@echo "... Polak_Ribiere/include/moc_Graph.s"
+	@echo "... Polak_Ribiere/include/moc_MainWindow.o"
+	@echo "... Polak_Ribiere/include/moc_MainWindow.i"
+	@echo "... Polak_Ribiere/include/moc_MainWindow.s"
+	@echo "... Polak_Ribiere/main.o"
+	@echo "... Polak_Ribiere/main.i"
+	@echo "... Polak_Ribiere/main.s"
+	@echo "... Polak_Ribiere/qrc_images.o"
+	@echo "... Polak_Ribiere/qrc_images.i"
+	@echo "... Polak_Ribiere/qrc_images.s"
+	@echo "... Polak_Ribiere/sources/FunctionInput.o"
+	@echo "... Polak_Ribiere/sources/FunctionInput.i"
+	@echo "... Polak_Ribiere/sources/FunctionInput.s"
+	@echo "... Polak_Ribiere/sources/Graph.o"
+	@echo "... Polak_Ribiere/sources/Graph.i"
+	@echo "... Polak_Ribiere/sources/Graph.s"
+	@echo "... Polak_Ribiere/sources/MainWindow.o"
+	@echo "... Polak_Ribiere/sources/MainWindow.i"
+	@echo "... Polak_Ribiere/sources/MainWindow.s"
 	@echo "... Solver/sources/ApplicationStorage.o"
 	@echo "... Solver/sources/ApplicationStorage.i"
 	@echo "... Solver/sources/ApplicationStorage.s"

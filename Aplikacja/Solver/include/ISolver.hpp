@@ -18,6 +18,7 @@ public:
     virtual void setAlgorithmParameters() = 0;
     virtual void setFunction(const unsigned int&,const std::string&) = 0;
     virtual void computeSolution() = 0;
+    virtual bool isComplete() const = 0;
     virtual SSolution getSolution() const = 0;
 };
 

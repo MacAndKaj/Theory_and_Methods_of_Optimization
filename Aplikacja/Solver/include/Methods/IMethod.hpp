@@ -18,6 +18,7 @@ public:
     virtual void setCallbackWhenIterationDone(const std::function<void()>& callback) = 0;
     virtual void setFunction(const std::shared_ptr<FunctionWrapper>&) = 0;
     virtual void setGradient(const std::shared_ptr<GradientWrapper>&) = 0;
+    virtual bool isReadyToCompute() const = 0;
     virtual SSolution getSolution() const = 0;
 };
 

@@ -12,6 +12,7 @@ public:
         double minimalStepFunctionDifference, unsigned int maxNumberOfIterations);
     IterationMethodsParameters(const IterationMethodsParameters&);
 
+    bool isComplete() const;
     const double getError() const;
     const double getMinimalStepSize() const;
     const double getMinimalStepFunctionDifference() const;

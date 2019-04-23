@@ -25,15 +25,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        sources/mainwindow.cpp \
-        sources/graph.cpp \
-        sources/functioninput.cpp
+        sources/MainWindow.cpp \
+        sources/Graph.cpp \
+        sources/FunctionInput.cpp
 
 HEADERS += \
-        include/mainwindow.h \
-        include/graph.h \
-        include/standardfunctionsdefinitions.h \
-        include/functioninput.h
+        include/MainWindow.h \
+        include/Graph.h \
+        include/FunctionInput.h
 
 FORMS += \
         forms/mainwindow.ui \

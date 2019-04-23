@@ -1,8 +1,0 @@
-#ifndef STANDARDFUNCTIONSDEFINITIONS_H
-#define STANDARDFUNCTIONSDEFINITIONS_H
-
-#include <vector>
-#include <string>
-
-
-#endif // STANDARDFUNCTIONSDEFINITIONS_H

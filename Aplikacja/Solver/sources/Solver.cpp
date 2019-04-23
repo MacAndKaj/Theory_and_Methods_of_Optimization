@@ -3,8 +3,6 @@
 //
 #include <Solver.hpp>
 #include <Methods/PolakRibiereMethod.hpp>
-#include "ApplicationStorage.hpp"
-
 
 Solver::Solver(const std::shared_ptr<IApplicationStorage>& applicationStorage)
     : _methodType(MethodType::MethodType_Unknown)
@@ -60,5 +58,10 @@ void Solver::setFunction(const unsigned int& dimension, const std::string& funct
 void Solver::setAlgorithmParameters()
 {
 
+}
+
+bool Solver::isComplete() const
+{
+    return _methodType != MethodType::MethodType_Unknown and _method;
 }
 

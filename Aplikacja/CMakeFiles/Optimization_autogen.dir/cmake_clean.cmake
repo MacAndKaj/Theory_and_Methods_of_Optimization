@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "Optimization_autogen"
   "CMakeFiles/Optimization_autogen.dir/AutogenOldSettings.cmake"
+  "MOCS_autogen"
+  "CMakeFiles/MOCS_autogen.dir/AutogenOldSettings.cmake"
   "CMakeFiles/Optimization_autogen"
 )
 

@@ -55,7 +55,7 @@ double MinimalizeInDirectionHelper::getAlfa(const SVector& direction, const SVec
 //    auto current_gradient_point = (*_gradientWrapper->getGradientInPoint(point));
 //    double s = ((*_gradientWrapper->getGradientInPoint(point))*s_random*s_random)/
 //        (2*(*s_random+));
-    double tau = 0.8;
+    double tau = 0.7;
     SVector next_point = point + alfa * direction;
     double value_in_x0 = *_functionWrapper->operator()(point);
     double value_in_next_point = *_functionWrapper->operator()(next_point);

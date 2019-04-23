@@ -26,6 +26,8 @@ public:
     void setAlgorithmParameters() override;
     void setMethod(MethodType) override;
     void setFunction(const unsigned int&,const std::string&) override;
+
+    bool isComplete() const override;
 private:
     MethodType _methodType;
     std::shared_ptr<IMethod> _method;

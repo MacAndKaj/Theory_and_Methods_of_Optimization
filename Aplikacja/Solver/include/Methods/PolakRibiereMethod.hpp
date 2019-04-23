@@ -29,6 +29,8 @@ public:
 
     void setGradient(const std::shared_ptr<GradientWrapper>&) override;
     void setFunction(const std::shared_ptr<FunctionWrapper>&) override;
+
+    bool isReadyToCompute() const override;
 private:
     PolakRibiereMethod(const IterationMethodsParameters&, const std::vector<SVector>&);
 

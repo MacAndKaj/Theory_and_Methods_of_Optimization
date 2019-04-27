@@ -30,17 +30,17 @@ void PolakRibiereMethod::setCallbackWhenIterationDone(const std::function<void()
 
 void PolakRibiereMethod::startComputing()
 {
-    _log << "[" + std::string(__FUNCTION__) + "]| from point " +
+    _log << "I[" + std::string(__FUNCTION__) + "]| from point " +
             _solutionVector.rbegin()->toString();
     auto success = optimizationOngoing();
     if (success)
     {
-        _log << "Solution found in point " + _solutionVector.rbegin()->toString();
+        _log << "ISolution found in point " + _solutionVector.rbegin()->toString();
         problemSolved();
     }
     else
     {
-        _log << "Error while seeking a solution in point " + _solutionVector.rbegin()->toString() +
+        _log << "EError while seeking a solution in point " + _solutionVector.rbegin()->toString() +
                 " Returning...";
     }
 }
@@ -89,7 +89,7 @@ bool PolakRibiereMethod::isStopConditionFulfilled() const
 {
     if (getCurrentIteration() == _parameters.getMaxNumberOfIterations())
     {
-        _log << "[" + std::string(__FUNCTION__) + "] Too much iterations";
+        _log << "W[" + std::string(__FUNCTION__) + "] Too much iterations";
         return true;
     }
     else if (getErrorInCurrentPoint() <= _parameters.getError())
@@ -99,7 +99,7 @@ bool PolakRibiereMethod::isStopConditionFulfilled() const
         strm << getErrorInCurrentPoint()<< "<=" <<
             _parameters.getError() ;
 
-        _log << "[" + std::string(__FUNCTION__) + "] gradient error " + strm.str();
+        _log << "W[" + std::string(__FUNCTION__) + "] gradient error " + strm.str();
         return true;
     }
     else if (getLastStepSize() <= _parameters.getMinimalStepSize())
@@ -108,7 +108,7 @@ bool PolakRibiereMethod::isStopConditionFulfilled() const
         strm << getLastStepSize() << "<=" <<
             _parameters.getMinimalStepSize();
 
-        _log << "[" + std::string(__FUNCTION__) + "] step size " +strm.str();
+        _log << "W[" + std::string(__FUNCTION__) + "] step size " +strm.str();
         return true;
     }
     else if (getLastStepFunctionDifference() <= _parameters.getMinimalStepFunctionDifference())
@@ -118,7 +118,7 @@ bool PolakRibiereMethod::isStopConditionFulfilled() const
         strm << getLastStepFunctionDifference() << "<=" <<
             _parameters.getMinimalStepFunctionDifference();
 
-        _log << "[" + std::string(__FUNCTION__) + "] last function values differences " + strm.str();
+        _log << "W[" + std::string(__FUNCTION__) + "] last function values differences " + strm.str();
         return true;
     }
     return false;
@@ -163,7 +163,7 @@ double PolakRibiereMethod::getBeta(const SVector& currentG, const SVector& previ
 
     if (not up or not down)
     {
-        _log << "[" + std::string(__FUNCTION__) + "]| Problem when evaluating beta!";
+        _log << "E[" + std::string(__FUNCTION__) + "]| Problem when evaluating beta!";
         return 0;
     }
     return (*up) / (*down);

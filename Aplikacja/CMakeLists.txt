@@ -22,7 +22,8 @@ set(AUTOGEN_BUILD_DIR Polak_Ribiere/forms)
 file(GLOB MOC_UIC
         Polak_Ribiere/forms/*.ui)
 file(GLOB MOC_HEADER
-        Polak_Ribiere/include/*.h)
+        Polak_Ribiere/include/*.h
+        )
 
 qt5_wrap_cpp(HEADERS ${MOC_HEADER})
 qt5_wrap_ui(UIS  ${MOC_UIC})

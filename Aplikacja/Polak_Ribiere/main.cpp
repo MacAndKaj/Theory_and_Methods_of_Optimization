@@ -4,7 +4,7 @@
 int main(int argc, char *argv[])
 {
     Logger& log = LoggersFactory::getLoggersFactory().getLogger("Application");
-    log << "[[START]]";
+    log << "I[[START]]";
     QApplication a(argc, argv);
     QIcon icon(":/opt.png");
     MainWindow w;
@@ -14,6 +14,6 @@ int main(int argc, char *argv[])
     w.show();
 
     auto returnedValue = QApplication::exec();
-    log << "[[STOP]]"  " Returned value is " + std::to_string(returnedValue);
+    log << "I[[STOP]]"  " Returned value is " + std::to_string(returnedValue);
     return returnedValue;
 }

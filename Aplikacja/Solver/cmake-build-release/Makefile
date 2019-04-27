@@ -234,6 +234,36 @@ sources/Definitions_and_Helpers/Definitions.cpp.s:
 	$(MAKE) -f CMakeFiles/SolverTests.dir/build.make CMakeFiles/SolverTests.dir/sources/Definitions_and_Helpers/Definitions.cpp.s
 .PHONY : sources/Definitions_and_Helpers/Definitions.cpp.s
 
+sources/FunctionInPointParameters.o: sources/FunctionInPointParameters.cpp.o
+
+.PHONY : sources/FunctionInPointParameters.o
+
+# target to build an object file
+sources/FunctionInPointParameters.cpp.o:
+	$(MAKE) -f CMakeFiles/Solver.dir/build.make CMakeFiles/Solver.dir/sources/FunctionInPointParameters.cpp.o
+	$(MAKE) -f CMakeFiles/SolverTests.dir/build.make CMakeFiles/SolverTests.dir/sources/FunctionInPointParameters.cpp.o
+.PHONY : sources/FunctionInPointParameters.cpp.o
+
+sources/FunctionInPointParameters.i: sources/FunctionInPointParameters.cpp.i
+
+.PHONY : sources/FunctionInPointParameters.i
+
+# target to preprocess a source file
+sources/FunctionInPointParameters.cpp.i:
+	$(MAKE) -f CMakeFiles/Solver.dir/build.make CMakeFiles/Solver.dir/sources/FunctionInPointParameters.cpp.i
+	$(MAKE) -f CMakeFiles/SolverTests.dir/build.make CMakeFiles/SolverTests.dir/sources/FunctionInPointParameters.cpp.i
+.PHONY : sources/FunctionInPointParameters.cpp.i
+
+sources/FunctionInPointParameters.s: sources/FunctionInPointParameters.cpp.s
+
+.PHONY : sources/FunctionInPointParameters.s
+
+# target to generate assembly for a file
+sources/FunctionInPointParameters.cpp.s:
+	$(MAKE) -f CMakeFiles/Solver.dir/build.make CMakeFiles/Solver.dir/sources/FunctionInPointParameters.cpp.s
+	$(MAKE) -f CMakeFiles/SolverTests.dir/build.make CMakeFiles/SolverTests.dir/sources/FunctionInPointParameters.cpp.s
+.PHONY : sources/FunctionInPointParameters.cpp.s
+
 sources/Functions/FunctionWrapper.o: sources/Functions/FunctionWrapper.cpp.o
 
 .PHONY : sources/Functions/FunctionWrapper.o
@@ -980,6 +1010,9 @@ help:
 	@echo "... sources/Definitions_and_Helpers/Definitions.o"
 	@echo "... sources/Definitions_and_Helpers/Definitions.i"
 	@echo "... sources/Definitions_and_Helpers/Definitions.s"
+	@echo "... sources/FunctionInPointParameters.o"
+	@echo "... sources/FunctionInPointParameters.i"
+	@echo "... sources/FunctionInPointParameters.s"
 	@echo "... sources/Functions/FunctionWrapper.o"
 	@echo "... sources/Functions/FunctionWrapper.i"
 	@echo "... sources/Functions/FunctionWrapper.s"

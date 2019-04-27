@@ -83,9 +83,22 @@ CMakeFiles/SolverTests.dir/sources/Definitions_and_Helpers/Definitions.cpp.s: cm
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SolverTests.dir/sources/Definitions_and_Helpers/Definitions.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/sources/Definitions_and_Helpers/Definitions.cpp -o CMakeFiles/SolverTests.dir/sources/Definitions_and_Helpers/Definitions.cpp.s
 
+CMakeFiles/SolverTests.dir/sources/FunctionInPointParameters.cpp.o: CMakeFiles/SolverTests.dir/flags.make
+CMakeFiles/SolverTests.dir/sources/FunctionInPointParameters.cpp.o: ../sources/FunctionInPointParameters.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SolverTests.dir/sources/FunctionInPointParameters.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SolverTests.dir/sources/FunctionInPointParameters.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/sources/FunctionInPointParameters.cpp
+
+CMakeFiles/SolverTests.dir/sources/FunctionInPointParameters.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SolverTests.dir/sources/FunctionInPointParameters.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/sources/FunctionInPointParameters.cpp > CMakeFiles/SolverTests.dir/sources/FunctionInPointParameters.cpp.i
+
+CMakeFiles/SolverTests.dir/sources/FunctionInPointParameters.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SolverTests.dir/sources/FunctionInPointParameters.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/sources/FunctionInPointParameters.cpp -o CMakeFiles/SolverTests.dir/sources/FunctionInPointParameters.cpp.s
+
 CMakeFiles/SolverTests.dir/sources/Functions/FunctionWrapper.cpp.o: CMakeFiles/SolverTests.dir/flags.make
 CMakeFiles/SolverTests.dir/sources/Functions/FunctionWrapper.cpp.o: ../sources/Functions/FunctionWrapper.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SolverTests.dir/sources/Functions/FunctionWrapper.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SolverTests.dir/sources/Functions/FunctionWrapper.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SolverTests.dir/sources/Functions/FunctionWrapper.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/sources/Functions/FunctionWrapper.cpp
 
 CMakeFiles/SolverTests.dir/sources/Functions/FunctionWrapper.cpp.i: cmake_force
@@ -98,7 +111,7 @@ CMakeFiles/SolverTests.dir/sources/Functions/FunctionWrapper.cpp.s: cmake_force
 
 CMakeFiles/SolverTests.dir/sources/Functions/FunctionsFactory.cpp.o: CMakeFiles/SolverTests.dir/flags.make
 CMakeFiles/SolverTests.dir/sources/Functions/FunctionsFactory.cpp.o: ../sources/Functions/FunctionsFactory.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SolverTests.dir/sources/Functions/FunctionsFactory.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SolverTests.dir/sources/Functions/FunctionsFactory.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SolverTests.dir/sources/Functions/FunctionsFactory.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/sources/Functions/FunctionsFactory.cpp
 
 CMakeFiles/SolverTests.dir/sources/Functions/FunctionsFactory.cpp.i: cmake_force
@@ -111,7 +124,7 @@ CMakeFiles/SolverTests.dir/sources/Functions/FunctionsFactory.cpp.s: cmake_force
 
 CMakeFiles/SolverTests.dir/sources/Functions/GradientWrapper.cpp.o: CMakeFiles/SolverTests.dir/flags.make
 CMakeFiles/SolverTests.dir/sources/Functions/GradientWrapper.cpp.o: ../sources/Functions/GradientWrapper.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SolverTests.dir/sources/Functions/GradientWrapper.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SolverTests.dir/sources/Functions/GradientWrapper.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SolverTests.dir/sources/Functions/GradientWrapper.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/sources/Functions/GradientWrapper.cpp
 
 CMakeFiles/SolverTests.dir/sources/Functions/GradientWrapper.cpp.i: cmake_force
@@ -124,7 +137,7 @@ CMakeFiles/SolverTests.dir/sources/Functions/GradientWrapper.cpp.s: cmake_force
 
 CMakeFiles/SolverTests.dir/sources/Functions/HessianWrapper.cpp.o: CMakeFiles/SolverTests.dir/flags.make
 CMakeFiles/SolverTests.dir/sources/Functions/HessianWrapper.cpp.o: ../sources/Functions/HessianWrapper.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SolverTests.dir/sources/Functions/HessianWrapper.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SolverTests.dir/sources/Functions/HessianWrapper.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SolverTests.dir/sources/Functions/HessianWrapper.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/sources/Functions/HessianWrapper.cpp
 
 CMakeFiles/SolverTests.dir/sources/Functions/HessianWrapper.cpp.i: cmake_force
@@ -137,7 +150,7 @@ CMakeFiles/SolverTests.dir/sources/Functions/HessianWrapper.cpp.s: cmake_force
 
 CMakeFiles/SolverTests.dir/sources/Functions/ParserWrapper.cpp.o: CMakeFiles/SolverTests.dir/flags.make
 CMakeFiles/SolverTests.dir/sources/Functions/ParserWrapper.cpp.o: ../sources/Functions/ParserWrapper.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SolverTests.dir/sources/Functions/ParserWrapper.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/SolverTests.dir/sources/Functions/ParserWrapper.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SolverTests.dir/sources/Functions/ParserWrapper.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/sources/Functions/ParserWrapper.cpp
 
 CMakeFiles/SolverTests.dir/sources/Functions/ParserWrapper.cpp.i: cmake_force
@@ -150,7 +163,7 @@ CMakeFiles/SolverTests.dir/sources/Functions/ParserWrapper.cpp.s: cmake_force
 
 CMakeFiles/SolverTests.dir/sources/Logger/Logger.cpp.o: CMakeFiles/SolverTests.dir/flags.make
 CMakeFiles/SolverTests.dir/sources/Logger/Logger.cpp.o: ../sources/Logger/Logger.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/SolverTests.dir/sources/Logger/Logger.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/SolverTests.dir/sources/Logger/Logger.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SolverTests.dir/sources/Logger/Logger.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/sources/Logger/Logger.cpp
 
 CMakeFiles/SolverTests.dir/sources/Logger/Logger.cpp.i: cmake_force
@@ -163,7 +176,7 @@ CMakeFiles/SolverTests.dir/sources/Logger/Logger.cpp.s: cmake_force
 
 CMakeFiles/SolverTests.dir/sources/Logger/LoggersFactory.cpp.o: CMakeFiles/SolverTests.dir/flags.make
 CMakeFiles/SolverTests.dir/sources/Logger/LoggersFactory.cpp.o: ../sources/Logger/LoggersFactory.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/SolverTests.dir/sources/Logger/LoggersFactory.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/SolverTests.dir/sources/Logger/LoggersFactory.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SolverTests.dir/sources/Logger/LoggersFactory.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/sources/Logger/LoggersFactory.cpp
 
 CMakeFiles/SolverTests.dir/sources/Logger/LoggersFactory.cpp.i: cmake_force
@@ -176,7 +189,7 @@ CMakeFiles/SolverTests.dir/sources/Logger/LoggersFactory.cpp.s: cmake_force
 
 CMakeFiles/SolverTests.dir/sources/Methods/IterationMethodsParameters.cpp.o: CMakeFiles/SolverTests.dir/flags.make
 CMakeFiles/SolverTests.dir/sources/Methods/IterationMethodsParameters.cpp.o: ../sources/Methods/IterationMethodsParameters.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/SolverTests.dir/sources/Methods/IterationMethodsParameters.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/SolverTests.dir/sources/Methods/IterationMethodsParameters.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SolverTests.dir/sources/Methods/IterationMethodsParameters.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/sources/Methods/IterationMethodsParameters.cpp
 
 CMakeFiles/SolverTests.dir/sources/Methods/IterationMethodsParameters.cpp.i: cmake_force
@@ -189,7 +202,7 @@ CMakeFiles/SolverTests.dir/sources/Methods/IterationMethodsParameters.cpp.s: cma
 
 CMakeFiles/SolverTests.dir/sources/Methods/MethodsFactory.cpp.o: CMakeFiles/SolverTests.dir/flags.make
 CMakeFiles/SolverTests.dir/sources/Methods/MethodsFactory.cpp.o: ../sources/Methods/MethodsFactory.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/SolverTests.dir/sources/Methods/MethodsFactory.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/SolverTests.dir/sources/Methods/MethodsFactory.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SolverTests.dir/sources/Methods/MethodsFactory.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/sources/Methods/MethodsFactory.cpp
 
 CMakeFiles/SolverTests.dir/sources/Methods/MethodsFactory.cpp.i: cmake_force
@@ -202,7 +215,7 @@ CMakeFiles/SolverTests.dir/sources/Methods/MethodsFactory.cpp.s: cmake_force
 
 CMakeFiles/SolverTests.dir/sources/Methods/MinimalizeInDirectionHelper.cpp.o: CMakeFiles/SolverTests.dir/flags.make
 CMakeFiles/SolverTests.dir/sources/Methods/MinimalizeInDirectionHelper.cpp.o: ../sources/Methods/MinimalizeInDirectionHelper.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/SolverTests.dir/sources/Methods/MinimalizeInDirectionHelper.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/SolverTests.dir/sources/Methods/MinimalizeInDirectionHelper.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SolverTests.dir/sources/Methods/MinimalizeInDirectionHelper.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/sources/Methods/MinimalizeInDirectionHelper.cpp
 
 CMakeFiles/SolverTests.dir/sources/Methods/MinimalizeInDirectionHelper.cpp.i: cmake_force
@@ -215,7 +228,7 @@ CMakeFiles/SolverTests.dir/sources/Methods/MinimalizeInDirectionHelper.cpp.s: cm
 
 CMakeFiles/SolverTests.dir/sources/Methods/PolakRibiereMethod.cpp.o: CMakeFiles/SolverTests.dir/flags.make
 CMakeFiles/SolverTests.dir/sources/Methods/PolakRibiereMethod.cpp.o: ../sources/Methods/PolakRibiereMethod.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/SolverTests.dir/sources/Methods/PolakRibiereMethod.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/SolverTests.dir/sources/Methods/PolakRibiereMethod.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SolverTests.dir/sources/Methods/PolakRibiereMethod.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/sources/Methods/PolakRibiereMethod.cpp
 
 CMakeFiles/SolverTests.dir/sources/Methods/PolakRibiereMethod.cpp.i: cmake_force
@@ -228,7 +241,7 @@ CMakeFiles/SolverTests.dir/sources/Methods/PolakRibiereMethod.cpp.s: cmake_force
 
 CMakeFiles/SolverTests.dir/sources/SMatrix.cpp.o: CMakeFiles/SolverTests.dir/flags.make
 CMakeFiles/SolverTests.dir/sources/SMatrix.cpp.o: ../sources/SMatrix.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/SolverTests.dir/sources/SMatrix.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/SolverTests.dir/sources/SMatrix.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SolverTests.dir/sources/SMatrix.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/sources/SMatrix.cpp
 
 CMakeFiles/SolverTests.dir/sources/SMatrix.cpp.i: cmake_force
@@ -241,7 +254,7 @@ CMakeFiles/SolverTests.dir/sources/SMatrix.cpp.s: cmake_force
 
 CMakeFiles/SolverTests.dir/sources/SSolution.cpp.o: CMakeFiles/SolverTests.dir/flags.make
 CMakeFiles/SolverTests.dir/sources/SSolution.cpp.o: ../sources/SSolution.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/SolverTests.dir/sources/SSolution.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/SolverTests.dir/sources/SSolution.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SolverTests.dir/sources/SSolution.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/sources/SSolution.cpp
 
 CMakeFiles/SolverTests.dir/sources/SSolution.cpp.i: cmake_force
@@ -254,7 +267,7 @@ CMakeFiles/SolverTests.dir/sources/SSolution.cpp.s: cmake_force
 
 CMakeFiles/SolverTests.dir/sources/SVector.cpp.o: CMakeFiles/SolverTests.dir/flags.make
 CMakeFiles/SolverTests.dir/sources/SVector.cpp.o: ../sources/SVector.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/SolverTests.dir/sources/SVector.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/SolverTests.dir/sources/SVector.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SolverTests.dir/sources/SVector.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/sources/SVector.cpp
 
 CMakeFiles/SolverTests.dir/sources/SVector.cpp.i: cmake_force
@@ -267,7 +280,7 @@ CMakeFiles/SolverTests.dir/sources/SVector.cpp.s: cmake_force
 
 CMakeFiles/SolverTests.dir/sources/Solver.cpp.o: CMakeFiles/SolverTests.dir/flags.make
 CMakeFiles/SolverTests.dir/sources/Solver.cpp.o: ../sources/Solver.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/SolverTests.dir/sources/Solver.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/SolverTests.dir/sources/Solver.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SolverTests.dir/sources/Solver.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/sources/Solver.cpp
 
 CMakeFiles/SolverTests.dir/sources/Solver.cpp.i: cmake_force
@@ -280,7 +293,7 @@ CMakeFiles/SolverTests.dir/sources/Solver.cpp.s: cmake_force
 
 CMakeFiles/SolverTests.dir/sources/SymbolicOperations/PythonFileHelper.cpp.o: CMakeFiles/SolverTests.dir/flags.make
 CMakeFiles/SolverTests.dir/sources/SymbolicOperations/PythonFileHelper.cpp.o: ../sources/SymbolicOperations/PythonFileHelper.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/SolverTests.dir/sources/SymbolicOperations/PythonFileHelper.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/SolverTests.dir/sources/SymbolicOperations/PythonFileHelper.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SolverTests.dir/sources/SymbolicOperations/PythonFileHelper.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/sources/SymbolicOperations/PythonFileHelper.cpp
 
 CMakeFiles/SolverTests.dir/sources/SymbolicOperations/PythonFileHelper.cpp.i: cmake_force
@@ -293,7 +306,7 @@ CMakeFiles/SolverTests.dir/sources/SymbolicOperations/PythonFileHelper.cpp.s: cm
 
 CMakeFiles/SolverTests.dir/sources/SymbolicOperations/SymbolicOperator.cpp.o: CMakeFiles/SolverTests.dir/flags.make
 CMakeFiles/SolverTests.dir/sources/SymbolicOperations/SymbolicOperator.cpp.o: ../sources/SymbolicOperations/SymbolicOperator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/SolverTests.dir/sources/SymbolicOperations/SymbolicOperator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/SolverTests.dir/sources/SymbolicOperations/SymbolicOperator.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SolverTests.dir/sources/SymbolicOperations/SymbolicOperator.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/sources/SymbolicOperations/SymbolicOperator.cpp
 
 CMakeFiles/SolverTests.dir/sources/SymbolicOperations/SymbolicOperator.cpp.i: cmake_force
@@ -306,7 +319,7 @@ CMakeFiles/SolverTests.dir/sources/SymbolicOperations/SymbolicOperator.cpp.s: cm
 
 CMakeFiles/SolverTests.dir/tests/FunctionWrapperTests.cpp.o: CMakeFiles/SolverTests.dir/flags.make
 CMakeFiles/SolverTests.dir/tests/FunctionWrapperTests.cpp.o: ../tests/FunctionWrapperTests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/SolverTests.dir/tests/FunctionWrapperTests.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/SolverTests.dir/tests/FunctionWrapperTests.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SolverTests.dir/tests/FunctionWrapperTests.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/tests/FunctionWrapperTests.cpp
 
 CMakeFiles/SolverTests.dir/tests/FunctionWrapperTests.cpp.i: cmake_force
@@ -319,7 +332,7 @@ CMakeFiles/SolverTests.dir/tests/FunctionWrapperTests.cpp.s: cmake_force
 
 CMakeFiles/SolverTests.dir/tests/FunctionsFactoryTests.cpp.o: CMakeFiles/SolverTests.dir/flags.make
 CMakeFiles/SolverTests.dir/tests/FunctionsFactoryTests.cpp.o: ../tests/FunctionsFactoryTests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/SolverTests.dir/tests/FunctionsFactoryTests.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/SolverTests.dir/tests/FunctionsFactoryTests.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SolverTests.dir/tests/FunctionsFactoryTests.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/tests/FunctionsFactoryTests.cpp
 
 CMakeFiles/SolverTests.dir/tests/FunctionsFactoryTests.cpp.i: cmake_force
@@ -332,7 +345,7 @@ CMakeFiles/SolverTests.dir/tests/FunctionsFactoryTests.cpp.s: cmake_force
 
 CMakeFiles/SolverTests.dir/tests/GradientWrapperTests.cpp.o: CMakeFiles/SolverTests.dir/flags.make
 CMakeFiles/SolverTests.dir/tests/GradientWrapperTests.cpp.o: ../tests/GradientWrapperTests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/SolverTests.dir/tests/GradientWrapperTests.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/SolverTests.dir/tests/GradientWrapperTests.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SolverTests.dir/tests/GradientWrapperTests.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/tests/GradientWrapperTests.cpp
 
 CMakeFiles/SolverTests.dir/tests/GradientWrapperTests.cpp.i: cmake_force
@@ -345,7 +358,7 @@ CMakeFiles/SolverTests.dir/tests/GradientWrapperTests.cpp.s: cmake_force
 
 CMakeFiles/SolverTests.dir/tests/ParserWrapperTests.cpp.o: CMakeFiles/SolverTests.dir/flags.make
 CMakeFiles/SolverTests.dir/tests/ParserWrapperTests.cpp.o: ../tests/ParserWrapperTests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/SolverTests.dir/tests/ParserWrapperTests.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/SolverTests.dir/tests/ParserWrapperTests.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SolverTests.dir/tests/ParserWrapperTests.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/tests/ParserWrapperTests.cpp
 
 CMakeFiles/SolverTests.dir/tests/ParserWrapperTests.cpp.i: cmake_force
@@ -358,7 +371,7 @@ CMakeFiles/SolverTests.dir/tests/ParserWrapperTests.cpp.s: cmake_force
 
 CMakeFiles/SolverTests.dir/tests/SMatrixTests.cpp.o: CMakeFiles/SolverTests.dir/flags.make
 CMakeFiles/SolverTests.dir/tests/SMatrixTests.cpp.o: ../tests/SMatrixTests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/SolverTests.dir/tests/SMatrixTests.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/SolverTests.dir/tests/SMatrixTests.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SolverTests.dir/tests/SMatrixTests.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/tests/SMatrixTests.cpp
 
 CMakeFiles/SolverTests.dir/tests/SMatrixTests.cpp.i: cmake_force
@@ -371,7 +384,7 @@ CMakeFiles/SolverTests.dir/tests/SMatrixTests.cpp.s: cmake_force
 
 CMakeFiles/SolverTests.dir/tests/SVectorTests.cpp.o: CMakeFiles/SolverTests.dir/flags.make
 CMakeFiles/SolverTests.dir/tests/SVectorTests.cpp.o: ../tests/SVectorTests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/SolverTests.dir/tests/SVectorTests.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/SolverTests.dir/tests/SVectorTests.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SolverTests.dir/tests/SVectorTests.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/tests/SVectorTests.cpp
 
 CMakeFiles/SolverTests.dir/tests/SVectorTests.cpp.i: cmake_force
@@ -384,7 +397,7 @@ CMakeFiles/SolverTests.dir/tests/SVectorTests.cpp.s: cmake_force
 
 CMakeFiles/SolverTests.dir/tests/SolverTests.cpp.o: CMakeFiles/SolverTests.dir/flags.make
 CMakeFiles/SolverTests.dir/tests/SolverTests.cpp.o: ../tests/SolverTests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/SolverTests.dir/tests/SolverTests.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/SolverTests.dir/tests/SolverTests.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SolverTests.dir/tests/SolverTests.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/tests/SolverTests.cpp
 
 CMakeFiles/SolverTests.dir/tests/SolverTests.cpp.i: cmake_force
@@ -397,7 +410,7 @@ CMakeFiles/SolverTests.dir/tests/SolverTests.cpp.s: cmake_force
 
 CMakeFiles/SolverTests.dir/tests/SymbolicOperatorTests.cpp.o: CMakeFiles/SolverTests.dir/flags.make
 CMakeFiles/SolverTests.dir/tests/SymbolicOperatorTests.cpp.o: ../tests/SymbolicOperatorTests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/SolverTests.dir/tests/SymbolicOperatorTests.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/SolverTests.dir/tests/SymbolicOperatorTests.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SolverTests.dir/tests/SymbolicOperatorTests.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/tests/SymbolicOperatorTests.cpp
 
 CMakeFiles/SolverTests.dir/tests/SymbolicOperatorTests.cpp.i: cmake_force
@@ -412,6 +425,7 @@ CMakeFiles/SolverTests.dir/tests/SymbolicOperatorTests.cpp.s: cmake_force
 SolverTests_OBJECTS = \
 "CMakeFiles/SolverTests.dir/sources/ApplicationStorage.cpp.o" \
 "CMakeFiles/SolverTests.dir/sources/Definitions_and_Helpers/Definitions.cpp.o" \
+"CMakeFiles/SolverTests.dir/sources/FunctionInPointParameters.cpp.o" \
 "CMakeFiles/SolverTests.dir/sources/Functions/FunctionWrapper.cpp.o" \
 "CMakeFiles/SolverTests.dir/sources/Functions/FunctionsFactory.cpp.o" \
 "CMakeFiles/SolverTests.dir/sources/Functions/GradientWrapper.cpp.o" \
@@ -443,6 +457,7 @@ SolverTests_EXTERNAL_OBJECTS =
 
 ../build/SolverTests: CMakeFiles/SolverTests.dir/sources/ApplicationStorage.cpp.o
 ../build/SolverTests: CMakeFiles/SolverTests.dir/sources/Definitions_and_Helpers/Definitions.cpp.o
+../build/SolverTests: CMakeFiles/SolverTests.dir/sources/FunctionInPointParameters.cpp.o
 ../build/SolverTests: CMakeFiles/SolverTests.dir/sources/Functions/FunctionWrapper.cpp.o
 ../build/SolverTests: CMakeFiles/SolverTests.dir/sources/Functions/FunctionsFactory.cpp.o
 ../build/SolverTests: CMakeFiles/SolverTests.dir/sources/Functions/GradientWrapper.cpp.o
@@ -470,7 +485,7 @@ SolverTests_EXTERNAL_OBJECTS =
 ../build/SolverTests: CMakeFiles/SolverTests.dir/tests/SymbolicOperatorTests.cpp.o
 ../build/SolverTests: CMakeFiles/SolverTests.dir/build.make
 ../build/SolverTests: CMakeFiles/SolverTests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Linking CXX executable ../build/SolverTests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Linking CXX executable ../build/SolverTests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SolverTests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

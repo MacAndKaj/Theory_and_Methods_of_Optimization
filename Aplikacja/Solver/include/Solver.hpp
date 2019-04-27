@@ -10,6 +10,7 @@
 #include <Logger/LoggersFactory.hpp>
 #include "ISolver.hpp"
 #include <Functions/FunctionsFactory.hpp>
+#include <Solver/include/Methods/IterationMethodsParameters.hpp>
 
 class IMethod;
 class IApplicationStorage;
@@ -23,7 +24,7 @@ public:
 
     SSolution getSolution() const override;
 
-    void setAlgorithmParameters() override;
+    void setAlgorithmParameters(const IterationMethodsParameters&) override;
     void setMethod(MethodType) override;
     void setFunction(const unsigned int&,const std::string&) override;
 

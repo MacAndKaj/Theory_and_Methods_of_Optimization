@@ -25,7 +25,7 @@ void FunctionWrapper::addSymbols(const std::vector<std::pair<std::string, double
         _symbolTable.add_variable(nameAndValue.first, *symbolIterator);
         symbolIterator++;
     }
-    _log << "["+std::string(__FUNCTION__) + "] operation succedded!";
+    _log << "I["+std::string(__FUNCTION__) + "] operation succedded!";
 }
 
 exprtk::expression<double>& FunctionWrapper::configAndGetExpression(const std::string& exprStr)
@@ -39,7 +39,7 @@ std::optional<double> FunctionWrapper::operator()(const SVector& point)
 {
     if (point.getSize() != _symbols.size()) {
         std::stringstream strm;
-        strm << "| Computing value of function f(x)=" << _expressionString << " failed!";
+        strm << "E| Computing value of function f(x)=" << _expressionString << " failed!";
         _log << strm.str();
         return std::optional<double>();
     }

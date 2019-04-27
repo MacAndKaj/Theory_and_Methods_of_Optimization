@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/SolverTests.dir/sources/ApplicationStorage.cpp.o"
   "CMakeFiles/SolverTests.dir/sources/Definitions_and_Helpers/Definitions.cpp.o"
+  "CMakeFiles/SolverTests.dir/sources/FunctionInPointParameters.cpp.o"
   "CMakeFiles/SolverTests.dir/sources/Functions/FunctionWrapper.cpp.o"
   "CMakeFiles/SolverTests.dir/sources/Functions/FunctionsFactory.cpp.o"
   "CMakeFiles/SolverTests.dir/sources/Functions/GradientWrapper.cpp.o"

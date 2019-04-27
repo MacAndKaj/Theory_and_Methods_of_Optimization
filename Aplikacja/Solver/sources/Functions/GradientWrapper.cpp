@@ -13,7 +13,7 @@ GradientWrapper::GradientWrapper(const std::shared_ptr<FunctionWrapper>& functio
     : _log(LoggersFactory::getLoggersFactory()
                .getLogger("GradientWrapper[" + function->getExpressionString() + "]"))
 {
-    _log << "["+std::string(__FUNCTION__) + "]| Generating gradient for function f(x)=" +
+    _log << "I["+std::string(__FUNCTION__) + "]| Generating gradient for function f(x)=" +
             function->getExpressionString();
     _originalFunction = function->getExpressionString();
     _gradientVector = applicationStorage->getSymbolicOperator()->getDerivatives(function);
@@ -23,7 +23,7 @@ std::optional<SVector> GradientWrapper::getGradientInPoint(const SVector& point)
 {
     if (point.getSize() != _gradientVector.size())
     {
-        _log << "Point dimension or gradient size not correct!";
+        _log << "EPoint dimension or gradient size not correct!";
         return {};
     }
     std::vector<double> _computedGradient;
@@ -33,7 +33,7 @@ std::optional<SVector> GradientWrapper::getGradientInPoint(const SVector& point)
         auto gradientItemInPoint = item->operator ()(point);
         if (not gradientItemInPoint)
         {
-            _log << "Problem when extracting value of gradient by one of the variables in point!";
+            _log << "EProblem when extracting value of gradient by one of the variables in point!";
             return SVector();
         }
         _computedGradient.push_back(*gradientItemInPoint);

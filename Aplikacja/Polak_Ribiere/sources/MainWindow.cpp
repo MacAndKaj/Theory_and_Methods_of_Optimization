@@ -6,8 +6,6 @@
 #include <MainWindow.h>
 #include <FunctionInput.h>
 #include <Graph.h>
-#include <Solver.hpp>
-#include <ApplicationStorage.hpp>
 
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent)
@@ -16,12 +14,10 @@ MainWindow::MainWindow(QWidget* parent)
 {
     _ui->setupUi(this);
     _ui->progressBar_computing->hide();
-    _applicationStorage = std::make_shared<ApplicationStorage>();
-    _solver = std::make_unique<Solver>(_applicationStorage);
     _ui->pushButton_chooseFunction->setDisabled(true);
     _ui->pushButton_start->setDisabled(true);
 
-    connect(_ui->pushButton_start,&QPushButton::clicked,this, &MainWindow::startClicked);
+    connect(_ui->pushButton_start, &QPushButton::clicked, this, &MainWindow::startClicked);
     setupComboBox();
 }
 
@@ -50,8 +46,8 @@ void MainWindow::setFunction(const std::string& function)
 
     std::stringstream strm;
     strm << __FUNCTION__ << " to " << function << " with dimension " << dimension;
-    _log << strm.str();
-    _solver->setFunction(dimension, function);
+    _log << 'I' + strm.str();
+    _solver.setFunction(dimension, function);
 }
 
 void MainWindow::on_pushButton_StopShow_clicked()
@@ -69,8 +65,7 @@ void MainWindow::on_pushButton_chooseFunction_clicked()
 
 void MainWindow::startClicked()
 {
-    _ui->listWidget->addItems({"first item","second item"});
-    QT
+    _ui->listWidget->addItems({"first item", "second item"});
 }
 
 void MainWindow::startComputing()
@@ -87,7 +82,8 @@ void MainWindow::setupComboBox()
 
     _ui->comboBox_methods->setCurrentIndex(0);
     connect(_ui->comboBox_methods, SIGNAL(currentIndexChanged(int)),
-            this, SLOT(currentMethodChanged(int)));
+        this, SLOT(currentMethodChanged(int)));
+    _log << 'I' + std::string(__FUNCTION__) + " succesfully!";
 }
 
 void MainWindow::currentMethodChanged(int index)
@@ -97,9 +93,11 @@ void MainWindow::currentMethodChanged(int index)
         _ui->pushButton_chooseFunction->setDisabled(true);
         _ui->pushButton_start->setDisabled(true);
     }
-    else if(not _ui->pushButton_chooseFunction->isEnabled())
+    else if (not _ui->pushButton_chooseFunction->isEnabled())
     {
         _ui->pushButton_chooseFunction->setDisabled(false);
         _ui->pushButton_start->setDisabled(false);
     }
+    _solver.setMethod(methodsMap[index].second);
+    _log << std::string(__FUNCTION__) + " to " + methodsMap[index].first.toStdString();
 }

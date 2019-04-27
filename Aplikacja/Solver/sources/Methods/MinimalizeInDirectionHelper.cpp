@@ -45,7 +45,7 @@ double MinimalizeInDirectionHelper::getAlfa(const SVector& direction, const SVec
 {
     if (not _functionWrapper or not _gradientWrapper)
     {
-        _log << "[" + std::string(__FUNCTION__) + "]| Lack of function or its gradient!!!";
+        _log << "E[" + std::string(__FUNCTION__) + "]| Lack of function or its gradient!!!";
         return 0;
     }
 
@@ -67,7 +67,7 @@ double MinimalizeInDirectionHelper::getAlfa(const SVector& direction, const SVec
         value_in_next_point = *_functionWrapper->operator()(next_point);
         stepSize = (next_point-point).getCartesianNorm();
     }
-    _log << "[" + std::string(__FUNCTION__) + "] Alfa found in point " + point.toString() +
+    _log << "I[" + std::string(__FUNCTION__) + "] Alfa found in point " + point.toString() +
             " Is equal to " + std::to_string(alfa);
 
     return alfa;

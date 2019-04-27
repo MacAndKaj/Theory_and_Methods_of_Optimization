@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Solver.dir/main.cpp.o"
   "CMakeFiles/Solver.dir/sources/ApplicationStorage.cpp.o"
   "CMakeFiles/Solver.dir/sources/Definitions_and_Helpers/Definitions.cpp.o"
+  "CMakeFiles/Solver.dir/sources/FunctionInPointParameters.cpp.o"
   "CMakeFiles/Solver.dir/sources/Functions/FunctionWrapper.cpp.o"
   "CMakeFiles/Solver.dir/sources/Functions/FunctionsFactory.cpp.o"
   "CMakeFiles/Solver.dir/sources/Functions/GradientWrapper.cpp.o"

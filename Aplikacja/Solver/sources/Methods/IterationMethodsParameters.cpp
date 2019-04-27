@@ -4,6 +4,7 @@
 
 #include <Methods/IterationMethodsParameters.hpp>
 #include <algorithm>
+#include <Solver/include/Methods/IterationMethodsParameters.hpp>
 
 #include "Methods/IterationMethodsParameters.hpp"
 
@@ -44,3 +45,4 @@ const unsigned int IterationMethodsParameters::getMaxNumberOfIterations() const
 {
     return _maxNumberOfIterations;
 }
+

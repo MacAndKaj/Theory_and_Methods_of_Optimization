@@ -161,6 +161,10 @@
 			<Option target="Solver"/>
 			<Option target="SolverTests"/>
 		</Unit>
+		<Unit filename="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/sources/FunctionInPointParameters.cpp">
+			<Option target="Solver"/>
+			<Option target="SolverTests"/>
+		</Unit>
 		<Unit filename="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/sources/Functions/FunctionWrapper.cpp">
 			<Option target="Solver"/>
 			<Option target="SolverTests"/>

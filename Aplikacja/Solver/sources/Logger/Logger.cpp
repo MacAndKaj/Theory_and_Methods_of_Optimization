@@ -28,7 +28,29 @@ Logger& Logger::operator <<(const std::string& msg)
     }
     else if (not msg.empty() and _log)
     {
-        _log->info(msg);
+        auto type = msg[0];
+        auto msgIterator = msg.begin();
+        if (type == 'D' or type == 'W' or type == 'I' or type == 'E')
+        {
+            ++msgIterator;
+        }
+        auto message = std::string{msgIterator,msg.end()};
+        if(type == 'I')
+        {
+            _log->info(message);
+        }
+        else if(type =='W')
+        {
+            _log->warn(message);
+        }
+        else if(type =='E')
+        {
+            _log->error(message);
+        }
+        else
+        {
+            _log->debug(message);
+        }
     }
 
     return *this;

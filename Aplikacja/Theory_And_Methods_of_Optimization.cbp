@@ -256,6 +256,12 @@
 			<Option target="Optimization"/>
 			<Option target="MOCS"/>
 		</Unit>
+		<Unit filename="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/moc_SolverWrapper.cpp">
+			<Option target="MOCS"/>
+		</Unit>
+		<Unit filename="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/moc_SolverWrapper.cpp.rule">
+			<Option target="MOCS"/>
+		</Unit>
 		<Unit filename="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/main.cpp">
 			<Option target="Optimization"/>
 		</Unit>
@@ -271,10 +277,16 @@
 		<Unit filename="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/sources/MainWindow.cpp">
 			<Option target="Optimization"/>
 		</Unit>
+		<Unit filename="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/sources/SolverWrapper.cpp">
+			<Option target="Optimization"/>
+		</Unit>
 		<Unit filename="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/sources/ApplicationStorage.cpp">
 			<Option target="Optimization"/>
 		</Unit>
 		<Unit filename="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/sources/Definitions_and_Helpers/Definitions.cpp">
+			<Option target="Optimization"/>
+		</Unit>
+		<Unit filename="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/sources/FunctionInPointParameters.cpp">
 			<Option target="Optimization"/>
 		</Unit>
 		<Unit filename="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Solver/sources/Functions/FunctionWrapper.cpp">

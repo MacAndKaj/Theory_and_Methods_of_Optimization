@@ -24,11 +24,11 @@ ParserWrapper::parseToFunction(unsigned int dimension, const std::string& expr)
     wrapper->addSymbols(namesAndValues);
     if (not _parser.compile(expr, wrapper->configAndGetExpression(expr)))
     {
-        _log << "[" + std::string(__FUNCTION__) + "]| Error! " + _parser.error() + " " +
+        _log << "E[" + std::string(__FUNCTION__) + "]| " + _parser.error() + " " +
                 wrapper->getExpressionString();
     }
     std::stringstream strm;
-    strm << "[" << __FUNCTION__ << "]| Succedded for function f(x)=" << expr;
+    strm << "I[" << __FUNCTION__ << "]| Succedded for function f(x)=" << expr;
     _log << strm.str();
     return wrapper;
 }

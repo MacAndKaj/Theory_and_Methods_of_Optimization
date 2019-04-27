@@ -9,7 +9,7 @@ Solver::Solver(const std::shared_ptr<IApplicationStorage>& applicationStorage)
     , _log(LoggersFactory::getLoggersFactory().getLogger("Solver"))
 {
     _applicationStorage = applicationStorage;
-    _log << "Generating Solver";
+    _log << "IGenerating Solver";
 }
 
 void Solver::setMethod(MethodType methodType)
@@ -18,12 +18,14 @@ void Solver::setMethod(MethodType methodType)
     if (_methodType == MethodType::MethodType_PolakRibiere)
     {
         std::stringstream strm;
-        strm << "[" << __FUNCTION__ << "] to: " << methodType;
+        strm << "I[" << __FUNCTION__ << "] to: " << methodType;
         _log << strm.str();
     }
     else
     {
-
+        std::stringstream strm;
+        strm << "I[" << __FUNCTION__ << " Unknown method";
+        _log << strm.str();
     }
 }
 
@@ -31,10 +33,10 @@ void Solver::computeSolution()
 {
     if(not _method)
     {
-        _log << "["+std::string(__FUNCTION__) + "] WARNING! Method not set, returning!";
+        _log << "E["+std::string(__FUNCTION__) + "] WARNING! Method not set, returning!";
         return;
     }
-//    std::thread computingThread(&PolakRibiereMethod::startComputing,*_method);
+    computeSolution();
 }
 
 SSolution Solver::getSolution() const
@@ -47,7 +49,7 @@ void Solver::setFunction(const unsigned int& dimension, const std::string& funct
     if (not _method)
     {
         std::stringstream strm;
-        strm << "[" << __FUNCTION__ << "]Method not set! Function " << function << " not set! Returning...";
+        strm << "E[" << __FUNCTION__ << "]Method not set! Function " << function << " not set! Returning...";
         _log << strm.str();
         return;
     }
@@ -55,8 +57,15 @@ void Solver::setFunction(const unsigned int& dimension, const std::string& funct
     _method->setFunction(functionWrapper);
 }
 
-void Solver::setAlgorithmParameters()
+void Solver::setAlgorithmParameters(const IterationMethodsParameters& parameters)
 {
+    if(or not _method)
+    {
+        std::stringstream strm;
+        strm << "E[" << __FUNCTION__ << "] Method is not set";
+        _log << strm.str();
+        return;
+    }
 
 }
 

@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/moc_FunctionInput.cpp" "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_FunctionInput.cpp.o"
   "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/moc_Graph.cpp" "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_Graph.cpp.o"
   "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/moc_MainWindow.cpp" "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o"
+  "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/moc_SolverWrapper.cpp" "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_SolverWrapper.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

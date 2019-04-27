@@ -73,7 +73,7 @@ double SVector::x(unsigned int&& index) const
 {
     if (_vector.size() < index)
     {
-        _log << "Index is out of range for vector!";
+        _log << "EIndex is out of range for vector!";
         return 0;
     }
     return _vector[index - 1];

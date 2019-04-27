@@ -219,6 +219,7 @@ CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_Graph.cpp.o
  /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qwidget.h
 CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o
  /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/MainWindow.h
+ /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/SolverWrapper.h
  /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/moc_MainWindow.cpp
  /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qalgorithms.h
  /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qarraydata.h
@@ -320,12 +321,144 @@ CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o
  /home/maciek/Qt/5.11.2/gcc_64/include/QtGui/qwindowdefs.h
  /home/maciek/Qt/5.11.2/gcc_64/include/QtGui/qwindowdefs_win.h
  /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QMainWindow
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QWidget
  /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qmainwindow.h
  /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qsizepolicy.h
  /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qtabwidget.h
  /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qtwidgets-config.h
  /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qtwidgetsglobal.h
  /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qwidget.h
+ Solver/include/ApplicationStorage.hpp
  Solver/include/Definitions_and_Helpers/Definitions.hpp
+ Solver/include/FunctionInPointParameters.hpp
+ Solver/include/Functions/FunctionWrapper.hpp
+ Solver/include/Functions/FunctionsFactory.hpp
+ Solver/include/Functions/IFunctionsFactory.hpp
+ Solver/include/Functions/Parser/exprtk.hpp
+ Solver/include/Functions/ParserWrapper.hpp
+ Solver/include/IApplicationStorage.hpp
+ Solver/include/ISolver.hpp
  Solver/include/Logger/Logger.hpp
  Solver/include/Logger/LoggersFactory.hpp
+ Solver/include/SVector.hpp
+ Solver/include/Solver.hpp
+CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_SolverWrapper.cpp.o
+ /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/SolverWrapper.h
+ /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/moc_SolverWrapper.cpp
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qalgorithms.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qarraydata.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qatomic.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qatomic_bootstrap.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qatomic_cxx11.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qatomic_msvc.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qbasicatomic.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qbytearray.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qbytearraylist.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qchar.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qcompilerdetection.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qconfig-bootstrapped.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qconfig.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qcontainerfwd.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qcontiguouscache.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qcoreevent.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qdatastream.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qdebug.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qfile.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qfiledevice.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qflags.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qgenericatomic.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qglobal.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qglobalstatic.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qhash.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qhashfunctions.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qiodevice.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qiterator.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qline.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qlist.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qlocale.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qlogging.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qmap.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qmargins.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qmetatype.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qmutex.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qnamespace.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qnumeric.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qobject.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qobject_impl.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qobjectdefs.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qobjectdefs_impl.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qpair.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qpoint.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qprocessordetection.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qrect.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qrefcount.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qregexp.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qscopedpointer.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qset.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qshareddata.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qsharedpointer.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qsharedpointer_impl.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qsize.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qstring.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qstringalgorithms.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qstringbuilder.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qstringlist.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qstringliteral.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qstringmatcher.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qstringview.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qsysinfo.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qsystemdetection.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qtcore-config.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qtextstream.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qtypeinfo.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qurl.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qurlquery.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qvariant.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qvarlengtharray.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qvector.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtCore/qversiontagging.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtGui/qbrush.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtGui/qcolor.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtGui/qcursor.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtGui/qevent.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtGui/qfont.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtGui/qfontinfo.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtGui/qfontmetrics.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtGui/qimage.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtGui/qkeysequence.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtGui/qmatrix.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtGui/qpaintdevice.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtGui/qpainterpath.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtGui/qpalette.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtGui/qpixelformat.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtGui/qpixmap.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtGui/qpolygon.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtGui/qregion.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtGui/qrgb.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtGui/qrgba64.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtGui/qtgui-config.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtGui/qtguiglobal.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtGui/qtouchdevice.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtGui/qtransform.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtGui/qvector2d.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtGui/qwindowdefs.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtGui/qwindowdefs_win.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QWidget
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qsizepolicy.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qtwidgets-config.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qtwidgetsglobal.h
+ /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qwidget.h
+ Solver/include/ApplicationStorage.hpp
+ Solver/include/Definitions_and_Helpers/Definitions.hpp
+ Solver/include/FunctionInPointParameters.hpp
+ Solver/include/Functions/FunctionWrapper.hpp
+ Solver/include/Functions/FunctionsFactory.hpp
+ Solver/include/Functions/IFunctionsFactory.hpp
+ Solver/include/Functions/Parser/exprtk.hpp
+ Solver/include/Functions/ParserWrapper.hpp
+ Solver/include/IApplicationStorage.hpp
+ Solver/include/ISolver.hpp
+ Solver/include/Logger/Logger.hpp
+ Solver/include/Logger/LoggersFactory.hpp
+ Solver/include/SVector.hpp
+ Solver/include/Solver.hpp

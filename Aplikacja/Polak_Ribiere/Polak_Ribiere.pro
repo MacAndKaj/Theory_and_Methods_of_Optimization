@@ -35,9 +35,9 @@ HEADERS += \
         include/FunctionInput.h
 
 FORMS += \
-        forms/mainwindow.ui \
-        forms/graph.ui \
-        forms/functioninput.ui
+        forms/mainwindow._ui \
+        forms/graph._ui \
+        forms/functioninput._ui
 
 MOC_DIR = forms
 

@@ -5,7 +5,7 @@
 #ifndef SOLVER_LOGGER_HPP
 #define SOLVER_LOGGER_HPP
 
-#include <spdlog/logger.h>
+#include <spdlog/sinks/basic_file_sink.h>
 
 class LoggersFactory;
 
@@ -15,7 +15,7 @@ public:
     Logger() = delete;
     Logger& operator <<(const std::string&);
 private:
-    explicit Logger(const std::string&);
+    Logger(const std::string&, const std::shared_ptr<spdlog::sinks::basic_file_sink_mt>&);
 
     bool _loggingEnabled;
     std::shared_ptr<spdlog::logger> _log;

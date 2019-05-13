@@ -12,20 +12,19 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDoubleSpinBox>
 #include <QtWidgets/QFormLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
-#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpinBox>
+#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -39,6 +38,8 @@ public:
     QVBoxLayout *verticalLayout_3;
     QComboBox *comboBox_methods;
     QPushButton *pushButton_chooseFunction;
+    QLabel *label_chosenFunction;
+    QHBoxLayout *horizontalLayout_5;
     QHBoxLayout *horizontalLayout_3;
     QFormLayout *formLayout;
     QLineEdit *lineEdit_ValueError;
@@ -49,16 +50,15 @@ public:
     QLabel *label_stepsError;
     QDoubleSpinBox *doubleSpinBox_armijo;
     QLabel *label_armijoError;
-    QListWidget *listWidget;
+    QTextBrowser *textBrowser;
     QProgressBar *progressBar_computing;
     QHBoxLayout *horizontalLayout;
     QHBoxLayout *horizontalLayout_2;
     QHBoxLayout *horizontalLayout_4;
     QLabel *label_numberOfIterations;
     QSpinBox *spinBox_iterations;
-    QCheckBox *checkBox;
     QPushButton *pushButton_start;
-    QPushButton *pushButton_StopShow;
+    QPushButton *pushButton_show;
     QPushButton *pushButton_quit;
     QMenuBar *menuBar;
     QMenu *menu_File;
@@ -88,6 +88,22 @@ public:
         pushButton_chooseFunction->setObjectName(QStringLiteral("pushButton_chooseFunction"));
 
         verticalLayout_3->addWidget(pushButton_chooseFunction);
+
+        label_chosenFunction = new QLabel(centralWidget);
+        label_chosenFunction->setObjectName(QStringLiteral("label_chosenFunction"));
+        label_chosenFunction->setFrameShape(QFrame::Box);
+        label_chosenFunction->setFrameShadow(QFrame::Raised);
+        label_chosenFunction->setLineWidth(4);
+        label_chosenFunction->setAlignment(Qt::AlignCenter);
+        label_chosenFunction->setTextInteractionFlags(Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse);
+
+        verticalLayout_3->addWidget(label_chosenFunction);
+
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setSpacing(6);
+        horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
+
+        verticalLayout_3->addLayout(horizontalLayout_5);
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setSpacing(6);
@@ -159,11 +175,10 @@ public:
 
         horizontalLayout_3->addLayout(formLayout);
 
-        listWidget = new QListWidget(centralWidget);
-        new QListWidgetItem(listWidget);
-        listWidget->setObjectName(QStringLiteral("listWidget"));
+        textBrowser = new QTextBrowser(centralWidget);
+        textBrowser->setObjectName(QStringLiteral("textBrowser"));
 
-        horizontalLayout_3->addWidget(listWidget);
+        horizontalLayout_3->addWidget(textBrowser);
 
 
         verticalLayout_3->addLayout(horizontalLayout_3);
@@ -198,22 +213,16 @@ public:
 
         horizontalLayout_2->addWidget(spinBox_iterations);
 
-        checkBox = new QCheckBox(centralWidget);
-        checkBox->setObjectName(QStringLiteral("checkBox"));
-        checkBox->setEnabled(false);
-        checkBox->setTristate(false);
-
-        horizontalLayout_2->addWidget(checkBox);
-
         pushButton_start = new QPushButton(centralWidget);
         pushButton_start->setObjectName(QStringLiteral("pushButton_start"));
 
         horizontalLayout_2->addWidget(pushButton_start);
 
-        pushButton_StopShow = new QPushButton(centralWidget);
-        pushButton_StopShow->setObjectName(QStringLiteral("pushButton_StopShow"));
+        pushButton_show = new QPushButton(centralWidget);
+        pushButton_show->setObjectName(QStringLiteral("pushButton_show"));
+        pushButton_show->setEnabled(true);
 
-        horizontalLayout_2->addWidget(pushButton_StopShow);
+        horizontalLayout_2->addWidget(pushButton_show);
 
         pushButton_quit = new QPushButton(centralWidget);
         pushButton_quit->setObjectName(QStringLiteral("pushButton_quit"));
@@ -257,6 +266,7 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
         actionactionExit->setText(QApplication::translate("MainWindow", "Exit", nullptr));
         pushButton_chooseFunction->setText(QApplication::translate("MainWindow", "Choose a function", nullptr));
+        label_chosenFunction->setText(QString());
         lineEdit_ValueError->setText(QApplication::translate("MainWindow", "1e-5", nullptr));
         label_gradientError->setText(QApplication::translate("MainWindow", "Gradient error", nullptr));
 #ifndef QT_NO_TOOLTIP
@@ -267,17 +277,9 @@ public:
         lineEdit_StepError->setText(QApplication::translate("MainWindow", "1e-5", nullptr));
         label_stepsError->setText(QApplication::translate("MainWindow", "Steps error", nullptr));
         label_armijoError->setText(QApplication::translate("MainWindow", "Minimalization in direction parameter", nullptr));
-
-        const bool __sortingEnabled = listWidget->isSortingEnabled();
-        listWidget->setSortingEnabled(false);
-        QListWidgetItem *___qlistwidgetitem = listWidget->item(0);
-        ___qlistwidgetitem->setText(QApplication::translate("MainWindow", "Start", nullptr));
-        listWidget->setSortingEnabled(__sortingEnabled);
-
         label_numberOfIterations->setText(QApplication::translate("MainWindow", "Number of Iterations", nullptr));
-        checkBox->setText(QApplication::translate("MainWindow", "Visualisation", nullptr));
         pushButton_start->setText(QApplication::translate("MainWindow", "Start", nullptr));
-        pushButton_StopShow->setText(QApplication::translate("MainWindow", "Stop", nullptr));
+        pushButton_show->setText(QApplication::translate("MainWindow", "Show Graphical Solution", nullptr));
         pushButton_quit->setText(QApplication::translate("MainWindow", "Quit", nullptr));
         menu_File->setTitle(QApplication::translate("MainWindow", "File", nullptr));
         menu_View->setTitle(QApplication::translate("MainWindow", "View", nullptr));

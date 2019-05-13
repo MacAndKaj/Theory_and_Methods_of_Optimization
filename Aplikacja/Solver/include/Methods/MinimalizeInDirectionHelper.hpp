@@ -20,13 +20,15 @@ class MinimalizeInDirectionHelper
 public:
     MinimalizeInDirectionHelper();
     MinimalizeInDirectionHelper(const std::shared_ptr<FunctionWrapper>&,
-        const std::shared_ptr<GradientWrapper>&, double minStepSize);
+        const std::shared_ptr<GradientWrapper>&, double minStepSize,double tau);
     void setFunctionWrapper(const std::shared_ptr<FunctionWrapper>&);
     void setGradientWrapper(const std::shared_ptr<GradientWrapper>&);
     void setMinStepSize(double minStepSize);
+    void setTau(double tau);
     double getAlfa(const SVector&, const SVector&);
 private:
     double _minStepSize{1e-5};
+    double _tau;
 
     std::shared_ptr<FunctionWrapper> _functionWrapper;
     std::shared_ptr<GradientWrapper> _gradientWrapper;

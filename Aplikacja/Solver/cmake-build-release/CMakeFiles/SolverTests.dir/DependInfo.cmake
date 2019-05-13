@@ -40,7 +40,6 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../include"
   "../include/SymbolicOperations/headers"
   "../tests"
-  "/usr/local/include"
   )
 
 # Targets to which this target links.

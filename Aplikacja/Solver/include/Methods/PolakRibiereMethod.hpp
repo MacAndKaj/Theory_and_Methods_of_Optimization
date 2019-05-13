@@ -14,6 +14,7 @@
 
 class FunctionWrapper;
 class GradientWrapper;
+class FunctionInPointParameters;
 
 class PolakRibiereMethod : public IMethod
 {
@@ -25,18 +26,17 @@ public:
     PolakRibiereMethod(const PolakRibiereMethod&) = delete;
 
     void startComputing() override;
-    void setCallbackWhenIterationDone(const std::function<void()>&) override;
+    void setCallbackWhenIterationDone(const std::function<void(FunctionInPointParameters)>&) override;
 
     void setGradient(const std::shared_ptr<GradientWrapper>&) override;
     void setFunction(const std::shared_ptr<FunctionWrapper>&) override;
 
     bool isReadyToCompute() const override;
 private:
-    PolakRibiereMethod(const IterationMethodsParameters&, const std::vector<SVector>&);
+    PolakRibiereMethod(const IterationMethodsParameters&, std::shared_ptr<SSolution>);
 
 //--stop condition checking
     bool isStopConditionFulfilled() const;
-    void updateParameters();
     double getLastStepSize() const;
     double getErrorInCurrentPoint() const;
     double getLastStepFunctionDifference() const;
@@ -49,11 +49,10 @@ private:
     void problemSolved();
 
     unsigned int _currentIteration;
-    SVector _currentGradient;
 
 //--solution _trace including [x_0,x_1,...,x_n -> x_d]
-    std::function<void()> _callback;
-    std::vector<SVector> _solutionVector;
+    std::function<void(FunctionInPointParameters)> _callback;
+    std::shared_ptr<SSolution> _solutionVector;
     std::shared_ptr<FunctionWrapper> _function;
     std::shared_ptr<GradientWrapper> _gradient;
     IterationMethodsParameters _parameters;

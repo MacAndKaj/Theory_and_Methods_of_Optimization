@@ -10,12 +10,14 @@
 #define IMETHODS_FRIENDSHIP friend class MethodsFactory;
 class FunctionWrapper;
 class GradientWrapper;
+class FunctionInPointParameters;
 
 class IMethod
 {
 public:
     virtual void startComputing() = 0;
-    virtual void setCallbackWhenIterationDone(const std::function<void()>& callback) = 0;
+    virtual void setCallbackWhenIterationDone(
+        const std::function<void(FunctionInPointParameters)>& callback) = 0;
     virtual void setFunction(const std::shared_ptr<FunctionWrapper>&) = 0;
     virtual void setGradient(const std::shared_ptr<GradientWrapper>&) = 0;
     virtual bool isReadyToCompute() const = 0;

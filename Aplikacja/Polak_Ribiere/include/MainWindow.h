@@ -3,25 +3,24 @@
 
 #include <memory>
 #include <QMainWindow>
-
 #include <Logger/LoggersFactory.hpp>
 #include <Definitions_and_Helpers/Definitions.hpp>
+#include <QtWidgets/QFormLayout>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QListWidgetItem>
 #include "SolverWrapper.h"
+#include <ui_mainwindow.h>
 
 class Graph;
 class FunctionInput;
 
 
-namespace Ui
-{
-    class MainWindow;
-}
-
 namespace
 {
-    std::vector<std::pair<QString, MethodType>> methodsMap = {
-        std::pair<QString, MethodType>{"MethodType_Unknown", MethodType::MethodType_Unknown}
-        , std::pair<QString, MethodType>{"MethodType_PolakRibiere"
+    std::vector<std::pair<QString, MethodType>> methodsVector = {
+        std::pair<QString, MethodType>{"Unknown", MethodType::MethodType_Unknown}
+        , std::pair<QString, MethodType>{"Polak-Ribiere"
                                          , MethodType::MethodType_PolakRibiere}
     };
 }
@@ -34,29 +33,35 @@ public:
     explicit MainWindow(QWidget* parent = nullptr);
     ~MainWindow() override;
     void closeEvent(QCloseEvent* event) override;
-    void setFunction(const std::string&);
 
 public slots:
+    void setFunction();
     void currentMethodChanged(int);
+    void iterationDone(const FunctionInPointParameters&);
 
 private slots:
 
     inline void on_actionactionExit_triggered()
-    { close(); }
+    { close();}
 
-    void on_pushButton_StopShow_clicked();
+    void on_pushButton_show_clicked();
     void on_pushButton_chooseFunction_clicked();
     void startClicked();
 
 private:
     void startComputing();
     void setupComboBox();
+    void startingPointEdit(unsigned int);
 
     Ui::MainWindow* _ui;
-    std::unique_ptr<Graph> _graph;
-    std::unique_ptr<FunctionInput> _functionInput;
+    Graph* _graph;
+    FunctionInput* _functionInput;
     SolverWrapper _solver;
     Logger& _log;
+
+    std::vector<QLabel*> _labels;
+    std::vector<QLineEdit*> _lineEdits;
+    std::vector<QFormLayout*> _layouts;
 };
 
 #endif // MAINWINDOW_H

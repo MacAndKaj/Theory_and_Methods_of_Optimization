@@ -2,27 +2,27 @@
 // Created by maciek on 03.04.19.
 //
 
-#include <Methods/IterationMethodsParameters.hpp>
 #include <algorithm>
-#include <Solver/include/Methods/IterationMethodsParameters.hpp>
+#include <Methods/IterationMethodsParameters.hpp>
+#include <Definitions_and_Helpers/Definitions.hpp>
 
-#include "Methods/IterationMethodsParameters.hpp"
-
-IterationMethodsParameters::IterationMethodsParameters(const double error,
-    const double minimalStepSize, const double minimalStepFunctionDifference,
-    const unsigned int maxNumberOfIterations)
+IterationMethodsParameters::IterationMethodsParameters(const double& error,
+    const double& minimalStepSize, const double& minimalStepFunctionDifference,
+    const double& armijoParameter, const unsigned int maxNumberOfIterations)
     : _error(error)
     , _minimalStepSize(minimalStepSize)
     , _minimalStepFunctionDifference(minimalStepFunctionDifference)
     , _maxNumberOfIterations(maxNumberOfIterations)
+    , _armijoMethodParameter(armijoParameter)
 {
 }
 
-IterationMethodsParameters::IterationMethodsParameters(const IterationMethodsParameters& other)
-    : _error(other._error)
-    , _minimalStepSize(other._minimalStepSize)
-    , _minimalStepFunctionDifference(other._minimalStepFunctionDifference)
-    , _maxNumberOfIterations(other._maxNumberOfIterations)
+IterationMethodsParameters::IterationMethodsParameters()
+    : _error(defaultSolutionGradientError)
+    , _minimalStepSize(defaultSolutionStepError)
+    , _minimalStepFunctionDifference(defaultSolutionValueError)
+    , _maxNumberOfIterations(defaultIterationsNumber)
+    , _armijoMethodParameter(defaultArmijoMethodParameter)
 {
 }
 
@@ -46,3 +46,7 @@ const unsigned int IterationMethodsParameters::getMaxNumberOfIterations() const
     return _maxNumberOfIterations;
 }
 
+const double IterationMethodsParameters::getArmijoMethodParameter() const
+{
+    return _armijoMethodParameter;
+}

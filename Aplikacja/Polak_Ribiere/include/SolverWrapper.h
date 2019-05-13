@@ -14,26 +14,30 @@
 #include <Solver/include/FunctionInPointParameters.hpp>
 #include <Solver/include/Methods/IterationMethodsParameters.hpp>
 
+
+
 class SolverWrapper : public QWidget
 {
 Q_OBJECT
 public:
     SolverWrapper();
+    void startComputing();
 
     void setFunction(unsigned int, const std::string&);
     void setAlgorithmParameters(const IterationMethodsParameters&);
     void setMethod(MethodType);
+    void setStartPoint(const SVector&);
+    SSolution getSolution() const;
+    unsigned int getProblemDimension()const;
+    std::shared_ptr<FunctionWrapper> getFunction()const;
 
 signals:
-    void iterationDone(FunctionInPointParameters);
+    void iterationDone(const FunctionInPointParameters&);
 
 private:
-    void iterationCallback(FunctionInPointParameters);
-
     std::shared_ptr<IApplicationStorage> _applicationStorage;
     std::unique_ptr<ISolver> _solver;
-    unsigned int _iteration;
-    Logger& _log;
+    unsigned int _dimension;
 };
 
 #endif //THEORY_AND_METHODS_OF_OPTIMIZATION_SOLVERWRAPPER_HPP

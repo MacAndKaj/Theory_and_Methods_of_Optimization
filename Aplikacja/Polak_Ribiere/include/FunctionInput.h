@@ -2,7 +2,7 @@
 #define FUNCTIONINPUT_H
 
 #include <QDialog>
-
+#include "FunctionsSaver.hpp"
 
 namespace Ui {
 class FunctionInput;
@@ -30,6 +30,7 @@ private:
 
     Ui::FunctionInput *_ui;
     MainWindow* _mainWindow;
+    FunctionsSaver _functionsSaver;
     std::string _chosenFunction;
 };
 

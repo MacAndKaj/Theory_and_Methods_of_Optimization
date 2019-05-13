@@ -22,7 +22,7 @@ public:
         const std::shared_ptr<FunctionWrapper>&) override;
 private:
     FunctionsFactory(const std::shared_ptr<IApplicationStorage>&);
-
+    std::map<std::string,std::shared_ptr<FunctionWrapper>> _functions;
     std::shared_ptr<IApplicationStorage> _applicationStorage;
     ParserWrapper _parser;
     Logger& _log;

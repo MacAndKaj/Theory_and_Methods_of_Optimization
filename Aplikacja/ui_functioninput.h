@@ -83,7 +83,6 @@ public:
 
 
         retranslateUi(FunctionInput);
-        QObject::connect(buttonBox, SIGNAL(accepted()), FunctionInput, SLOT(accept()));
         QObject::connect(buttonBox, SIGNAL(rejected()), FunctionInput, SLOT(reject()));
 
         QMetaObject::connectSlotsByName(FunctionInput);

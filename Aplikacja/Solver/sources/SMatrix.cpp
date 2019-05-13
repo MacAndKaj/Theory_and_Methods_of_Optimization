@@ -1,13 +1,11 @@
-#include <cmath>
-
 //
 // Created by maciek on 06.03.19.
 //
-
-#include <SMatrix.hpp>
-#include <Logger/LoggersFactory.hpp>
+#include <cmath>
 #include <sstream>
 #include <iostream>
+#include <SMatrix.hpp>
+#include <Logger/LoggersFactory.hpp>
 
 SMatrix::SMatrix()
     : _log(LoggersFactory::getLoggersFactory().getLogger("SMatrix"))

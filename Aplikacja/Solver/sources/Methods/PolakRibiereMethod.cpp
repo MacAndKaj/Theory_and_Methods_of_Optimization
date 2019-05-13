@@ -1,18 +1,21 @@
+#include <utility>
+
 //
 // Created by maciek on 08.03.19.
 //
 
-#include <Logger/LoggersFactory.hpp>
-#include <Methods/PolakRibiereMethod.hpp>
-#include <Functions/GradientWrapper.hpp>
 #include <iomanip>
 #include <sstream>
 #include <iostream>
+#include <Logger/LoggersFactory.hpp>
+#include <Methods/PolakRibiereMethod.hpp>
+#include <Functions/GradientWrapper.hpp>
+#include <FunctionInPointParameters.hpp>
 
 PolakRibiereMethod::PolakRibiereMethod(const IterationMethodsParameters& parameters,
-    const std::vector<SVector>& solutionVecor)
+    std::shared_ptr<SSolution> startingPoint)
     : _parameters(parameters)
-    , _solutionVector(solutionVecor)
+    , _solutionVector(std::move(startingPoint))
     , _log(LoggersFactory::getLoggersFactory().getLogger("PolakRibiereMethod"))
 {
 
@@ -20,10 +23,11 @@ PolakRibiereMethod::PolakRibiereMethod(const IterationMethodsParameters& paramet
 
 SSolution PolakRibiereMethod::getSolution() const
 {
-    return SSolution();
+    return *_solutionVector;
 }
 
-void PolakRibiereMethod::setCallbackWhenIterationDone(const std::function<void()>& callback)
+void PolakRibiereMethod::setCallbackWhenIterationDone(
+    const std::function<void(FunctionInPointParameters)>& callback)
 {
     _callback = callback;
 }
@@ -31,45 +35,60 @@ void PolakRibiereMethod::setCallbackWhenIterationDone(const std::function<void()
 void PolakRibiereMethod::startComputing()
 {
     _log << "I[" + std::string(__FUNCTION__) + "]| from point " +
-            _solutionVector.rbegin()->toString();
-    auto success = optimizationOngoing();
+            _solutionVector->getLastPoint().toString();
+    auto success = false;
+    if (isReadyToCompute())
+    {
+        _log << "I[" + std::string(__FUNCTION__) + "| start optimization process";
+        success = optimizationOngoing();
+    }
+
     if (success)
     {
-        _log << "ISolution found in point " + _solutionVector.rbegin()->toString();
+        _log << "ISolution found in point " + _solutionVector->getLastPoint().toString();
         problemSolved();
     }
     else
     {
-        _log << "EError while seeking a solution in point " + _solutionVector.rbegin()->toString() +
+        _log << "EError while seeking a solution in point " +
+                _solutionVector->getLastPoint().toString() +
                 " Returning...";
     }
 }
 
 bool PolakRibiereMethod::optimizationOngoing()
 {
+    std::stringstream strm;
+    strm << "Begin computing with: e_g = " << _parameters.getError()
+        << " e_s = " << _parameters.getMinimalStepSize()
+        << " e_v = " << _parameters.getMinimalStepFunctionDifference()
+        << " armijo = " << _parameters.getArmijoMethodParameter()
+        << "iterations = " << _parameters.getMaxNumberOfIterations();
+    _log << 'I' + strm.str();
+
     _minimalizeInDirectionHelper.setMinStepSize(_parameters.getMinimalStepSize());
-    _solutionVector.reserve(
-        _parameters.getMaxNumberOfIterations()); //first solution point is starting point
-    auto current_point = *_solutionVector.rbegin();
+    _minimalizeInDirectionHelper.setTau(_parameters.getArmijoMethodParameter());
+    auto current_point = _solutionVector->getLastPoint();
     auto current_gradient = *(_gradient->getGradientInPoint(current_point));
     auto current_direction = -current_gradient;
-
+    _currentIteration = 0;
     double alfa, beta;
     do
     {
         alfa = _minimalizeInDirectionHelper.getAlfa(current_direction, current_point);
         current_point = current_point + alfa * current_direction;
-        _solutionVector.emplace_back(current_point);
+        _solutionVector->addNewPoint(current_point,*_function->operator()(current_point));
         auto previous_gradient = current_gradient;
         current_gradient = *(_gradient->getGradientInPoint(current_point));
 
         beta = getBeta(current_gradient, previous_gradient);
         current_direction = -current_gradient + current_direction * beta;
 
-        if (_callback) _callback();
+        if (_callback)
+        {
+            _callback({current_point, *_function->operator ()(current_point)});
+        }
         ++_currentIteration;
-        std::cout << current_point.toString() << " val:  " << *_function->operator()(current_point) << std::setprecision(20) << std::endl;
-
     } while (not isStopConditionFulfilled());
     return true;
 }
@@ -81,8 +100,15 @@ void PolakRibiereMethod::problemSolved()
 
 void PolakRibiereMethod::setFunction(const std::shared_ptr<FunctionWrapper>& function)
 {
+    _log << "I[" + std::string(__FUNCTION__) + "]| [ " + function->getExpressionString() + " ]";
     _function = function;
     _minimalizeInDirectionHelper.setFunctionWrapper(_function);
+}
+
+void PolakRibiereMethod::setGradient(const std::shared_ptr<GradientWrapper>& ptr)
+{
+    _gradient = ptr;
+    _minimalizeInDirectionHelper.setGradientWrapper(_gradient);
 }
 
 bool PolakRibiereMethod::isStopConditionFulfilled() const
@@ -96,8 +122,8 @@ bool PolakRibiereMethod::isStopConditionFulfilled() const
     {
 
         std::stringstream strm;
-        strm << getErrorInCurrentPoint()<< "<=" <<
-            _parameters.getError() ;
+        strm << getErrorInCurrentPoint() << "<=" <<
+            _parameters.getError();
 
         _log << "W[" + std::string(__FUNCTION__) + "] gradient error " + strm.str();
         return true;
@@ -108,7 +134,7 @@ bool PolakRibiereMethod::isStopConditionFulfilled() const
         strm << getLastStepSize() << "<=" <<
             _parameters.getMinimalStepSize();
 
-        _log << "W[" + std::string(__FUNCTION__) + "] step size " +strm.str();
+        _log << "W[" + std::string(__FUNCTION__) + "] _step size " + strm.str();
         return true;
     }
     else if (getLastStepFunctionDifference() <= _parameters.getMinimalStepFunctionDifference())
@@ -118,7 +144,8 @@ bool PolakRibiereMethod::isStopConditionFulfilled() const
         strm << getLastStepFunctionDifference() << "<=" <<
             _parameters.getMinimalStepFunctionDifference();
 
-        _log << "W[" + std::string(__FUNCTION__) + "] last function values differences " + strm.str();
+        _log << "W[" + std::string(__FUNCTION__) + "] last function values differences " +
+                strm.str();
         return true;
     }
     return false;
@@ -126,33 +153,28 @@ bool PolakRibiereMethod::isStopConditionFulfilled() const
 
 double PolakRibiereMethod::getLastStepFunctionDifference() const
 {
-    auto lastPoint = *_solutionVector.rbegin();
-    auto secondToLastPoint = *(++_solutionVector.rbegin());
+    auto lastPoint = _solutionVector->getLastPoint();
+    auto secondToLastPoint = _solutionVector->getSecondLastPoint();
     return std::fabs(
         (*_function->operator ()(lastPoint)) - (*_function->operator ()(secondToLastPoint)));
 }
 
 double PolakRibiereMethod::getErrorInCurrentPoint() const
 {
-    auto gradientValue = _gradient->getGradientInPoint(*_solutionVector.rbegin());
+    auto gradientValue = _gradient->getGradientInPoint(_solutionVector->getLastPoint());
     return gradientValue->getCartesianNorm();
 }
 
 double PolakRibiereMethod::getLastStepSize() const
 {
-    auto lastPoint = *_solutionVector.rbegin();
-    auto secondToLastPoint = *(++_solutionVector.rbegin());
+    auto lastPoint = _solutionVector->getLastPoint();
+    auto secondToLastPoint = _solutionVector->getSecondLastPoint();
     return (secondToLastPoint - lastPoint).getCartesianNorm();
 }
 
 unsigned int PolakRibiereMethod::getCurrentIteration() const
 {
     return _currentIteration;
-}
-
-void PolakRibiereMethod::updateParameters()
-{
-
 }
 
 double PolakRibiereMethod::getBeta(const SVector& currentG, const SVector& previousG) const
@@ -167,12 +189,6 @@ double PolakRibiereMethod::getBeta(const SVector& currentG, const SVector& previ
         return 0;
     }
     return (*up) / (*down);
-}
-
-void PolakRibiereMethod::setGradient(const std::shared_ptr<GradientWrapper>& ptr)
-{
-    _gradient = ptr;
-    _minimalizeInDirectionHelper.setGradientWrapper(_gradient);
 }
 
 bool PolakRibiereMethod::isReadyToCompute() const

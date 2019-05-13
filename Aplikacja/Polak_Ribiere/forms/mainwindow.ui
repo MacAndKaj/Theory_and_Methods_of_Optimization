@@ -26,6 +26,31 @@
      </widget>
     </item>
     <item>
+     <widget class="QLabel" name="label_chosenFunction">
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="lineWidth">
+       <number>4</number>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="textInteractionFlags">
+       <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_5"/>
+    </item>
+    <item>
      <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
        <layout class="QFormLayout" name="formLayout">
@@ -154,13 +179,7 @@
        </layout>
       </item>
       <item>
-       <widget class="QListWidget" name="listWidget">
-        <item>
-         <property name="text">
-          <string>Start</string>
-         </property>
-        </item>
-       </widget>
+       <widget class="QTextBrowser" name="textBrowser"/>
       </item>
      </layout>
     </item>
@@ -197,19 +216,6 @@
          </widget>
         </item>
         <item>
-         <widget class="QCheckBox" name="checkBox">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="text">
-           <string>Visualisation</string>
-          </property>
-          <property name="tristate">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
          <widget class="QPushButton" name="pushButton_start">
           <property name="text">
            <string>Start</string>
@@ -217,9 +223,12 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_StopShow">
+         <widget class="QPushButton" name="pushButton_show">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
           <property name="text">
-           <string>Stop</string>
+           <string>Show Graphical Solution</string>
           </property>
          </widget>
         </item>

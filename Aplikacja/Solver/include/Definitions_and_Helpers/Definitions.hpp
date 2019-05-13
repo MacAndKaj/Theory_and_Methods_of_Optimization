@@ -7,10 +7,11 @@
 
 #include <iostream>
 
-const unsigned int defaultIterationsNumber = 200;
-const double defaultSolutionError = 1e-20;
-const double defaultSolutionError1 = 1e-20;
-const double defaultSolutionError2 = 1e-20;
+const unsigned int defaultIterationsNumber = 20;
+const double defaultSolutionGradientError = 1e-10;
+const double defaultSolutionStepError = 1e-10;
+const double defaultSolutionValueError = 1e-10;
+const double defaultArmijoMethodParameter = 0.7;
 
 enum class MethodType
 {

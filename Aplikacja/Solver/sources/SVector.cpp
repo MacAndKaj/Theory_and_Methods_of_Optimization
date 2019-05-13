@@ -115,7 +115,7 @@ std::string SVector::toString() const
     {
 
         strm<<" ";
-        strm << item << std::setprecision(20);
+        strm << item << std::setprecision(5);
     }
     strm << " ]";
     return strm.str();

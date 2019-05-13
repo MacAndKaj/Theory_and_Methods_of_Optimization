@@ -6,15 +6,8 @@
 #include <ui_functioninput.h>
 #include <iostream>
 
-std::vector<std::pair<std::string, std::string>> standardFunctions =
-    {
-        {  "", "x1^4+x2^4-0.62*x1^2-0.62*x2^2"}
-        , {"", "100*(x2-x1^2)^2+(1-x1)^2"}
-    };
-
 FunctionInput::FunctionInput(QWidget* parent)
-    :
-    QDialog(parent)
+    : QDialog(parent)
     , _ui(new Ui::FunctionInput)
 {
     setUp();
@@ -31,14 +24,13 @@ void FunctionInput::setUp()
 {
     _ui->setupUi(this);
     createComboBox();
-    connect(_ui->buttonBox, &QDialogButtonBox::accepted, this, &FunctionInput::acceptFunction);
     _ui->radioButton_chooseFunction->setChecked(true);
     _ui->lineEdit_function->setDisabled(true);
-
     connect(_ui->radioButton_chooseFunction, &QRadioButton::clicked, this
             , &FunctionInput::radioButtonChanged);
     connect(_ui->radioButton_inputFunction, &QRadioButton::clicked, this
             , &FunctionInput::radioButtonChanged);
+    connect(_ui->buttonBox, &QDialogButtonBox::accepted, this, &FunctionInput::acceptFunction);
 }
 
 FunctionInput::~FunctionInput()
@@ -50,17 +42,19 @@ void FunctionInput::acceptFunction()
 {
     if (_ui->radioButton_chooseFunction->isChecked())
     {
-        _chosenFunction = _ui->comboBox_functions->currentText().toStdString();
+        _chosenFunction = _functionsSaver
+            .getFunctionWithIndex(_ui->comboBox_functions->currentIndex());
     }
     else
     {
         _chosenFunction = _ui->lineEdit_function->text().toStdString();
     }
+    accept();
 }
 
 void FunctionInput::createComboBox()
 {
-    for (const auto& functionPair: standardFunctions)
+    for (const auto& functionPair: _functionsSaver.readFunctions())
     {
         if (functionPair.first.empty())
         {

@@ -2,9 +2,8 @@
 // Created by maciek on 23.04.19.
 //
 
-#include <Solver/include/FunctionInPointParameters.hpp>
-
-#include "FunctionInPointParameters.hpp"
+#include <sstream>
+#include <FunctionInPointParameters.hpp>
 
 FunctionInPointParameters::FunctionInPointParameters(const SVector& point,
     const double functionValue)
@@ -26,5 +25,9 @@ const double FunctionInPointParameters::getFunctionValue() const
 
 const std::string FunctionInPointParameters::toString() const
 {
-    return std::string("f(")+ _point.toString() + " = " + std::to_string(_functionValue);
+    std::stringstream strm;
+    strm << "f(" <<  _point.toString()
+        << ") = "<< _functionValue;
+
+    return strm.str();
 }

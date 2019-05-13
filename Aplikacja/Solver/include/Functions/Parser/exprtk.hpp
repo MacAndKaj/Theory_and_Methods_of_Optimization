@@ -434,7 +434,7 @@ namespace exprtk
                                     "expm1",  "false",   "floor",  "for",   "frac",  "grad2deg",
                                     "hypot", "iclamp", "if",  "else", "ilike", "in",  "inrange",
                                     "like",  "log",  "log10", "log2",  "logn",  "log1p", "mand",
-                                    "max", "min",  "mod", "mor",  "mul", "ncdf",  "nand", "nor",
+                                    "_max", "_min",  "mod", "mor",  "mul", "ncdf",  "nand", "nor",
                                     "not",   "not_equal",   "null",   "or",   "pow",  "rad2deg",
                                     "repeat", "return", "root", "round", "roundn", "sec", "sgn",
                                     "shl", "shr", "sin", "sinc", "sinh", "sqrt",  "sum", "swap",
@@ -450,7 +450,7 @@ namespace exprtk
                                     "atan2",  "avg",  "ceil",  "clamp",  "cos",  "cosh",  "cot",
                                     "csc",  "equal",  "erf",  "erfc",  "exp",  "expm1", "floor",
                                     "frac", "hypot", "iclamp",  "like", "log", "log10",  "log2",
-                                    "logn", "log1p", "mand", "max", "min", "mod", "mor",  "mul",
+                                    "logn", "log1p", "mand", "_max", "_min", "mod", "mor",  "mul",
                                     "ncdf",  "pow",  "root",  "round",  "roundn",  "sec", "sgn",
                                     "sin", "sinc", "sinh", "sqrt", "sum", "swap", "tan", "tanh",
                                     "trunc",  "not_equal",  "inrange",  "deg2grad",   "deg2rad",
@@ -20352,8 +20352,8 @@ namespace exprtk
          static const std::string s_sum     = "sum" ;
          static const std::string s_mul     = "mul" ;
          static const std::string s_avg     = "avg" ;
-         static const std::string s_min     = "min" ;
-         static const std::string s_max     = "max" ;
+         static const std::string s_min     = "_min" ;
+         static const std::string s_max     = "_max" ;
          static const std::string s_mand    = "mand";
          static const std::string s_mor     = "mor" ;
          static const std::string s_multi   = "~"   ;
@@ -22414,8 +22414,8 @@ namespace exprtk
          }
          else if (details::imatch(symbol, "avg" )) opt_type = details::e_avg ;
          else if (details::imatch(symbol, "mand")) opt_type = details::e_mand;
-         else if (details::imatch(symbol, "max" )) opt_type = details::e_max ;
-         else if (details::imatch(symbol, "min" )) opt_type = details::e_min ;
+         else if (details::imatch(symbol, "_max" )) opt_type = details::e_max ;
+         else if (details::imatch(symbol, "_min" )) opt_type = details::e_min ;
          else if (details::imatch(symbol, "mor" )) opt_type = details::e_mor ;
          else if (details::imatch(symbol, "mul" )) opt_type = details::e_prod;
          else if (details::imatch(symbol, "sum" )) opt_type = details::e_sum ;
@@ -36271,7 +36271,7 @@ namespace exprtk
                                              "x + (cos(y - sin(2 / x * pi)) - sin(x - cos(2 * y / pi))) - y",
                                              "clamp(-1.0, sin(2 * pi * x) + cos(y / 2 * pi), +1.0)",
                                              "iclamp(-1.0, sin(2 * pi * x) + cos(y / 2 * pi), +1.0)",
-                                             "max(3.33, min(sqrt(1 - sin(2 * x) + cos(pi / y) / 3), 1.11))",
+                                             "_max(3.33, _min(sqrt(1 - sin(2 * x) + cos(pi / y) / 3), 1.11))",
                                              "if(avg(x,y) <= x + y, x - y, x * y) + 2 * pi / x",
                                              "1.1x^1 + 2.2y^2 - 3.3x^3 + 4.4y^4 - 5.5x^5 + 6.6y^6 - 7.7x^27 + 8.8y^55",
                                              "(yy + xx)",
@@ -36286,7 +36286,7 @@ namespace exprtk
                                              "(xx^2 / sin(2 * pi / yy)) -xx / 2",
                                              "xx + (cos(yy - sin(2 / xx * pi)) - sin(xx - cos(2 * yy / pi))) - yy",
                                              "clamp(-1.0, sin(2 * pi * xx) + cos(yy / 2 * pi), +1.0)",
-                                             "max(3.33, min(sqrt(1 - sin(2 * xx) + cos(pi / yy) / 3), 1.11))",
+                                             "_max(3.33, _min(sqrt(1 - sin(2 * xx) + cos(pi / yy) / 3), 1.11))",
                                              "if(avg(xx,yy) <= xx + yy, xx - yy, xx * yy) + 2 * pi / xx",
                                              "1.1xx^1 + 2.2yy^2 - 3.3xx^3 + 4.4yy^4 - 5.5xx^5 + 6.6yy^6 - 7.7xx^27 + 8.8yy^55",
                                              "(1.1*(2.2*(3.3*(4.4*(5.5*(6.6*(7.7*(8.8*(9.9+x)))))))))",

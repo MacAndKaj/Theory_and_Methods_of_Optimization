@@ -29,6 +29,9 @@ FunctionsFactory::FunctionsFactory(const std::shared_ptr<IApplicationStorage>& a
 std::shared_ptr<FunctionWrapper>
 FunctionsFactory::getFunctionFromString(const std::string& function, unsigned int dimension)
 {
+    auto functionsIter = _functions.find(function);
+    if (functionsIter != _functions.end()) return functionsIter->second;
+
     std::string checkedFunction;
     for (int i = 0; i < function.size(); ++i)
     {
@@ -40,12 +43,13 @@ FunctionsFactory::getFunctionFromString(const std::string& function, unsigned in
         else
         { checkedFunction += function[i]; }
     }
-    return _parser.parseToFunction(dimension, checkedFunction);
+    _functions[function] = _parser.parseToFunction(dimension, checkedFunction);
+    return _functions[function];
 }
 
 std::shared_ptr<GradientWrapper>
 FunctionsFactory::getGradientForFunction(const std::shared_ptr<FunctionWrapper>& ptr)
 {
-    return std::make_shared<GradientWrapper>(ptr,_applicationStorage);
+    return std::make_shared<GradientWrapper>(ptr, _applicationStorage);
 }
 

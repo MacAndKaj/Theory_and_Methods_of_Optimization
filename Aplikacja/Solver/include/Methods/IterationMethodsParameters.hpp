@@ -8,19 +8,23 @@
 class IterationMethodsParameters
 {
 public:
-    IterationMethodsParameters(double error, double minimalStepSize,
-        double minimalStepFunctionDifference, unsigned int maxNumberOfIterations);
-    IterationMethodsParameters(const IterationMethodsParameters&);
+    IterationMethodsParameters();
+    IterationMethodsParameters(const double& error, const double& minimalStepSize,
+        const double& minimalStepFunctionDifference, const double& armijoParameter, unsigned int maxNumberOfIterations);
+    IterationMethodsParameters(const IterationMethodsParameters&) = default;
+    IterationMethodsParameters& operator =(const IterationMethodsParameters&) = default;
 
     const double getError() const;
     const double getMinimalStepSize() const;
     const double getMinimalStepFunctionDifference() const;
     const unsigned int getMaxNumberOfIterations() const;
+    const double getArmijoMethodParameter() const;
 private:
-    const double _error;
-    const double _minimalStepSize;
-    const double _minimalStepFunctionDifference;
-    const unsigned int _maxNumberOfIterations;
+    double _error;
+    double _minimalStepSize;
+    double _minimalStepFunctionDifference;
+    double _armijoMethodParameter;
+    unsigned int _maxNumberOfIterations;
 };
 
 #endif //SOLVER_ITERATIONMETHODSPARAMETERS_HPP

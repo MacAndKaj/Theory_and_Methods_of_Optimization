@@ -1,14 +1,17 @@
 //
 // Created by maciek on 06.03.19.
 //
+#include <memory>
 #include <Solver.hpp>
 #include <Methods/PolakRibiereMethod.hpp>
+#include <Methods/MethodsFactory.hpp>
 
 Solver::Solver(const std::shared_ptr<IApplicationStorage>& applicationStorage)
     : _methodType(MethodType::MethodType_Unknown)
     , _log(LoggersFactory::getLoggersFactory().getLogger("Solver"))
 {
     _applicationStorage = applicationStorage;
+    _functionsFactory = applicationStorage->getFunctionsFactory();
     _log << "IGenerating Solver";
 }
 
@@ -29,37 +32,44 @@ void Solver::setMethod(MethodType methodType)
     }
 }
 
-void Solver::computeSolution()
+void Solver::computeSolution(const std::function<void(FunctionInPointParameters)>& callback)
 {
-    if(not _method)
+    if (_methodType == MethodType::MethodType_Unknown or not _solution)
     {
-        _log << "E["+std::string(__FUNCTION__) + "] WARNING! Method not set, returning!";
+        _log << "E[" + std::string(__FUNCTION__) + "] WARNING! Method not set or lack of starting point, returning! ";
         return;
     }
-    computeSolution();
+    _method =
+        _applicationStorage->getMethodsFactory()->getPolakRibiereMethod(
+            _parameters.getError(), _parameters.getMinimalStepSize(), _parameters
+                .getMinimalStepFunctionDifference(), _parameters.getArmijoMethodParameter()
+            , _parameters.getMaxNumberOfIterations(), _solution);
+    auto functionWrapper = _functionsFactory->getFunctionFromString(_function, _dimension);
+    auto gradientWrapper = _functionsFactory->getGradientForFunction(functionWrapper);
+    _method->setFunction(functionWrapper);
+    _method->setGradient(gradientWrapper);
+    _method->setCallbackWhenIterationDone(callback);
+    _method->startComputing();
 }
 
 SSolution Solver::getSolution() const
 {
-    return SSolution();
+    if(_method)
+    {
+        return _method->getSolution();
+    }
+    return SSolution({SVector()},0);
 }
 
 void Solver::setFunction(const unsigned int& dimension, const std::string& function)
 {
-    if (not _method)
-    {
-        std::stringstream strm;
-        strm << "E[" << __FUNCTION__ << "]Method not set! Function " << function << " not set! Returning...";
-        _log << strm.str();
-        return;
-    }
-    auto functionWrapper = _functionsFactory->getFunctionFromString(function, dimension);
-    _method->setFunction(functionWrapper);
+    _function = function;
+    _dimension = dimension;
 }
 
 void Solver::setAlgorithmParameters(const IterationMethodsParameters& parameters)
 {
-    if(or not _method)
+    if (_methodType == MethodType::MethodType_Unknown)
     {
         std::stringstream strm;
         strm << "E[" << __FUNCTION__ << "] Method is not set";
@@ -67,10 +77,17 @@ void Solver::setAlgorithmParameters(const IterationMethodsParameters& parameters
         return;
     }
 
+    _parameters = parameters;
 }
 
-bool Solver::isComplete() const
+void Solver::setStartingPoint(const SVector& vector)
 {
-    return _methodType != MethodType::MethodType_Unknown and _method;
+    auto startSolution = {vector};
+    auto value =*getFunction()->operator()(vector);
+    _solution = std::make_shared<SSolution>(startSolution,value);
 }
 
+std::shared_ptr<FunctionWrapper> Solver::getFunction() const
+{
+    return _functionsFactory->getFunctionFromString(_function,_dimension);
+}

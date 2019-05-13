@@ -1,9 +1,10 @@
 file(REMOVE_RECURSE
-  "Optimization_autogen"
-  "CMakeFiles/Optimization_autogen.dir/AutogenOldSettings.cmake"
   "MOCS_autogen"
-  "CMakeFiles/MOCS_autogen.dir/AutogenOldSettings.cmake"
+  "CMakeFiles/MOCS_autogen.dir/AutogenOldSettings.txt"
+  "Optimization_autogen"
+  "CMakeFiles/Optimization_autogen.dir/AutogenOldSettings.txt"
   "CMakeFiles/Optimization_autogen"
+  "Optimization_autogen/mocs_compilation.cpp"
 )
 
 # Per-language clean rules from dependency scanning.

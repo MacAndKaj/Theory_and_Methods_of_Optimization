@@ -77,7 +77,8 @@ void MainWindow::setFunction()
 
 void MainWindow::on_pushButton_show_clicked()
 {
-    _graph = new Graph(_solver.getFunction(),_solver.getSolution());
+    if (_graph != nullptr) _graph->close();
+    _graph = new Graph(_solver.getFunction(), _solver.getSolution());
     _graph->exec();
 }
 
@@ -91,8 +92,9 @@ void MainWindow::on_pushButton_chooseFunction_clicked()
 
 void MainWindow::startClicked()
 {
-    connect(&_solver, SIGNAL(iterationDone(const FunctionInPointParameters&)),
-        this, SLOT(iterationDone(const FunctionInPointParameters&)));
+    connect(&_solver, SIGNAL(iterationDone(
+                                 const FunctionInPointParameters&)), this, SLOT(iterationDone(
+                                                                                    const FunctionInPointParameters&)));
     std::vector<double> point;
     for (const auto& lineEdit : _lineEdits)
     {
@@ -105,8 +107,9 @@ void MainWindow::startClicked()
     _solver.setStartPoint(startPoint);
     startComputing();
 
-    disconnect(&_solver, SIGNAL(iterationDone(const FunctionInPointParameters&)),
-        this, SLOT(iterationDone(const FunctionInPointParameters&)));
+    disconnect(&_solver, SIGNAL(iterationDone(
+                                    const FunctionInPointParameters&)), this, SLOT(iterationDone(
+                                                                                       const FunctionInPointParameters&)));
     _ui->pushButton_show->setEnabled(_solver.getProblemDimension() == 2);
 }
 
@@ -130,9 +133,9 @@ void MainWindow::setupComboBox()
     }
 
     _ui->comboBox_methods->setCurrentIndex(1);
-    connect(_ui->comboBox_methods, SIGNAL(currentIndexChanged(int)), this, SLOT(
-                                                                               currentMethodChanged(
-                                                                                   int)));
+    connect(_ui->comboBox_methods, SIGNAL(
+                                       currentIndexChanged(int)), this, SLOT(currentMethodChanged(
+        int)));
     _log << 'I' + std::string(__FUNCTION__) + " succesfully!";
 }
 

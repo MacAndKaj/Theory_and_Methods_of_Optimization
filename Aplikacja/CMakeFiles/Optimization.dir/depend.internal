@@ -3,11 +3,6 @@
 
 CMakeFiles/Optimization.dir/Optimization_autogen/mocs_compilation.cpp.o
  /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Optimization_autogen/mocs_compilation.cpp
-CMakeFiles/Optimization.dir/Polak_Ribiere/include/FunctionsSaver.cpp.o
- /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/FunctionsSaver.cpp
- /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/FunctionsSaver.hpp
- Solver/include/Logger/Logger.hpp
- Solver/include/Logger/LoggersFactory.hpp
 CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_FunctionInput.cpp.o
  /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/FunctionInput.h
  /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/FunctionsSaver.hpp
@@ -686,6 +681,17 @@ CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_Graph.cpp.o
  /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qwidget.h
  /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qwidgetaction.h
  /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qwizard.h
+ /usr/local/qwt-6.1.4/include/qwt_color_map.h
+ /usr/local/qwt-6.1.4/include/qwt_global.h
+ /usr/local/qwt-6.1.4/include/qwt_graphic.h
+ /usr/local/qwt-6.1.4/include/qwt_interval.h
+ /usr/local/qwt-6.1.4/include/qwt_legend_data.h
+ /usr/local/qwt-6.1.4/include/qwt_null_paintdevice.h
+ /usr/local/qwt-6.1.4/include/qwt_plot_item.h
+ /usr/local/qwt-6.1.4/include/qwt_plot_rasteritem.h
+ /usr/local/qwt-6.1.4/include/qwt_plot_spectrogram.h
+ /usr/local/qwt-6.1.4/include/qwt_raster_data.h
+ /usr/local/qwt-6.1.4/include/qwt_text.h
  Solver/include/Functions/FunctionWrapper.hpp
  Solver/include/Functions/Parser/exprtk.hpp
  Solver/include/Logger/Logger.hpp
@@ -1396,6 +1402,11 @@ CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.o
  Solver/include/Solver.hpp
  ui_functioninput.h
  ui_mainwindow.h
+CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionsSaver.cpp.o
+ /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/sources/FunctionsSaver.cpp
+ Polak_Ribiere/include/FunctionsSaver.hpp
+ Solver/include/Logger/Logger.hpp
+ Solver/include/Logger/LoggersFactory.hpp
 CMakeFiles/Optimization.dir/Polak_Ribiere/sources/Graph.cpp.o
  /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/sources/Graph.cpp
  /home/maciek/Qt/5.11.2/gcc_64/include/QtCharts/QAbstractAxis
@@ -1987,6 +1998,32 @@ CMakeFiles/Optimization.dir/Polak_Ribiere/sources/Graph.cpp.o
  /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qwidget.h
  /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qwidgetaction.h
  /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qwizard.h
+ /usr/local/qwt-6.1.4/include/qwt_color_map.h
+ /usr/local/qwt-6.1.4/include/qwt_global.h
+ /usr/local/qwt-6.1.4/include/qwt_graphic.h
+ /usr/local/qwt-6.1.4/include/qwt_interval.h
+ /usr/local/qwt-6.1.4/include/qwt_legend_data.h
+ /usr/local/qwt-6.1.4/include/qwt_math.h
+ /usr/local/qwt-6.1.4/include/qwt_null_paintdevice.h
+ /usr/local/qwt-6.1.4/include/qwt_plot.h
+ /usr/local/qwt-6.1.4/include/qwt_plot_curve.h
+ /usr/local/qwt-6.1.4/include/qwt_plot_dict.h
+ /usr/local/qwt-6.1.4/include/qwt_plot_item.h
+ /usr/local/qwt-6.1.4/include/qwt_plot_marker.h
+ /usr/local/qwt-6.1.4/include/qwt_plot_rasteritem.h
+ /usr/local/qwt-6.1.4/include/qwt_plot_seriesitem.h
+ /usr/local/qwt-6.1.4/include/qwt_plot_spectrogram.h
+ /usr/local/qwt-6.1.4/include/qwt_point_3d.h
+ /usr/local/qwt-6.1.4/include/qwt_point_polar.h
+ /usr/local/qwt-6.1.4/include/qwt_raster_data.h
+ /usr/local/qwt-6.1.4/include/qwt_samples.h
+ /usr/local/qwt-6.1.4/include/qwt_scale_div.h
+ /usr/local/qwt-6.1.4/include/qwt_scale_map.h
+ /usr/local/qwt-6.1.4/include/qwt_series_data.h
+ /usr/local/qwt-6.1.4/include/qwt_series_store.h
+ /usr/local/qwt-6.1.4/include/qwt_symbol.h
+ /usr/local/qwt-6.1.4/include/qwt_text.h
+ /usr/local/qwt-6.1.4/include/qwt_transform.h
  Polak_Ribiere/include/Graph.h
  Solver/include/Functions/FunctionWrapper.hpp
  Solver/include/Functions/Parser/exprtk.hpp
@@ -2583,6 +2620,17 @@ CMakeFiles/Optimization.dir/Polak_Ribiere/sources/MainWindow.cpp.o
  /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qwidget.h
  /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qwidgetaction.h
  /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qwizard.h
+ /usr/local/qwt-6.1.4/include/qwt_color_map.h
+ /usr/local/qwt-6.1.4/include/qwt_global.h
+ /usr/local/qwt-6.1.4/include/qwt_graphic.h
+ /usr/local/qwt-6.1.4/include/qwt_interval.h
+ /usr/local/qwt-6.1.4/include/qwt_legend_data.h
+ /usr/local/qwt-6.1.4/include/qwt_null_paintdevice.h
+ /usr/local/qwt-6.1.4/include/qwt_plot_item.h
+ /usr/local/qwt-6.1.4/include/qwt_plot_rasteritem.h
+ /usr/local/qwt-6.1.4/include/qwt_plot_spectrogram.h
+ /usr/local/qwt-6.1.4/include/qwt_raster_data.h
+ /usr/local/qwt-6.1.4/include/qwt_text.h
  Polak_Ribiere/include/FunctionInput.h
  Polak_Ribiere/include/FunctionsSaver.hpp
  Polak_Ribiere/include/Graph.h

@@ -11,7 +11,7 @@ const unsigned int defaultIterationsNumber = 20;
 const double defaultSolutionGradientError = 1e-10;
 const double defaultSolutionStepError = 1e-10;
 const double defaultSolutionValueError = 1e-10;
-const double defaultArmijoMethodParameter = 0.7;
+const double defaultArmijoMethodParameter = 0.5;
 
 enum class MethodType
 {

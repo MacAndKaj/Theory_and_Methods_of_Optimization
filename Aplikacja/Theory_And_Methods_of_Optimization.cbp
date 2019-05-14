@@ -5,7 +5,7 @@
 		<Option title="Theory_And_Methods_of_Optimization"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5\;CMake Files\..\..\..\..\Qt\;CMake Files\..\..\..\..\Qt\5.11.2\;CMake Files\..\..\..\..\Qt\5.11.2\gcc_64\;CMake Files\..\..\..\..\Qt\5.11.2\gcc_64\lib\;CMake Files\..\..\..\..\Qt\5.11.2\gcc_64\lib\cmake\;CMake Files\..\..\..\..\Qt\5.11.2\gcc_64\lib\cmake\Qt5Core\;CMake Files\..\..\..\..\Qt\5.11.2\gcc_64\lib\cmake\Qt5Widgets\;CMake Files\..\..\..\..\Qt\5.11.2\gcc_64\lib\cmake\Qt5Gui\;CMake Files\..\..\..\..\Qt\5.11.2\gcc_64\lib\cmake\Qt5DataVisualization\;CMake Files\..\..\..\..\Qt\5.11.2\gcc_64\lib\cmake\Qt5Charts\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5\;CMake Files\..\..\..\..\Qt\;CMake Files\..\..\..\..\Qt\5.11.2\;CMake Files\..\..\..\..\Qt\5.11.2\gcc_64\;CMake Files\..\..\..\..\Qt\5.11.2\gcc_64\lib\;CMake Files\..\..\..\..\Qt\5.11.2\gcc_64\lib\cmake\;CMake Files\..\..\..\..\Qt\5.11.2\gcc_64\lib\cmake\Qt5Core\;CMake Files\..\..\..\..\Qt\5.11.2\gcc_64\lib\cmake\Qt5Widgets\;CMake Files\..\..\..\..\Qt\5.11.2\gcc_64\lib\cmake\Qt5Gui\;CMake Files\..\..\..\..\Qt\5.11.2\gcc_64\lib\cmake\Qt5DataVisualization\;CMake Files\..\..\..\..\Qt\5.11.2\gcc_64\lib\cmake\Qt5Charts\;CMake Files\cmake_modules\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja"/>
@@ -54,6 +54,7 @@
 					<Add directory="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/forms"/>
 					<Add directory="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include"/>
 					<Add directory="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/forms"/>
+					<Add directory="/usr/local/qwt-6.1.4/include"/>
 					<Add directory="/home/maciek/Qt/5.11.2/gcc_64/include"/>
 					<Add directory="/home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets"/>
 					<Add directory="/home/maciek/Qt/5.11.2/gcc_64/include/QtGui"/>
@@ -92,6 +93,7 @@
 					<Add directory="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/forms"/>
 					<Add directory="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include"/>
 					<Add directory="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/forms"/>
+					<Add directory="/usr/local/qwt-6.1.4/include"/>
 					<Add directory="/home/maciek/Qt/5.11.2/gcc_64/include"/>
 					<Add directory="/home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets"/>
 					<Add directory="/home/maciek/Qt/5.11.2/gcc_64/include/QtGui"/>
@@ -132,6 +134,7 @@
 					<Add directory="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/forms"/>
 					<Add directory="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include"/>
 					<Add directory="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/forms"/>
+					<Add directory="/usr/local/qwt-6.1.4/include"/>
 					<Add directory="/home/maciek/Qt/5.11.2/gcc_64/include"/>
 					<Add directory="/home/maciek/Qt/5.11.2/gcc_64/include/QtCore"/>
 					<Add directory="/home/maciek/Qt/5.11.2/gcc_64/./mkspecs/linux-g++"/>
@@ -174,6 +177,7 @@
 					<Add directory="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/forms"/>
 					<Add directory="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include"/>
 					<Add directory="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/forms"/>
+					<Add directory="/usr/local/qwt-6.1.4/include"/>
 					<Add directory="/home/maciek/Qt/5.11.2/gcc_64/include"/>
 					<Add directory="/home/maciek/Qt/5.11.2/gcc_64/include/QtCore"/>
 					<Add directory="/home/maciek/Qt/5.11.2/gcc_64/./mkspecs/linux-g++"/>
@@ -236,12 +240,6 @@
 			<Option target="MOCS"/>
 			<Option target="Optimization"/>
 		</Unit>
-		<Unit filename="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/FunctionsSaver.cpp">
-			<Option target="Optimization"/>
-		</Unit>
-		<Unit filename="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/FunctionsSaver.hpp">
-			<Option target="Optimization"/>
-		</Unit>
 		<Unit filename="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/moc_FunctionInput.cpp">
 			<Option target="MOCS"/>
 			<Option target="Optimization"/>
@@ -281,6 +279,9 @@
 			<Option target="Optimization"/>
 		</Unit>
 		<Unit filename="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/sources/FunctionInput.cpp">
+			<Option target="Optimization"/>
+		</Unit>
+		<Unit filename="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/sources/FunctionsSaver.cpp">
 			<Option target="Optimization"/>
 		</Unit>
 		<Unit filename="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/sources/Graph.cpp">
@@ -525,6 +526,9 @@
 		</Unit>
 		<Unit filename="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/../../../../Qt/5.11.2/gcc_64/lib/cmake/Qt5Charts/Qt5ChartsConfigVersion.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\Qt\5.11.2\gcc_64\lib\cmake\Qt5Charts\"/>
+		</Unit>
+		<Unit filename="/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/cmake_modules/FindQwt.cmake">
+			<Option virtualFolder="CMake Files\cmake_modules\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

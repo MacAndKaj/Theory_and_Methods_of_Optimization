@@ -680,6 +680,17 @@ CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_Graph.cpp.o: /home/maciek/Qt/5.11.
 CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_Graph.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qwidget.h
 CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_Graph.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qwidgetaction.h
 CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_Graph.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qwizard.h
+CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_Graph.cpp.o: /usr/local/qwt-6.1.4/include/qwt_color_map.h
+CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_Graph.cpp.o: /usr/local/qwt-6.1.4/include/qwt_global.h
+CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_Graph.cpp.o: /usr/local/qwt-6.1.4/include/qwt_graphic.h
+CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_Graph.cpp.o: /usr/local/qwt-6.1.4/include/qwt_interval.h
+CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_Graph.cpp.o: /usr/local/qwt-6.1.4/include/qwt_legend_data.h
+CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_Graph.cpp.o: /usr/local/qwt-6.1.4/include/qwt_null_paintdevice.h
+CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_Graph.cpp.o: /usr/local/qwt-6.1.4/include/qwt_plot_item.h
+CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_Graph.cpp.o: /usr/local/qwt-6.1.4/include/qwt_plot_rasteritem.h
+CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_Graph.cpp.o: /usr/local/qwt-6.1.4/include/qwt_plot_spectrogram.h
+CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_Graph.cpp.o: /usr/local/qwt-6.1.4/include/qwt_raster_data.h
+CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_Graph.cpp.o: /usr/local/qwt-6.1.4/include/qwt_text.h
 CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_Graph.cpp.o: Solver/include/Functions/FunctionWrapper.hpp
 CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_Graph.cpp.o: Solver/include/Functions/Parser/exprtk.hpp
 CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_Graph.cpp.o: Solver/include/Logger/Logger.hpp

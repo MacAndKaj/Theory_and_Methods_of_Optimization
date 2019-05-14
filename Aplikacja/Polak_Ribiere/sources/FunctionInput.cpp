@@ -48,6 +48,7 @@ void FunctionInput::acceptFunction()
     else
     {
         _chosenFunction = _ui->lineEdit_function->text().toStdString();
+        _functionsSaver.saveFunction(_chosenFunction);
     }
     accept();
 }

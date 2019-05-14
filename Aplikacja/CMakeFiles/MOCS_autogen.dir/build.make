@@ -55,7 +55,7 @@ include CMakeFiles/MOCS_autogen.dir/progress.make
 
 CMakeFiles/MOCS_autogen:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC for target MOCS"
-	/home/maciek/clion-2019.1.2/bin/cmake/linux/bin/cmake -E cmake_autogen /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles/MOCS_autogen.dir/AutogenInfo.cmake ""
+	/home/maciek/clion-2019.1.2/bin/cmake/linux/bin/cmake -E cmake_autogen /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles/MOCS_autogen.dir/AutogenInfo.cmake Release
 
 MOCS_autogen: CMakeFiles/MOCS_autogen
 MOCS_autogen: CMakeFiles/MOCS_autogen.dir/build.make

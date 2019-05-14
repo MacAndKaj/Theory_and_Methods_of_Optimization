@@ -62,12 +62,12 @@ double MinimalizeInDirectionHelper::getAlfa(const SVector& direction, const SVec
     }
 
     double alfa = 1;
-    double eta = 0.1;
+    double eta = 0.01;
     SVector next_point = point + alfa * direction;
     double value_in_x0 = *_functionWrapper->operator ()(point);
     double value_in_next_point = *_functionWrapper->operator ()(next_point);
     double stepSize = (next_point-point).getCartesianNorm();
-    while (value_in_next_point >= value_in_x0 + alfa*eta*(*((*_gradientWrapper->getGradientInPoint(point)).transpose()*direction)) and stepSize > _minStepSize)
+    while (value_in_next_point > (value_in_x0 + alfa*eta*(*((*_gradientWrapper->getGradientInPoint(point)).transpose()*direction))))
     {
         alfa = _tau * alfa;
         next_point = point + alfa * direction;
@@ -77,7 +77,7 @@ double MinimalizeInDirectionHelper::getAlfa(const SVector& direction, const SVec
 
     std::stringstream strm;
     strm  << "I[" + std::string(__FUNCTION__) << "] Alfa found in point " << point.toString() +
-             " Is equal to " << std::setprecision(20) << alfa;
+             " Is equal to " << std::setprecision(10) << alfa;
     _log << strm.str();
     return alfa;
 }

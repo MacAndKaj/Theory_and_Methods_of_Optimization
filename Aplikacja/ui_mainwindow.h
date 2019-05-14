@@ -161,7 +161,7 @@ public:
         doubleSpinBox_armijo->setMaximumSize(QSize(100, 16777215));
         doubleSpinBox_armijo->setDecimals(6);
         doubleSpinBox_armijo->setMinimum(1e-06);
-        doubleSpinBox_armijo->setMaximum(0.9);
+        doubleSpinBox_armijo->setMaximum(0.5);
         doubleSpinBox_armijo->setSingleStep(1e-06);
         doubleSpinBox_armijo->setValue(1e-06);
 

@@ -98,22 +98,9 @@ CMakeFiles/Optimization.dir/Optimization_autogen/mocs_compilation.cpp.s: cmake_f
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Optimization.dir/Optimization_autogen/mocs_compilation.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Optimization_autogen/mocs_compilation.cpp -o CMakeFiles/Optimization.dir/Optimization_autogen/mocs_compilation.cpp.s
 
-CMakeFiles/Optimization.dir/Polak_Ribiere/include/FunctionsSaver.cpp.o: CMakeFiles/Optimization.dir/flags.make
-CMakeFiles/Optimization.dir/Polak_Ribiere/include/FunctionsSaver.cpp.o: Polak_Ribiere/include/FunctionsSaver.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Optimization.dir/Polak_Ribiere/include/FunctionsSaver.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Optimization.dir/Polak_Ribiere/include/FunctionsSaver.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/FunctionsSaver.cpp
-
-CMakeFiles/Optimization.dir/Polak_Ribiere/include/FunctionsSaver.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Optimization.dir/Polak_Ribiere/include/FunctionsSaver.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/FunctionsSaver.cpp > CMakeFiles/Optimization.dir/Polak_Ribiere/include/FunctionsSaver.cpp.i
-
-CMakeFiles/Optimization.dir/Polak_Ribiere/include/FunctionsSaver.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Optimization.dir/Polak_Ribiere/include/FunctionsSaver.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/FunctionsSaver.cpp -o CMakeFiles/Optimization.dir/Polak_Ribiere/include/FunctionsSaver.cpp.s
-
 CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_FunctionInput.cpp.o: CMakeFiles/Optimization.dir/flags.make
 CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_FunctionInput.cpp.o: Polak_Ribiere/include/moc_FunctionInput.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_FunctionInput.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_FunctionInput.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_FunctionInput.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/moc_FunctionInput.cpp
 
 CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_FunctionInput.cpp.i: cmake_force
@@ -126,7 +113,7 @@ CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_FunctionInput.cpp.s: cmake
 
 CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_Graph.cpp.o: CMakeFiles/Optimization.dir/flags.make
 CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_Graph.cpp.o: Polak_Ribiere/include/moc_Graph.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_Graph.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_Graph.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_Graph.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/moc_Graph.cpp
 
 CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_Graph.cpp.i: cmake_force
@@ -139,7 +126,7 @@ CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_Graph.cpp.s: cmake_force
 
 CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: CMakeFiles/Optimization.dir/flags.make
 CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: Polak_Ribiere/include/moc_MainWindow.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/moc_MainWindow.cpp
 
 CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_MainWindow.cpp.i: cmake_force
@@ -152,7 +139,7 @@ CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_MainWindow.cpp.s: cmake_fo
 
 CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_SolverWrapper.cpp.o: CMakeFiles/Optimization.dir/flags.make
 CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_SolverWrapper.cpp.o: Polak_Ribiere/include/moc_SolverWrapper.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_SolverWrapper.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_SolverWrapper.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_SolverWrapper.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/moc_SolverWrapper.cpp
 
 CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_SolverWrapper.cpp.i: cmake_force
@@ -165,7 +152,7 @@ CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_SolverWrapper.cpp.s: cmake
 
 CMakeFiles/Optimization.dir/Polak_Ribiere/main.cpp.o: CMakeFiles/Optimization.dir/flags.make
 CMakeFiles/Optimization.dir/Polak_Ribiere/main.cpp.o: Polak_Ribiere/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Optimization.dir/Polak_Ribiere/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Optimization.dir/Polak_Ribiere/main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Optimization.dir/Polak_Ribiere/main.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/main.cpp
 
 CMakeFiles/Optimization.dir/Polak_Ribiere/main.cpp.i: cmake_force
@@ -178,7 +165,7 @@ CMakeFiles/Optimization.dir/Polak_Ribiere/main.cpp.s: cmake_force
 
 CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.o: CMakeFiles/Optimization.dir/flags.make
 CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.o: Polak_Ribiere/sources/FunctionInput.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/sources/FunctionInput.cpp
 
 CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.i: cmake_force
@@ -188,6 +175,19 @@ CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.i: cmake_for
 CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/sources/FunctionInput.cpp -o CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.s
+
+CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionsSaver.cpp.o: CMakeFiles/Optimization.dir/flags.make
+CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionsSaver.cpp.o: Polak_Ribiere/sources/FunctionsSaver.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionsSaver.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionsSaver.cpp.o -c /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/sources/FunctionsSaver.cpp
+
+CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionsSaver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionsSaver.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/sources/FunctionsSaver.cpp > CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionsSaver.cpp.i
+
+CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionsSaver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionsSaver.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/sources/FunctionsSaver.cpp -o CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionsSaver.cpp.s
 
 CMakeFiles/Optimization.dir/Polak_Ribiere/sources/Graph.cpp.o: CMakeFiles/Optimization.dir/flags.make
 CMakeFiles/Optimization.dir/Polak_Ribiere/sources/Graph.cpp.o: Polak_Ribiere/sources/Graph.cpp
@@ -504,13 +504,13 @@ CMakeFiles/Optimization.dir/Polak_Ribiere/qrc_images.cpp.s: cmake_force
 # Object files for target Optimization
 Optimization_OBJECTS = \
 "CMakeFiles/Optimization.dir/Optimization_autogen/mocs_compilation.cpp.o" \
-"CMakeFiles/Optimization.dir/Polak_Ribiere/include/FunctionsSaver.cpp.o" \
 "CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_FunctionInput.cpp.o" \
 "CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_Graph.cpp.o" \
 "CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o" \
 "CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_SolverWrapper.cpp.o" \
 "CMakeFiles/Optimization.dir/Polak_Ribiere/main.cpp.o" \
 "CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.o" \
+"CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionsSaver.cpp.o" \
 "CMakeFiles/Optimization.dir/Polak_Ribiere/sources/Graph.cpp.o" \
 "CMakeFiles/Optimization.dir/Polak_Ribiere/sources/MainWindow.cpp.o" \
 "CMakeFiles/Optimization.dir/Polak_Ribiere/sources/SolverWrapper.cpp.o" \
@@ -540,13 +540,13 @@ Optimization_OBJECTS = \
 Optimization_EXTERNAL_OBJECTS =
 
 build/Optimization: CMakeFiles/Optimization.dir/Optimization_autogen/mocs_compilation.cpp.o
-build/Optimization: CMakeFiles/Optimization.dir/Polak_Ribiere/include/FunctionsSaver.cpp.o
 build/Optimization: CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_FunctionInput.cpp.o
 build/Optimization: CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_Graph.cpp.o
 build/Optimization: CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o
 build/Optimization: CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_SolverWrapper.cpp.o
 build/Optimization: CMakeFiles/Optimization.dir/Polak_Ribiere/main.cpp.o
 build/Optimization: CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.o
+build/Optimization: CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionsSaver.cpp.o
 build/Optimization: CMakeFiles/Optimization.dir/Polak_Ribiere/sources/Graph.cpp.o
 build/Optimization: CMakeFiles/Optimization.dir/Polak_Ribiere/sources/MainWindow.cpp.o
 build/Optimization: CMakeFiles/Optimization.dir/Polak_Ribiere/sources/SolverWrapper.cpp.o
@@ -572,6 +572,7 @@ build/Optimization: CMakeFiles/Optimization.dir/Solver/sources/SymbolicOperation
 build/Optimization: CMakeFiles/Optimization.dir/Solver/sources/SymbolicOperations/SymbolicOperator.cpp.o
 build/Optimization: CMakeFiles/Optimization.dir/Polak_Ribiere/qrc_images.cpp.o
 build/Optimization: CMakeFiles/Optimization.dir/build.make
+build/Optimization: /usr/local/qwt-6.1.4/lib/libqwt.so
 build/Optimization: libMOCS.a
 build/Optimization: /home/maciek/Qt/5.11.2/gcc_64/lib/libQt5DataVisualization.so.5.11.2
 build/Optimization: /home/maciek/Qt/5.11.2/gcc_64/lib/libQt5Charts.so.5.11.2

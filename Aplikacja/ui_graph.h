@@ -37,8 +37,8 @@ public:
         if (Graph->objectName().isEmpty())
             Graph->setObjectName(QStringLiteral("Graph"));
         Graph->setWindowModality(Qt::WindowModal);
-        Graph->resize(886, 585);
-        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        Graph->resize(1252, 842);
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(Graph->sizePolicy().hasHeightForWidth());

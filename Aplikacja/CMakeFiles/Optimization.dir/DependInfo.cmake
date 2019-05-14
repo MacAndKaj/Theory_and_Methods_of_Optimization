@@ -5,7 +5,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Optimization_autogen/mocs_compilation.cpp" "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles/Optimization.dir/Optimization_autogen/mocs_compilation.cpp.o"
-  "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/FunctionsSaver.cpp" "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles/Optimization.dir/Polak_Ribiere/include/FunctionsSaver.cpp.o"
   "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/moc_FunctionInput.cpp" "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_FunctionInput.cpp.o"
   "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/moc_Graph.cpp" "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_Graph.cpp.o"
   "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/include/moc_MainWindow.cpp" "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o"
@@ -13,6 +12,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/main.cpp" "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles/Optimization.dir/Polak_Ribiere/main.cpp.o"
   "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/qrc_images.cpp" "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles/Optimization.dir/Polak_Ribiere/qrc_images.cpp.o"
   "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/sources/FunctionInput.cpp" "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.o"
+  "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/sources/FunctionsSaver.cpp" "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionsSaver.cpp.o"
   "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/sources/Graph.cpp" "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles/Optimization.dir/Polak_Ribiere/sources/Graph.cpp.o"
   "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/sources/MainWindow.cpp" "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles/Optimization.dir/Polak_Ribiere/sources/MainWindow.cpp.o"
   "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/Polak_Ribiere/sources/SolverWrapper.cpp" "/home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja/CMakeFiles/Optimization.dir/Polak_Ribiere/sources/SolverWrapper.cpp.o"
@@ -57,6 +57,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "Polak_Ribiere/forms"
   "Polak_Ribiere/include"
   "Polak_Ribiere/include/forms"
+  "/usr/local/qwt-6.1.4/include"
   "/home/maciek/Qt/5.11.2/gcc_64/include"
   "/home/maciek/Qt/5.11.2/gcc_64/include/QtCore"
   "/home/maciek/Qt/5.11.2/gcc_64/./mkspecs/linux-g++"

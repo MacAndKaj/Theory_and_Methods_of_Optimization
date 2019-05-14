@@ -12,6 +12,8 @@ set(Qt5Core_DIR "/home/maciek/Qt/5.11.2/gcc_64/lib/cmake/Qt5Core")
 set(Qt5Widgets_DIR "/home/maciek/Qt/5.11.2/gcc_64/lib/cmake/Qt5Widgets")
 set(Qt5Gui_DIR "/home/maciek/Qt/5.11.2/gcc_64/lib/cmake/Qt5Gui")
 set(Qt5Charts_DIR "/home/maciek/Qt/5.11.2/gcc_64/lib/cmake/Qt5Charts")
+set(QWT_INCLUDE_DIR "/usr/local/qwt-6.1.4/include")
+set(QWT_LIBRARY "/usr/local/qwt-6.1.4/lib/libqwt.so")
 set(Solver Solver)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOUIC_SEARCH_PATHS Polak_Ribiere/forms)
@@ -50,17 +52,20 @@ add_library(MOCS ${HEADERS} ${UIS})
 qt5_use_modules(MOCS Widgets)
 add_executable(Optimization ${SRCS} Polak_Ribiere/qrc_images.cpp)
 
+
 find_package(Threads REQUIRED)
-
-
+find_package(Qwt REQUIRED)
+set(QWT_LIBRARIES ${QWT_LIBRARY})
 include_directories(Solver/include
                     ${AUTOGEN_BUILD_DIR}
                     Polak_Ribiere/include
                     Polak_Ribiere/include/forms
+                    ${QWT_INCLUDE_DIR}
                     )
 
 target_link_libraries(Optimization
                       pthread
+                      ${QWT_LIBRARIES}
                       MOCS)
 qt5_add_resources(Polak_Ribiere/images.qrc)
 qt5_use_modules(Optimization Core Widgets DataVisualization Gui Charts)

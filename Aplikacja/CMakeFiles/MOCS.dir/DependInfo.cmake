@@ -28,6 +28,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "Polak_Ribiere/forms"
   "Polak_Ribiere/include"
   "Polak_Ribiere/include/forms"
+  "/usr/local/qwt-6.1.4/include"
   "/home/maciek/Qt/5.11.2/gcc_64/include"
   "/home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets"
   "/home/maciek/Qt/5.11.2/gcc_64/include/QtGui"

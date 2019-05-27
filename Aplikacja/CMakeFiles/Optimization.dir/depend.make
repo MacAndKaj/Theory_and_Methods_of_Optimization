@@ -826,7 +826,6 @@ CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/ma
 CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QMainWindow
 CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QMenu
 CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QMenuBar
-CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QProgressBar
 CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QPushButton
 CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QSpinBox
 CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QTextBrowser
@@ -856,7 +855,6 @@ CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/ma
 CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qmainwindow.h
 CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qmenu.h
 CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qmenubar.h
-CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qprogressbar.h
 CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qpushbutton.h
 CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qrubberband.h
 CMakeFiles/Optimization.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qsizepolicy.h
@@ -1136,7 +1134,6 @@ CMakeFiles/Optimization.dir/Polak_Ribiere/main.cpp.o: /home/maciek/Qt/5.11.2/gcc
 CMakeFiles/Optimization.dir/Polak_Ribiere/main.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QMainWindow
 CMakeFiles/Optimization.dir/Polak_Ribiere/main.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QMenu
 CMakeFiles/Optimization.dir/Polak_Ribiere/main.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QMenuBar
-CMakeFiles/Optimization.dir/Polak_Ribiere/main.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QProgressBar
 CMakeFiles/Optimization.dir/Polak_Ribiere/main.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QPushButton
 CMakeFiles/Optimization.dir/Polak_Ribiere/main.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QSpinBox
 CMakeFiles/Optimization.dir/Polak_Ribiere/main.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QTextBrowser
@@ -1166,7 +1163,6 @@ CMakeFiles/Optimization.dir/Polak_Ribiere/main.cpp.o: /home/maciek/Qt/5.11.2/gcc
 CMakeFiles/Optimization.dir/Polak_Ribiere/main.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qmainwindow.h
 CMakeFiles/Optimization.dir/Polak_Ribiere/main.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qmenu.h
 CMakeFiles/Optimization.dir/Polak_Ribiere/main.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qmenubar.h
-CMakeFiles/Optimization.dir/Polak_Ribiere/main.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qprogressbar.h
 CMakeFiles/Optimization.dir/Polak_Ribiere/main.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qpushbutton.h
 CMakeFiles/Optimization.dir/Polak_Ribiere/main.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qrubberband.h
 CMakeFiles/Optimization.dir/Polak_Ribiere/main.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qsizepolicy.h
@@ -1331,7 +1327,6 @@ CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.o: /home/mac
 CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QMainWindow
 CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QMenu
 CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QMenuBar
-CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QProgressBar
 CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QPushButton
 CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QRadioButton
 CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QSpinBox
@@ -1364,7 +1359,6 @@ CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.o: /home/mac
 CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qmainwindow.h
 CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qmenu.h
 CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qmenubar.h
-CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qprogressbar.h
 CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qpushbutton.h
 CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qradiobutton.h
 CMakeFiles/Optimization.dir/Polak_Ribiere/sources/FunctionInput.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qrubberband.h
@@ -2481,7 +2475,6 @@ CMakeFiles/Optimization.dir/Polak_Ribiere/sources/MainWindow.cpp.o: /home/maciek
 CMakeFiles/Optimization.dir/Polak_Ribiere/sources/MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QMenu
 CMakeFiles/Optimization.dir/Polak_Ribiere/sources/MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QMenuBar
 CMakeFiles/Optimization.dir/Polak_Ribiere/sources/MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QMessageBox
-CMakeFiles/Optimization.dir/Polak_Ribiere/sources/MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QProgressBar
 CMakeFiles/Optimization.dir/Polak_Ribiere/sources/MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QPushButton
 CMakeFiles/Optimization.dir/Polak_Ribiere/sources/MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QScrollerProperties
 CMakeFiles/Optimization.dir/Polak_Ribiere/sources/MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QSpinBox
@@ -2811,6 +2804,7 @@ CMakeFiles/Optimization.dir/Solver/sources/Functions/FunctionsFactory.cpp.o: Sol
 CMakeFiles/Optimization.dir/Solver/sources/Functions/FunctionsFactory.cpp.o: Solver/include/Functions/FunctionWrapper.hpp
 CMakeFiles/Optimization.dir/Solver/sources/Functions/FunctionsFactory.cpp.o: Solver/include/Functions/FunctionsFactory.hpp
 CMakeFiles/Optimization.dir/Solver/sources/Functions/FunctionsFactory.cpp.o: Solver/include/Functions/GradientWrapper.hpp
+CMakeFiles/Optimization.dir/Solver/sources/Functions/FunctionsFactory.cpp.o: Solver/include/Functions/HessianWrapper.hpp
 CMakeFiles/Optimization.dir/Solver/sources/Functions/FunctionsFactory.cpp.o: Solver/include/Functions/IFunctionsFactory.hpp
 CMakeFiles/Optimization.dir/Solver/sources/Functions/FunctionsFactory.cpp.o: Solver/include/Functions/Parser/exprtk.hpp
 CMakeFiles/Optimization.dir/Solver/sources/Functions/FunctionsFactory.cpp.o: Solver/include/Functions/ParserWrapper.hpp
@@ -2829,14 +2823,19 @@ CMakeFiles/Optimization.dir/Solver/sources/Functions/GradientWrapper.cpp.o: Solv
 CMakeFiles/Optimization.dir/Solver/sources/Functions/GradientWrapper.cpp.o: Solver/include/SymbolicOperations/ISymbolicOperator.hpp
 
 CMakeFiles/Optimization.dir/Solver/sources/Functions/HessianWrapper.cpp.o: Solver/sources/Functions/HessianWrapper.cpp
+CMakeFiles/Optimization.dir/Solver/sources/Functions/HessianWrapper.cpp.o: Solver/include/ApplicationStorage.hpp
 CMakeFiles/Optimization.dir/Solver/sources/Functions/HessianWrapper.cpp.o: Solver/include/Functions/FunctionWrapper.hpp
 CMakeFiles/Optimization.dir/Solver/sources/Functions/HessianWrapper.cpp.o: Solver/include/Functions/GradientWrapper.hpp
 CMakeFiles/Optimization.dir/Solver/sources/Functions/HessianWrapper.cpp.o: Solver/include/Functions/HessianWrapper.hpp
 CMakeFiles/Optimization.dir/Solver/sources/Functions/HessianWrapper.cpp.o: Solver/include/Functions/Parser/exprtk.hpp
+CMakeFiles/Optimization.dir/Solver/sources/Functions/HessianWrapper.cpp.o: Solver/include/IApplicationStorage.hpp
 CMakeFiles/Optimization.dir/Solver/sources/Functions/HessianWrapper.cpp.o: Solver/include/Logger/Logger.hpp
 CMakeFiles/Optimization.dir/Solver/sources/Functions/HessianWrapper.cpp.o: Solver/include/Logger/LoggersFactory.hpp
 CMakeFiles/Optimization.dir/Solver/sources/Functions/HessianWrapper.cpp.o: Solver/include/SMatrix.hpp
 CMakeFiles/Optimization.dir/Solver/sources/Functions/HessianWrapper.cpp.o: Solver/include/SVector.hpp
+CMakeFiles/Optimization.dir/Solver/sources/Functions/HessianWrapper.cpp.o: Solver/include/SymbolicOperations/ISymbolicOperator.hpp
+CMakeFiles/Optimization.dir/Solver/sources/Functions/HessianWrapper.cpp.o: Solver/include/SymbolicOperations/PythonFileHelper.hpp
+CMakeFiles/Optimization.dir/Solver/sources/Functions/HessianWrapper.cpp.o: Solver/include/SymbolicOperations/SymbolicOperator.hpp
 
 CMakeFiles/Optimization.dir/Solver/sources/Functions/ParserWrapper.cpp.o: Solver/sources/Functions/ParserWrapper.cpp
 CMakeFiles/Optimization.dir/Solver/sources/Functions/ParserWrapper.cpp.o: Solver/include/Functions/FunctionWrapper.hpp
@@ -2881,6 +2880,7 @@ CMakeFiles/Optimization.dir/Solver/sources/Methods/PolakRibiereMethod.cpp.o: Sol
 CMakeFiles/Optimization.dir/Solver/sources/Methods/PolakRibiereMethod.cpp.o: Solver/include/FunctionInPointParameters.hpp
 CMakeFiles/Optimization.dir/Solver/sources/Methods/PolakRibiereMethod.cpp.o: Solver/include/Functions/FunctionWrapper.hpp
 CMakeFiles/Optimization.dir/Solver/sources/Methods/PolakRibiereMethod.cpp.o: Solver/include/Functions/GradientWrapper.hpp
+CMakeFiles/Optimization.dir/Solver/sources/Methods/PolakRibiereMethod.cpp.o: Solver/include/Functions/HessianWrapper.hpp
 CMakeFiles/Optimization.dir/Solver/sources/Methods/PolakRibiereMethod.cpp.o: Solver/include/Functions/Parser/exprtk.hpp
 CMakeFiles/Optimization.dir/Solver/sources/Methods/PolakRibiereMethod.cpp.o: Solver/include/Logger/Logger.hpp
 CMakeFiles/Optimization.dir/Solver/sources/Methods/PolakRibiereMethod.cpp.o: Solver/include/Logger/LoggersFactory.hpp
@@ -2888,6 +2888,7 @@ CMakeFiles/Optimization.dir/Solver/sources/Methods/PolakRibiereMethod.cpp.o: Sol
 CMakeFiles/Optimization.dir/Solver/sources/Methods/PolakRibiereMethod.cpp.o: Solver/include/Methods/IterationMethodsParameters.hpp
 CMakeFiles/Optimization.dir/Solver/sources/Methods/PolakRibiereMethod.cpp.o: Solver/include/Methods/MinimalizeInDirectionHelper.hpp
 CMakeFiles/Optimization.dir/Solver/sources/Methods/PolakRibiereMethod.cpp.o: Solver/include/Methods/PolakRibiereMethod.hpp
+CMakeFiles/Optimization.dir/Solver/sources/Methods/PolakRibiereMethod.cpp.o: Solver/include/SMatrix.hpp
 CMakeFiles/Optimization.dir/Solver/sources/Methods/PolakRibiereMethod.cpp.o: Solver/include/SSolution.hpp
 CMakeFiles/Optimization.dir/Solver/sources/Methods/PolakRibiereMethod.cpp.o: Solver/include/SVector.hpp
 

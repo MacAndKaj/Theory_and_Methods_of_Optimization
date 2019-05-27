@@ -826,7 +826,6 @@ CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/
 CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QMainWindow
 CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QMenu
 CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QMenuBar
-CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QProgressBar
 CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QPushButton
 CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QSpinBox
 CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QTextBrowser
@@ -856,7 +855,6 @@ CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/
 CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qmainwindow.h
 CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qmenu.h
 CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qmenubar.h
-CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qprogressbar.h
 CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qpushbutton.h
 CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qrubberband.h
 CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o: /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qsizepolicy.h

@@ -12,7 +12,7 @@
 class IMethodMock : public IMethod
 {
 public:
-    MOCK_METHOD0(startComputing, void());
+    MOCK_METHOD0(startComputing, bool());
     MOCK_METHOD1(setFunction, void(const std::shared_ptr<FunctionWrapper>&));
     MOCK_CONST_METHOD0(getSolution, SSolution());
 };

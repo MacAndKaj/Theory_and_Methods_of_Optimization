@@ -61,7 +61,7 @@ private:
 
     int _min{-200};
     int _max{200};
-    int _step{1};
+    int _step{5};
     float _scaler{100.f};
     std::map<double, std::vector<SVector>> _3DpointsMap;
 };

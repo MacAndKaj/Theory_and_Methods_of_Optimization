@@ -23,6 +23,8 @@ public:
     bool operator!=(const SMatrix&)const;
     const SMatrix& operator -();
     std::string toString() const;
+    std::optional<double> det() const;
+    std::vector<double> getSubDeterminants() const;
 
 private:
     /// First-number of rows, Second-number of columns

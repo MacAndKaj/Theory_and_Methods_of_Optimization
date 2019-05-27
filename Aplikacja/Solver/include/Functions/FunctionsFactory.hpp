@@ -20,6 +20,8 @@ public:
         unsigned int) override;
     std::shared_ptr<GradientWrapper> getGradientForFunction(
         const std::shared_ptr<FunctionWrapper>&) override;
+    std::shared_ptr<HessianWrapper> getHessianForGradient(
+        std::shared_ptr<GradientWrapper> ptr) override;
 private:
     FunctionsFactory(const std::shared_ptr<IApplicationStorage>&);
     std::map<std::string,std::shared_ptr<FunctionWrapper>> _functions;

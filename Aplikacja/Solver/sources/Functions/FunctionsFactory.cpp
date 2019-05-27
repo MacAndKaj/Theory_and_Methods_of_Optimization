@@ -5,6 +5,7 @@
 #include <memory>
 #include <Functions/FunctionsFactory.hpp>
 #include <Functions/GradientWrapper.hpp>
+#include <Functions/HessianWrapper.hpp>
 #include <Logger/LoggersFactory.hpp>
 
 std::shared_ptr<FunctionsFactory> FunctionsFactory::_instance;
@@ -51,5 +52,11 @@ std::shared_ptr<GradientWrapper>
 FunctionsFactory::getGradientForFunction(const std::shared_ptr<FunctionWrapper>& ptr)
 {
     return std::make_shared<GradientWrapper>(ptr, _applicationStorage);
+}
+
+std::shared_ptr<HessianWrapper>
+FunctionsFactory::getHessianForGradient(std::shared_ptr<GradientWrapper> ptr)
+{
+    return std::make_shared<HessianWrapper>(ptr,_applicationStorage);
 }
 

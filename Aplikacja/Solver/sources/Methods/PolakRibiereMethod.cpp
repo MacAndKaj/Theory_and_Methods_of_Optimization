@@ -1,15 +1,15 @@
-#include <utility>
-
 //
 // Created by maciek on 08.03.19.
 //
-
 #include <iomanip>
+#include <utility>
 #include <sstream>
 #include <iostream>
+#include <SMatrix.hpp>
 #include <Logger/LoggersFactory.hpp>
 #include <Methods/PolakRibiereMethod.hpp>
 #include <Functions/GradientWrapper.hpp>
+#include <Functions/HessianWrapper.hpp>
 #include <FunctionInPointParameters.hpp>
 
 PolakRibiereMethod::PolakRibiereMethod(const IterationMethodsParameters& parameters,
@@ -32,7 +32,7 @@ void PolakRibiereMethod::setCallbackWhenIterationDone(
     _callback = callback;
 }
 
-void PolakRibiereMethod::startComputing()
+bool PolakRibiereMethod::startComputing()
 {
     _log << "I[" + std::string(__FUNCTION__) + "]| from point " +
             _solutionVector->getLastPoint().toString();
@@ -54,6 +54,7 @@ void PolakRibiereMethod::startComputing()
                 _solutionVector->getLastPoint().toString() +
                 " Returning...";
     }
+    return success;
 }
 
 bool PolakRibiereMethod::optimizationOngoing()
@@ -90,6 +91,12 @@ bool PolakRibiereMethod::optimizationOngoing()
         }
         ++_currentIteration;
     } while (not isStopConditionFulfilled());
+    auto subdeterminants = _hessian->getHessianInPoint(current_point)->getSubDeterminants();
+    for (const auto& det : subdeterminants)
+    {
+       std::cout << det << std::endl;
+        if (std::fabs(det - double(0)) < std::numeric_limits<double>::epsilon()) return false;
+    }
     return true;
 }
 
@@ -194,6 +201,11 @@ double PolakRibiereMethod::getBeta(const SVector& currentG, const SVector& previ
 bool PolakRibiereMethod::isReadyToCompute() const
 {
     return _function and _gradient;
+}
+
+void PolakRibiereMethod::setHessian(const std::shared_ptr<HessianWrapper>& hessian)
+{
+    _hessian = hessian;
 }
 
 

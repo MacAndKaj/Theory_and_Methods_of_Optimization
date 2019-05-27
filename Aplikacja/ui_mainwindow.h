@@ -21,7 +21,6 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QTextBrowser>
@@ -51,7 +50,7 @@ public:
     QDoubleSpinBox *doubleSpinBox_armijo;
     QLabel *label_armijoError;
     QTextBrowser *textBrowser;
-    QProgressBar *progressBar_computing;
+    QLabel *label;
     QHBoxLayout *horizontalLayout;
     QHBoxLayout *horizontalLayout_2;
     QHBoxLayout *horizontalLayout_4;
@@ -183,11 +182,21 @@ public:
 
         verticalLayout_3->addLayout(horizontalLayout_3);
 
-        progressBar_computing = new QProgressBar(centralWidget);
-        progressBar_computing->setObjectName(QStringLiteral("progressBar_computing"));
-        progressBar_computing->setValue(24);
+        label = new QLabel(centralWidget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setMinimumSize(QSize(0, 40));
+        QFont font;
+        font.setFamily(QStringLiteral("URW Bookman L"));
+        font.setPointSize(11);
+        font.setBold(false);
+        font.setItalic(true);
+        font.setWeight(9);
+        label->setFont(font);
+        label->setStyleSheet(QLatin1String("font: 75 italic 11pt \"URW Bookman L\";\n"
+"background-color: rgb(239, 41, 41);"));
+        label->setAlignment(Qt::AlignCenter);
 
-        verticalLayout_3->addWidget(progressBar_computing);
+        verticalLayout_3->addWidget(label);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
@@ -277,6 +286,7 @@ public:
         lineEdit_StepError->setText(QApplication::translate("MainWindow", "1e-5", nullptr));
         label_stepsError->setText(QApplication::translate("MainWindow", "Steps error", nullptr));
         label_armijoError->setText(QApplication::translate("MainWindow", "Minimalization in direction parameter", nullptr));
+        label->setText(QApplication::translate("MainWindow", "Saddle point reached! Please change starting point.", nullptr));
         label_numberOfIterations->setText(QApplication::translate("MainWindow", "Number of Iterations", nullptr));
         pushButton_start->setText(QApplication::translate("MainWindow", "Start", nullptr));
         pushButton_show->setText(QApplication::translate("MainWindow", "Show Graphical Solution", nullptr));

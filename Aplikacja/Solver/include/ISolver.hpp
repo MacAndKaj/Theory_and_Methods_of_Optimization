@@ -22,7 +22,7 @@ public:
     virtual void setStartingPoint(const SVector&) = 0;
     virtual void setAlgorithmParameters(const IterationMethodsParameters&) = 0;
     virtual void setFunction(const unsigned int&,const std::string&) = 0;
-    virtual void computeSolution(const std::function<void(FunctionInPointParameters)>&) = 0;
+    virtual bool computeSolution(const std::function<void(FunctionInPointParameters)>&) = 0;
     virtual SSolution getSolution() const = 0;
     virtual std::shared_ptr<FunctionWrapper> getFunction() const = 0;
 };

@@ -62,3 +62,8 @@ unsigned int GradientWrapper::getDimension() const
 {
     return static_cast<unsigned int>(_gradientVector.size());
 }
+
+const std::vector<std::shared_ptr<FunctionWrapper>>& GradientWrapper::getGradient() const
+{
+    return _gradientVector;
+}

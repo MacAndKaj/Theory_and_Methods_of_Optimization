@@ -32,12 +32,12 @@ void Solver::setMethod(MethodType methodType)
     }
 }
 
-void Solver::computeSolution(const std::function<void(FunctionInPointParameters)>& callback)
+bool Solver::computeSolution(const std::function<void(FunctionInPointParameters)>& callback)
 {
     if (_methodType == MethodType::MethodType_Unknown or not _solution)
     {
         _log << "E[" + std::string(__FUNCTION__) + "] WARNING! Method not set or lack of starting point, returning! ";
-        return;
+        return false;
     }
     _method =
         _applicationStorage->getMethodsFactory()->getPolakRibiereMethod(
@@ -46,10 +46,12 @@ void Solver::computeSolution(const std::function<void(FunctionInPointParameters)
             , _parameters.getMaxNumberOfIterations(), _solution);
     auto functionWrapper = _functionsFactory->getFunctionFromString(_function, _dimension);
     auto gradientWrapper = _functionsFactory->getGradientForFunction(functionWrapper);
+    auto hessianWrapper = _functionsFactory->getHessianForGradient(gradientWrapper);
     _method->setFunction(functionWrapper);
     _method->setGradient(gradientWrapper);
+    _method->setHessian(hessianWrapper);
     _method->setCallbackWhenIterationDone(callback);
-    _method->startComputing();
+    return _method->startComputing();
 }
 
 SSolution Solver::getSolution() const

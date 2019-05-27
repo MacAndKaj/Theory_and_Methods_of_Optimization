@@ -30,9 +30,9 @@ void SolverWrapper::setAlgorithmParameters(const IterationMethodsParameters& par
     _solver->setAlgorithmParameters(params);
 }
 
-void SolverWrapper::startComputing()
+bool SolverWrapper::startComputing()
 {
-    _solver->computeSolution(
+    return _solver->computeSolution(
         [this](FunctionInPointParameters parameters){ emit iterationDone(parameters); });
 }
 

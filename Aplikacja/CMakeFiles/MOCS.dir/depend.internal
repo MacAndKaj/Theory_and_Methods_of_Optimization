@@ -827,7 +827,6 @@ CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o
  /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QMainWindow
  /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QMenu
  /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QMenuBar
- /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QProgressBar
  /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QPushButton
  /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QSpinBox
  /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/QTextBrowser
@@ -857,7 +856,6 @@ CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o
  /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qmainwindow.h
  /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qmenu.h
  /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qmenubar.h
- /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qprogressbar.h
  /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qpushbutton.h
  /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qrubberband.h
  /home/maciek/Qt/5.11.2/gcc_64/include/QtWidgets/qsizepolicy.h

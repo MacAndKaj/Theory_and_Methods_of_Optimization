@@ -192,3 +192,50 @@ std::string SMatrix::toString() const
     }
     return strm.str();
 }
+
+std::optional<double> SMatrix::det() const
+{
+    if (_dimension.first != _dimension.second)
+    {
+        return std::optional<double>();
+    }
+    if (_dimension.first == 1)
+    {
+        return *_vector.begin()->begin();
+    }
+    double det = 0;
+    for (auto columnNumber = 0; columnNumber < _vector.size(); ++columnNumber)
+    {
+        std::vector<std::vector<double>> temp;
+        for (int rowNumber = 1; rowNumber < _vector.size(); ++rowNumber)
+        {
+            temp.emplace_back(_vector[rowNumber]);
+            temp[rowNumber - 1].erase(temp[rowNumber - 1].begin() + columnNumber);
+        }
+        det += std::pow(-1, 1 + columnNumber + 1) * (*(_vector.begin()->begin() + columnNumber)) *
+               (*SMatrix(temp).det());
+    }
+
+    return det;
+}
+
+std::vector<double> SMatrix::getSubDeterminants() const
+{
+    auto sizeRows = _dimension.first;
+    if (sizeRows != _dimension.second) return {};
+
+    std::vector<double> returnedVector;
+    for (auto i = 0; i < sizeRows; ++i)
+    {
+        std::vector<std::vector<double>> temp;
+        for (auto j = 0; j < i + 1; ++j)
+        {
+            temp.emplace_back(std::vector<double>(_vector[j].begin(), _vector[j].begin() + i + 1));
+        }
+
+        returnedVector.emplace_back(*SMatrix(temp).det());
+    }
+    return returnedVector;
+}
+
+

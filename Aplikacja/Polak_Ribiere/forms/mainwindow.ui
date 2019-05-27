@@ -184,9 +184,31 @@
      </layout>
     </item>
     <item>
-     <widget class="QProgressBar" name="progressBar_computing">
-      <property name="value">
-       <number>24</number>
+     <widget class="QLabel" name="label">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>URW Bookman L</family>
+        <pointsize>11</pointsize>
+        <weight>9</weight>
+        <italic>true</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 italic 11pt &quot;URW Bookman L&quot;;
+background-color: rgb(239, 41, 41);</string>
+      </property>
+      <property name="text">
+       <string>Saddle point reached! Please change starting point.</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>

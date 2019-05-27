@@ -21,7 +21,7 @@ class SolverWrapper : public QWidget
 Q_OBJECT
 public:
     SolverWrapper();
-    void startComputing();
+    bool startComputing();
 
     void setFunction(unsigned int, const std::string&);
     void setAlgorithmParameters(const IterationMethodsParameters&);

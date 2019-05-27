@@ -31,7 +31,6 @@ private:
          , {"Modified Himmelblau's Function", "(x1^2+x2-11)^2+(x1+x2^2-7)^2-200"}
          , {"Test Function 1", "sin(x1)*(sin(x2)*exp(-(x1^2+x2^2)))"}
          , {"Test Function 2", "x1*exp(-(x1^2+x2^2))"}
-
         };;
 };
 

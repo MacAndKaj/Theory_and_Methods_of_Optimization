@@ -20,7 +20,7 @@ class Solver: public ISolver
 public:
     Solver() = delete;
     explicit Solver(const std::shared_ptr<IApplicationStorage>&);
-    void computeSolution(const std::function<void(FunctionInPointParameters)>&) override;
+    bool computeSolution(const std::function<void(FunctionInPointParameters)>& callback) override;
 
     SSolution getSolution() const override;
     std::shared_ptr<FunctionWrapper> getFunction() const override;

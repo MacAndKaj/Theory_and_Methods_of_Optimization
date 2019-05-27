@@ -17,9 +17,9 @@ MainWindow::MainWindow(QWidget* parent)
     , _log(LoggersFactory::getLoggersFactory().getLogger("MainWindow"))
 {
     _ui->setupUi(this);
-    _ui->progressBar_computing->hide();
     _ui->pushButton_start->setDisabled(true);
     _ui->pushButton_show->setDisabled(true);
+    _ui->label->setVisible(false);
 
     std::stringstream strm;
     strm << std::scientific << defaultSolutionGradientError;
@@ -56,6 +56,7 @@ void MainWindow::closeEvent(QCloseEvent* event)
 
 void MainWindow::setFunction()
 {
+    _ui->label->setVisible(false);
     auto function = _functionInput->getChosenFunction();
     _ui->label_chosenFunction->setText(function.c_str());
     unsigned int dimension = 0;
@@ -121,8 +122,7 @@ void MainWindow::startComputing()
         , static_cast<unsigned int>(_ui->spinBox_iterations->value()));
     _solver.setAlgorithmParameters(params);
 
-    _solver.startComputing();
-
+    _ui->label->setVisible(not _solver.startComputing());
 }
 
 void MainWindow::setupComboBox()

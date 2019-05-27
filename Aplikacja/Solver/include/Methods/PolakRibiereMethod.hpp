@@ -25,11 +25,12 @@ public:
     PolakRibiereMethod() = delete;
     PolakRibiereMethod(const PolakRibiereMethod&) = delete;
 
-    void startComputing() override;
+    bool startComputing() override;
     void setCallbackWhenIterationDone(const std::function<void(FunctionInPointParameters)>&) override;
 
     void setGradient(const std::shared_ptr<GradientWrapper>&) override;
     void setFunction(const std::shared_ptr<FunctionWrapper>&) override;
+    void setHessian(const std::shared_ptr<HessianWrapper>& hessian) override;
 
     bool isReadyToCompute() const override;
 private:
@@ -55,6 +56,7 @@ private:
     std::shared_ptr<SSolution> _solutionVector;
     std::shared_ptr<FunctionWrapper> _function;
     std::shared_ptr<GradientWrapper> _gradient;
+    std::shared_ptr<HessianWrapper> _hessian;
     IterationMethodsParameters _parameters;
     MinimalizeInDirectionHelper _minimalizeInDirectionHelper;
     Logger& _log;

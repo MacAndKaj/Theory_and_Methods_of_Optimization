@@ -2,34 +2,39 @@
 // Created by maciek on 06.04.19.
 //
 
-#include <Functions/HessianWrapper.hpp>
 #include <SMatrix.hpp>
-#include <Logger/LoggersFactory.hpp>
 #include <SVector.hpp>
+#include <Logger/LoggersFactory.hpp>
+#include <Functions/HessianWrapper.hpp>
+#include <ApplicationStorage.hpp>
+#include <SymbolicOperations/SymbolicOperator.hpp>
+#include <iostream>
 
 HessianWrapper::HessianWrapper(const std::shared_ptr<GradientWrapper>& gradient,
     const std::shared_ptr<IApplicationStorage>& applicationStorage)
     : _log(LoggersFactory::getLoggersFactory()
                .getLogger("HessianWrapper[" + gradient->getOriginalFunction() + "]"))
 {
-
+    for (const auto& gradientSymbolicForm : gradient->getGradient())
+    {
+        _hessianMatrix.emplace_back(
+            applicationStorage->getSymbolicOperator()->getDerivatives(gradientSymbolicForm));
+    }
 }
 
-std::optional <SMatrix> HessianWrapper::getHessianInPoint(const SVector& point)
+std::optional<SMatrix> HessianWrapper::getHessianInPoint(const SVector& point)
 {
-    std::vector<std::vector<double>> matrixReturned(point.getSize());
-    auto returnedMatrixRowsIter = matrixReturned.begin();
+
+    std::vector<std::vector<double>> matrixReturned;
     for (const auto& rows : _hessianMatrix)
     {
-        returnedMatrixRowsIter->reserve(point.getSize());
-        auto returnedMatrixColsIter = returnedMatrixRowsIter->begin();
+        std::vector<double> temp;
         for (const auto& col_item : rows)
         {
-            (*returnedMatrixColsIter) = (*col_item->operator()(point));
-            ++returnedMatrixColsIter;
+            temp.emplace_back(*col_item->operator ()(point));
         }
-        ++returnedMatrixRowsIter;
+        matrixReturned.emplace_back(temp);
     }
 
-    return {SMatrix()};
+    return {SMatrix(matrixReturned)};
 }

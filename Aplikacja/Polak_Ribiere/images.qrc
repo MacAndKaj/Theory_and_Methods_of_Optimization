@@ -1,5 +1,6 @@
 <RCC>
-    <qresource prefix="/">
+    <qresource>
         <file>../opt.png</file>
+        <file>../point.obj</file>
     </qresource>
 </RCC>

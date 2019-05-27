@@ -1,0 +1,2 @@
+/usr/bin/ar qc libMOCS.a  CMakeFiles/MOCS.dir/MOCS_autogen/mocs_compilation.cpp.o CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_FunctionInput.cpp.o CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_Graph.cpp.o CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_MainWindow.cpp.o CMakeFiles/MOCS.dir/Polak_Ribiere/include/moc_SolverWrapper.cpp.o
+/usr/bin/ranlib libMOCS.a

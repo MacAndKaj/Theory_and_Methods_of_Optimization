@@ -1,0 +1,37 @@
+@startuml
+	actor User
+	participant Interface
+	participant Solver
+
+
+	User 		-> 	Interface 	: Choose method
+	Interface 	-> 	Interface 	: Generate method
+	User 		-> 	Interface	: Set function
+	User 		->	Interface	: Choose/Write function, then OK
+	alt
+		User 		->	Interface	: Set starting point
+		note left: if not set - start point is 0
+	end
+	alt
+		User 		->	Interface	: Set algorithm parameters
+	end
+
+	User 		->	Interface	: Start computing
+	Interface	->	Solver		: Compute solution
+	Solver 		-> 	Solver		: Generate gradient and hessian
+	Solver 		-> 	Solver		: Compute solution 
+	loop
+		Interface	<- Solver		: New solution point found	
+		Interface	-> Interface	: Show new point
+	end
+	Interface 	<- 	Solver		: Stop condition fulfilled
+
+	opt
+		User		-> 	Interface	: Show graphical solution
+		Interface	-> 	Interface	: Open window with graphical solution
+		opt
+			User 	-> Interface	: Change 3D/2D
+		end 
+	end
+
+@enduml

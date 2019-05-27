@@ -13,7 +13,7 @@ FunctionWrapper::FunctionWrapper()
 
 }
 
-void FunctionWrapper::addSymbols(const std::vector<std::pair<std::string, float>>& namesAndValuesMap)
+void FunctionWrapper::addSymbols(const std::vector<std::pair<std::string, double>>& namesAndValuesMap)
 {
     std::for_each(namesAndValuesMap.begin(), namesAndValuesMap.end(), [&](auto nameValuePair){
         _symbols.emplace_back(nameValuePair.second);
@@ -25,18 +25,24 @@ void FunctionWrapper::addSymbols(const std::vector<std::pair<std::string, float>
         _symbolTable.add_variable(nameAndValue.first, *symbolIterator);
         symbolIterator++;
     }
+    _log << "I["+std::string(__FUNCTION__) + "] operation succedded!";
 }
 
-exprtk::expression<float>& FunctionWrapper::configAndGetExpression(const std::string& exprStr)
+exprtk::expression<double>& FunctionWrapper::configAndGetExpression(const std::string& exprStr)
 {
     _expressionString = exprStr;
     _expression.register_symbol_table(_symbolTable);
     return _expression;
 }
 
-std::optional<float> FunctionWrapper::operator ()(SVector& point)
+std::optional<double> FunctionWrapper::operator()(const SVector& point)
 {
-    if (point.getSize() != _symbols.size()) return std::optional<float>();
+    if (point.getSize() != _symbols.size()) {
+        std::stringstream strm;
+        strm << "E| Computing value of function f(x)=" << _expressionString << " failed!";
+        _log << strm.str();
+        return std::optional<double>();
+    }
 
     auto pointIterator = point.getVector().cbegin();
     for (auto&& symbol : _symbols)
@@ -44,11 +50,17 @@ std::optional<float> FunctionWrapper::operator ()(SVector& point)
         symbol = *pointIterator;
         pointIterator++;
     }
-    return std::optional<float>(_expression.value());
+    return std::optional<double>(_expression.value());
 }
 
-const std::string FunctionWrapper::getExpressionString() const
+std::string FunctionWrapper::getExpressionString() const
 {
     return _expressionString;
 }
+
+unsigned int FunctionWrapper::getDimension() const
+{
+    return static_cast<unsigned int>(_symbols.size());
+}
+
 

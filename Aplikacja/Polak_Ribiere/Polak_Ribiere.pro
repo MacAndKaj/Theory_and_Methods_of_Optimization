@@ -6,7 +6,8 @@
 
 QT       += core gui widgets datavisualization
 
-CONFIG += c++14
+CONFIG += c++17
+LIBS += -pthread
 
 TARGET = Polak_Ribiere
 TEMPLATE = app
@@ -22,20 +23,23 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-CONFIG += c++11
-
 SOURCES += \
         main.cpp \
-        mainwindow.cpp \
-        graph.cpp
+        sources/MainWindow.cpp \
+        sources/Graph.cpp \
+        sources/FunctionInput.cpp
 
 HEADERS += \
-        mainwindow.h \
-        graph.h
+        include/MainWindow.h \
+        include/Graph.h \
+        include/FunctionInput.h
 
 FORMS += \
-        mainwindow.ui \
-        graph.ui
+        forms/mainwindow._ui \
+        forms/graph._ui \
+        forms/functioninput._ui
+
+MOC_DIR = forms
 
 RESOURCES += \
         images.qrc

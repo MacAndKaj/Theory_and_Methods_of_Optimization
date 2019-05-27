@@ -1,0 +1,5 @@
+/home/maciek/clion-2019.1.2/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - Unix Makefiles" /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja
+-- Found Qwt: /usr/local/qwt-6.1.4/lib/libqwt.so (6.1.4)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/maciek/Dokumenty/Theory_and_Methods_of_Optimization/Theory_and_Methods_of_Optimization/Aplikacja
